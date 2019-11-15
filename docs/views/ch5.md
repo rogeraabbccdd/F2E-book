@@ -54,6 +54,7 @@ for(let i=0;i<10;i++) {
 :::warning 挑戰
 在網頁上產生一排 51 個顏色漸變的 ★，第一個星的顏色為 `rgb(0,0,255)`，最後一個 ★ 色碼為 `rgb(255,0,0)`
 :::
+
 ## 巢狀 for
 如果 `for(A)` 迴圈裡面又有一個 `for(B)` 迴圈，可以處理更複雜的二維資料  
 ::: warning 練習
@@ -131,6 +132,32 @@ do {
 
 <img src="/images/ch5/while.jpg" height="300" style="margin: 10px 0;">
 
+## break 與 continue
+`break` 可以打斷迴圈的執行，`continue` 可以略一次執行  
+這兩個涵式在所有迴圈內都可以使用  
+```js
+// 當 i 等於 5 時，跳過這次迴圈
+for(let i=0;i<10;i++) {
+  if(i === 5) {
+    continue;
+  }
+	document.write(i);
+}
+
+// 猜猜神秘數字，讓使用者猜測神秘數字是多少，猜對才打斷迴圈
+let count = 1;
+let num = 123;
+while(true) {
+  let answer = prompt(`第 ${count} 次猜測，猜猜看秘密數字是多少`);
+  if(answer == num){
+    break;
+  }
+  num++;
+}
+```
+:::warning 練習
+試試看自己寫一個猜數字遊戲，並加入太大、太小等提示訊息
+:::
 ## 綜合應用
 :::warning 作業
 印 6 層星星塔，結構如下圖
