@@ -228,10 +228,31 @@ cond1(yes)->process11->process12->process13->e
 cond1(no)->process1->e
 @flowend
 
+```js
+let weather = "rain";
+let hasUmbrella = false;
+
+if(weather === "rain"){
+    if(hasUmbrella) {
+        alert("我有帶傘，下雨也不怕");
+    }
+    else {
+        alert("下雨又沒帶傘，你完蛋囉");
+    }
+}
+else {
+    alert("今天出太陽，有沒有帶傘都沒關係");
+}
+```
+
 ## 綜合應用
 `prompt()` 會跳出一個輸入視窗，使用者可以輸入文字，資料型態為文字  
-`confirm()` 會跳出一個確認視窗，使用者可以點是或否，資料型態為布林值  
+`confirm()` 會跳出一個確認視窗，使用者可以點確認或取消，資料型態為布林值  
 以上兩個函式 `()` 內都是放視窗文字  
+
+:::danger 注意
+`confirm()` 的功能比較像讓使用者確認資訊，我們這邊把它當作簡單的是非題使用  
+:::
 
 下面是運用上面兩個涵式製作的問答題的範例  
 ```js
