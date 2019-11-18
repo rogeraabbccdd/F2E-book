@@ -4542,6 +4542,11 @@ jsesc@~0.5.0:
   resolved "https://registry.yarnpkg.com/jsesc/-/jsesc-0.5.0.tgz#e7dee66e35d6fc16f710fe91d5cf69f70f08911d"
   integrity sha1-597mbjXW/Bb3EP6R1c9p9w8IkR0=
 
+jsmind@^0.4.6:
+  version "0.4.6"
+  resolved "https://registry.yarnpkg.com/jsmind/-/jsmind-0.4.6.tgz#b65eba72086837911b51cfb3fb67f676565ee585"
+  integrity sha1-tl66cghoN5EbUc+z+2f2dlZe5YU=
+
 json-parse-better-errors@^1.0.1, json-parse-better-errors@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/json-parse-better-errors/-/json-parse-better-errors-1.0.2.tgz#bb867cfb3450e69107c131d1c514bab3dc8bcaa9"
