@@ -72,6 +72,8 @@ for(let i=0;i<10;i++) {
 先判斷是否符合條件，符合的話才執行程式碼，執行後後再判斷要不要執行下一次  
 用於不確定執行次數的迴圈  
 
+<img src="/images/ch5/while_alive.png" height="300" style="margin: 10px 0;">
+
 @flowstart
 st=>start: 開始
 cond=>condition: 檢查條件
