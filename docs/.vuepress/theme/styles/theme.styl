@@ -302,6 +302,10 @@ th, td
 a.color-button
   cursor: pointer;
 
+.abstract-item
+  a:hover
+    text-decoration: none !important;
+
 /************** Dark **************/
 .reco-theme-dark
   color: #fff;
@@ -374,70 +378,3 @@ a.color-button
 @media (prefers-color-scheme: dark)
   html
     content: "dark"
-  body
-    color: #fff;
-  background: #121212;
-  a.sidebar-link, a.nav-link, a.dropdown-title
-    color: #fff;
-  .navbar
-    .links
-      background: #121212;
-  .navbar
-    color: #fff;
-    background: #121212;
-    .site-name
-      color: #fff;
-  .color-picker-menu
-    background: #121212;
-  .home-blog .home-blog-wrapper .info-wrapper .num > div h3
-    color: #fff;
-  .dropdown-wrapper .nav-dropdown
-    color: #fff;
-    background: #121212;
-  .sidebar
-    color: #fff;
-    background: #121212;
-  .content__default code
-    color: #dd6efd;
-  .iconfont
-    color: #aaa;
-  .footer
-    a
-      color: #fff;
-    a:hover
-      color:$accentColor
-  .nav-links a:hover, .nav-links a.router-link-active
-    color:$accentColor
-  .category-item:hover
-    .category-name
-      color: #000;
-  .custom-block.tip
-    color: #a0ddc1
-    background-color: rgba(66, 185, 131, 0.25)
-  .custom-block.tip .custom-block-title
-    color: #66c99c;
-  .custom-block.warning
-    color: #ffefa2
-    background-color: rgba(255, 229, 100, 0.25)
-  .custom-block.warning .custom-block-title
-    color: #ffd91d;
-  .custom-block.warning a
-    color: #ffdf41
-  .custom-block.danger
-    color: #f66;
-    background-color: rgba(204, 0, 0, 0.25)
-  .custom-block.danger .custom-block-title
-    color: #ff2929
-  .custom-block.danger a
-    color: #ff0a0a
-  .home .feature h2,
-  .home .feature p
-    color: #fff;
-  .home .hero .description
-    color: #fff;
-  .footer-wrapper
-    color: #fff !important;
-  tr:nth-child(2n)
-    background: #2b2f33;
-  blockquote
-    color: #ddd;

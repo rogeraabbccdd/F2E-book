@@ -49,9 +49,14 @@ export default {
 
     // local storage
     const dark = localStorage.getItem('reco-dark')
-    if(dark || this.isPreferDark)  this.darkTheme = true
-    else if(this.$themeConfig.defaultDark) this.darkTheme = this.$themeConfig.defaultDark
-    else this.darkTheme = false
+    if(dark === null) {
+      if(this.$themeConfig.defaultDark) this.darkTheme = this.$themeConfig.defaultDark
+      else this.darkTheme = false
+    }
+    else  this.darkTheme = (dark === "true")
+
+    if(this.isPreferDark) this.darkTheme = this.isPreferDark
+
     localStorage.setItem('reco-dark', this.darkTheme)
     this.setDarkTheme()
   },

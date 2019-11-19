@@ -37,10 +37,11 @@
 import Common from '@theme/components/Common.vue'
 import NoteAbstract from '@theme/components/NoteAbstract.vue'
 import mixin from '@theme/mixins/index.js'
+import Pagation from '@theme/components/Pagation.vue'
 
 export default {
   mixins: [mixin],
-  components: { Common, NoteAbstract },
+  components: { Common, NoteAbstract, Pagation },
 
   data () {
     return {

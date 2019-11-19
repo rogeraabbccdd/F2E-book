@@ -63,10 +63,11 @@
 import TagList from '@theme/components/TagList.vue'
 import NoteAbstract from '@theme/components/NoteAbstract.vue'
 import mixin from '@theme/mixins/index.js'
+import Pagation from '@theme/components/Pagation.vue'
 
 export default {
   mixins: [mixin],
-  components: { NoteAbstract, TagList },
+  components: { NoteAbstract, TagList, Pagation },
   data () {
     return {
       recoShow: false,

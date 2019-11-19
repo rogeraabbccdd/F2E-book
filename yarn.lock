@@ -886,11 +886,6 @@
   resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-loading-page/-/vuepress-plugin-loading-page-1.0.0.tgz#6f4412e303e1c4e150889eee8f7e86fffc88de07"
   integrity sha512-bxlzLeTk+vlzC2SIou8OSA3OQ2mxFv5I0ejjzAk2IiLoB91AbBnc0nUynYORwS3HRj5gR8M2JZSdIUQC3tTRsw==
 
-"@vuepress-reco/vuepress-plugin-pagation@^1.0.3":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-pagation/-/vuepress-plugin-pagation-1.0.3.tgz#150121c51806b57d71a60f62ff57b8ef5b3c9625"
-  integrity sha512-KbYWRcl2PM9HxJEfB9XASru2vpOUPpVNOajnQTx5DAWq+qMFst44QKAEa8RxDVlksDGmJoS7xqv3LsRaXwShOw==
-
 "@vuepress-reco/vuepress-plugin-screenfull@^1.0.0":
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/@vuepress-reco/vuepress-plugin-screenfull/-/vuepress-plugin-screenfull-1.0.0.tgz#3e08caf5517c5670afa6a1f9dc67d2127840d351"
