@@ -1,6 +1,6 @@
 --- 
 title: Ch.6 陣列與 JSON
-categories:
+tags:
  - JavaScript
 ---
 

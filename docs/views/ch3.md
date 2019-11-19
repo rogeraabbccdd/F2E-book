@@ -1,6 +1,6 @@
 --- 
 title: Ch.3 運算子
-categories:
+tags:
  - JavaScript
 ---
 

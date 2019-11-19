@@ -1,6 +1,6 @@
 --- 
 title: Ch.7 function 與物件
-categories:
+tags:
  - JavaScript
 ---
 

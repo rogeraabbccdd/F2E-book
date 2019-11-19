@@ -1,6 +1,6 @@
 --- 
 title: Ch.4 邏輯判斷式
-categories:
+tags:
  - JavaScript
 ---
 

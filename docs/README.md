@@ -10,7 +10,7 @@ heroImageStyle: {
 }
 isShowTitleInHome: true
 actionText: 開始
-actionLink: /categories/JavaScript/
+actionLink: /views/
 features:
 - title: 網頁前端
   details: 包含基礎 JavaScript 語法、JQuery 函式庫 以及 Vue.js 框架

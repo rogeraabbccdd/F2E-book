@@ -1,6 +1,6 @@
 --- 
 title: Ch.1 認識 JavaScript
-categories:
+tags:
  - JavaScript
 ---
 

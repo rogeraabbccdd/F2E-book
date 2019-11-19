@@ -36,7 +36,7 @@ module.exports = {
       },
       {
         text: "章節",
-        link: "/categories/JavaScript/",
+        link: "/views/",
         icon: "reco-menu"
       },
       {

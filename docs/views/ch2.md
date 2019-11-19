@@ -1,6 +1,6 @@
 --- 
 title: Ch.2 變數
-categories:
+tags:
  - JavaScript
 ---
 
