@@ -1,5 +1,5 @@
 --- 
-title: Ch.4 JavaScript 的邏輯判斷式
+title: Ch.4 邏輯判斷式
 categories:
  - JavaScript
 ---

@@ -1,5 +1,5 @@
 --- 
-title: Ch.6 JavaScript 的陣列與 JSON
+title: Ch.6 陣列與 JSON
 categories:
  - JavaScript
 ---

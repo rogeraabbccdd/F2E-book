@@ -1,5 +1,5 @@
 --- 
-title: Ch.7 JavaScript 的 function 與物件
+title: Ch.7 function 與物件
 categories:
  - JavaScript
 ---

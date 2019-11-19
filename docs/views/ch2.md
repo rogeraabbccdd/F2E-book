@@ -1,5 +1,5 @@
 --- 
-title: Ch.2 認識 JavaScriptJavaScript 的變數
+title: Ch.2 變數
 categories:
  - JavaScript
 ---

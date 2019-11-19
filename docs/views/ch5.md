@@ -1,5 +1,5 @@
 --- 
-title: Ch.5 JavaScript 的迴圈
+title: Ch.5 迴圈
 categories:
  - JavaScript
 ---

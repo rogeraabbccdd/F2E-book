@@ -1,5 +1,5 @@
 --- 
-title: Ch.3 JavaScript 的運算子
+title: Ch.3 運算子
 categories:
  - JavaScript
 ---
