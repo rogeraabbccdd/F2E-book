@@ -55,6 +55,10 @@ function 可以將程式處理完畢的結果傳出
 就像是一台計算機，將算式傳給計算機，計算機計算後將結果傳回來，顯示在螢幕上  
 
 ```js
+function sayHelloString(name) {
+  let r = "Hello, " + name;
+  return r;
+}
 ```
 
 ### 箭頭函式
