@@ -87,7 +87,7 @@ export default {
   methods: {
     goTags (tag) {
       const base = this.$site.base
-      window.location.href = `${base}tag/?tag=${tag}`
+      if(this.$route.query.tag !== tag) this.$router.push({path: `/tag/?tag=${tag}`})
     }
   }
 }
