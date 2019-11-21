@@ -40,6 +40,11 @@ module.exports = {
         icon: "reco-menu"
       },
       {
+        text: "標籤",
+        link: "/tag/",
+        icon: "reco-tag"
+      },
+      {
         text: "GitHub",
         link: "https://github.com/rogeraabbccdd/F2E-book",
         icon: "reco-github"
