@@ -1,5 +1,5 @@
 module.exports = {
-  plugins: ['cursor-effects', 'ribbon', 'reading-progress', 'demo-block', 'vuepress-plugin-code-copy', 'register-components', 'flowchart'],
+  plugins: ['cursor-effects', 'ribbon', 'reading-progress', 'demo-block', 'vuepress-plugin-code-copy', 'register-components', 'flowchart', 'vuepress-plugin-smooth-scroll'],
   title: "泰山職訓前端班課程講義",
   base: '/teach/',
   description: "進入 JavaScript 的世界",

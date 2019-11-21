@@ -31,6 +31,7 @@
     "vuepress-plugin-demo-block": "^0.7.2",
     "vuepress-plugin-flowchart": "^1.4.3",
     "vuepress-plugin-reading-progress": "^1.0.7",
-    "vuepress-plugin-ribbon": "^0.0.6"
+    "vuepress-plugin-ribbon": "^0.0.6",
+    "vuepress-plugin-smooth-scroll": "^0.0.7"
   }
 }

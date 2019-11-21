@@ -6962,7 +6962,7 @@ slice-ansi@^2.1.0:
     astral-regex "^1.0.0"
     is-fullwidth-code-point "^2.0.0"
 
-smoothscroll-polyfill@^0.4.3:
+smoothscroll-polyfill@^0.4.3, smoothscroll-polyfill@^0.4.4:
   version "0.4.4"
   resolved "https://registry.yarnpkg.com/smoothscroll-polyfill/-/smoothscroll-polyfill-0.4.4.tgz#3a259131dc6930e6ca80003e1cb03b603b69abf8"
   integrity sha512-TK5ZA9U5RqCwMpfoMq/l1mrH0JAR7y7KRvOBx0n2869aLxch+gT9GhN3yUfjiw+d/DiF1mKo14+hd62JyMmoBg==
@@ -8018,6 +8018,13 @@ vuepress-plugin-smooth-scroll@^0.0.3:
   integrity sha512-qsQkDftLVFLe8BiviIHaLV0Ea38YLZKKonDGsNQy1IE0wllFpFIEldWD8frWZtDFdx6b/O3KDMgVQ0qp5NjJCg==
   dependencies:
     smoothscroll-polyfill "^0.4.3"
+
+vuepress-plugin-smooth-scroll@^0.0.7:
+  version "0.0.7"
+  resolved "https://registry.yarnpkg.com/vuepress-plugin-smooth-scroll/-/vuepress-plugin-smooth-scroll-0.0.7.tgz#ee0dc4b76eb487b115ae95049a5d749b581b8439"
+  integrity sha512-VbLl4AFoLypylCGN0PHO7X+wSjWPKGccaE91DjooXVCsXs6DadzDZCpXSIlQ1WJf/uu9Pi40l3e33FNtt7xu2Q==
+  dependencies:
+    smoothscroll-polyfill "^0.4.4"
 
 vuepress@1.2.0:
   version "1.2.0"
