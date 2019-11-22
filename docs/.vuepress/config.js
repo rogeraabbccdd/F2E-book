@@ -21,7 +21,7 @@ module.exports = {
     ]
   ],
   themeConfig: {
-    catOrder: "name",
+    postOrder: "name",
     themePicker: true,
     defaultDark: true,
     footerTheme: false,

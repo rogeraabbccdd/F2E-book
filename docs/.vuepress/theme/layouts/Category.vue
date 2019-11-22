@@ -56,7 +56,7 @@ export default {
     posts () {
       let posts = this.$currentCategories.pages
       // posts = this._filterPostData(posts)
-      if (this.$themeConfig.catOrder === "name") this._sortPostDataName(posts)
+      if (this.$themeConfig.postOrder === "name") this._sortPostDataName(posts)
       else this._sortPostData(posts)
       this._setPage(1)
       return posts

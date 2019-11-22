@@ -20,7 +20,7 @@ export default {
     },
     _sortPostDataName (posts) {
       posts.sort((a, b) => {
-        return a.title.localeCompare(b.title);
+        return a.title.localeCompare(b.title, "zh-Hant-TW");
       })
     },
     // 获取时间的数字类型

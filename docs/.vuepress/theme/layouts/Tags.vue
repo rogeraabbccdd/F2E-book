@@ -43,7 +43,8 @@ export default {
     handlePosts () {
       let posts = this.$site.pages
       posts = this._filterPostData(posts)
-      this._sortPostData(posts)
+      if (this.$themeConfig.postOrder === "name") this._sortPostDataName(posts)
+      else this._sortPostData(posts)
       return posts
     }
   },
