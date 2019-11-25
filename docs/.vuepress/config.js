@@ -27,7 +27,7 @@ module.exports = {
     footerTheme: false,
     footerYear: false,
     footerCustom: "Made with ❤ by Kento",
-    GAID: "UA-131804412-11",
+    GAID: "UA-131804412-12",
     nav: [
       {
         text: "首頁",
