@@ -1,7 +1,7 @@
 module.exports = {
   plugins: ['cursor-effects', 'ribbon', 'reading-progress', 'demo-block', 'vuepress-plugin-code-copy', 'register-components', 'flowchart', 'vuepress-plugin-smooth-scroll'],
   title: "泰山職訓前端班課程講義",
-  base: '/teach/',
+  base: '/F2E-book/',
   description: "進入 JavaScript 的世界",
   dest: "public",
   head: [
