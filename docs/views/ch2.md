@@ -42,7 +42,7 @@ tags:
 - 建議使用有意義的文字當作變數名稱
 - 建議使用 [駝峰式大小寫](https://zh.wikipedia.org/wiki/%E9%A7%9D%E5%B3%B0%E5%BC%8F%E5%A4%A7%E5%B0%8F%E5%AF%AB) 當命名規則
 - 程式語言保留字無法當作變數名稱，圖片取自 [SoloLearn](https://www.sololearn.com/)
-  <img src="/images/ch2/reserved.png" style="margin: 10px 0;">  
+  <img src="/F2E-book/images/ch2/reserved.png" style="margin: 10px 0;">  
 
 
 下面這個範例以特殊字元當變數名稱  

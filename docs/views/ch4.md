@@ -97,7 +97,7 @@ else {
 ## 進階判斷式
 ### 三元運算子
 如果是 2 選 1 的判斷式，可以運用三元運算子，節省程式碼文字  
-<img src="/images/ch4/meme.jpg" height="300" style="margin: 10px 0;">
+<img src="/F2E-book/images/ch4/meme.jpg" height="300" style="margin: 10px 0;">
    
 > 條件 <span style="color:#FF1493">?</span> 成立時執行的程式 <span style="color:#ff6600">:</span> 否定時執行的程式  
    

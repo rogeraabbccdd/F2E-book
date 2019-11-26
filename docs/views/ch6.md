@@ -36,7 +36,7 @@ let bendons = ["雞排飯", "排骨飯", "魚排飯"];
 
 :::danger 注意
 在程式裡，陣列的索引是從 `0` 開始！  
-<img src="/images/ch6/meme.png" height="300" style="margin: 10px 0;">
+<img src="/F2E-book/images/ch6/meme.png" height="300" style="margin: 10px 0;">
 :::
 
 在陣列變數名後加上 `[]` ，裡面放入索引數字可以該索引的資料  
