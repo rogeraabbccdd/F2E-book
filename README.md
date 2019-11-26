@@ -14,4 +14,4 @@
 
 ## 課程報名
 - [109 年前端網頁開發技術 1 期](https://www.taiwanjobs.gov.tw/Internet/index/CourseQuery_detail.aspx?oid=123183)
-- [109 年度前端網頁開發技術 2 期](https://www.taiwanjobs.gov.tw/Internet/index/CourseQuery_detail.aspx?oid=123184)
+- [109 年前端網頁開發技術 2 期](https://www.taiwanjobs.gov.tw/Internet/index/CourseQuery_detail.aspx?oid=123184)
