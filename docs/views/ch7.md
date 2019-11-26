@@ -121,8 +121,9 @@ console.log(person.skills);
       {id:'root', isroot:true, topic:'person', 'background-color': 'orange'},
       {id:'sub1', parentid:'root', topic:'姓'},
       {id:'sub2', parentid:'root', topic:'名'},
-      {id:'sub3', parentid:'root', topic:'sayHello', 'background-color': 'lightseagreen'},
-      {id:'sub4', parentid:'root', topic:'addSkill', 'background-color': 'lightseagreen'},
+      {id:'sub3', parentid:'root', topic:'skills'},
+      {id:'sub4', parentid:'root', topic:'sayHello', 'background-color': 'lightseagreen'},
+      {id:'sub5', parentid:'root', topic:'addSkill', 'background-color': 'lightseagreen'},
     ]
   }
 }
