@@ -82,12 +82,12 @@ if (true) {
 console.log(x);   // 2
 
 // let 變數測試
-let x = 1;
+let y = 1;
 if (true) {
-  let x = 2;    // 一樣的名字，不會覆蓋掉舊的，這行的 x 只作用在 if　的 {} 內
-  console.log(x);   // 2
+  let y = 2;    // 一樣的名字，不會覆蓋掉舊的，這行的 x 只作用在 if　的 {} 內
+  console.log(y);   // 2
 }
-console.log(x);   // 1
+console.log(y);   // 1
 
 // const 變數測試
 const gravity = 9.8;

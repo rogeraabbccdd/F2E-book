@@ -154,7 +154,7 @@ while(true) {
   if(answer == num){
     break;
   }
-  num++;
+  count++;
 }
 ```
 :::warning 練習

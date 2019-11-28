@@ -68,7 +68,7 @@ if(條件){
 數字大小比較的範例  
 ```js
 let a = 10;
-if($a <= 10){
+if(a <= 10){
     console.log("a 小於等於 10");
 }
 else {
