@@ -18,7 +18,8 @@ module.exports = {
         name: "viewport",
         content: "width=device-width,initial-scale=1,user-scalable=no"
       }
-    ]
+    ],
+    ['script', { src: 'https://code.jquery.com/jquery-3.4.1.min.js' }],
   ],
   themeConfig: {
     postOrder: "name",
