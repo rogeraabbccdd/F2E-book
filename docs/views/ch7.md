@@ -98,9 +98,9 @@ let Ming = {
     }
 }
 
-person.sayHello();
-person.addSkill("javascript");
-console.log(person.skills);
+Ming.sayHello();
+Ming.addSkill("javascript");
+console.log(Ming.skills);
 ```
 
 上面的程式碼可以畫成像這樣的心智圖  
