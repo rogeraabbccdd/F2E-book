@@ -1,4 +1,4 @@
-# 前端網頁課程教材  
+# 前端網頁課程教材  ![build](https://api.travis-ci.org/rogeraabbccdd/F2E-book.svg?branch=master)
 <p align="center">
   <img height="300" src="./docs/.vuepress/public/hero.png">
 </p>
