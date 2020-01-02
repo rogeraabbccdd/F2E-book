@@ -12,8 +12,8 @@
 - Vue.js
 
 ## 課程報名
-- [109 年前端網頁開發技術 1 期](https://www.taiwanjobs.gov.tw/Internet/index/CourseQuery_detail.aspx?oid=123183)
-- [109 年前端網頁開發技術 2 期](https://www.taiwanjobs.gov.tw/Internet/index/CourseQuery_detail.aspx?oid=123184)
+- [109 年前端網頁開發技術 1 期](https://its.taiwanjobs.gov.tw/Course/Detail?ID=141353)
+- [109 年前端網頁開發技術 2 期](https://its.taiwanjobs.gov.tw/Course/Detail?ID=141574)
 
 ## 連結
 - [線上閱讀](https://rogeraabbccdd.github.io/F2E-book/)
