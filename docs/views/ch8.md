@@ -88,6 +88,38 @@ numbers.reverse();
 arr.includes("abc");
 // 陣列是否有包含文字，回傳索引
 arr.indexOf("abc");
+
+// 排序陣列: 英文
+let letters = ["a", "c", "b", "d"];
+letters.sort();
+
+// 排序中文: 中文
+// .sort 裡面的 function 會迴圈跑過每個值，一次兩個
+// 第一次跑第 1 2 個
+// 第二次跑第 2 3 個
+// a 指的是後面的，b 指的是前面的
+// return < 0 ，a會排在b前面
+// return = 0 ，a b順序不變
+// return > 0 ，a會排在b後面。
+let ChineseNum = ["三", "一", "四", "二"];
+ChineseNum.sort((a, b)=>{
+  // localeCompare 可以依語言排序文字
+  // 如果 a 在 b 之前為 -1，相反則為 1，相等為 0
+  return a.localeCompare(b, "zh-Hant-TW");
+})
+
+// .map() 可以運算陣列的每個值後產生新的陣列
+let numbers1 = [1,2,3,4];
+numbers1 = numbers1.map(num => {
+  return num*2
+})
+
+// .filter() 可以過濾陣列後產生新的陣列
+// true 代表保留，false 代表刪除
+let numbers2 = [100,200,300,400];
+numbers2 = numbers2.filter(num => {
+  return num > 200
+})
 ```
 :::warning 練習
 將 `prompt()` 輸入的文字移除前後空白後倒過來後顯示在網頁上  
