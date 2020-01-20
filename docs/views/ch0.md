@@ -30,15 +30,19 @@ Markdown 是一種輕量級標記式語言，它有純文字標記的特性，�
 
 ## 認識程式設計
 透過小遊戲認識程式設計
-- Google 首頁遊戲  
+- [Google 首頁遊戲](https://www.google.com/doodles/celebrating-50-years-of-kids-coding)  
   <a href="https://www.google.com/doodles/celebrating-50-years-of-kids-coding" target="_blank">
     <img src="/F2E-book/images/ch0/googlegame.gif" height="200" style="margin: 10px 0;">  
   </a>
-- Code.org 的一小時玩程式活動  
+- [Code.org 的一小時玩程式活動](https://code.org/hourofcode/overview)  
   <a href="https://code.org/hourofcode/overview" target="_blank">
     <img src="/F2E-book/images/ch0/flappy.jpg" height="200" style="margin: 10px 0;">  
   </a>
-- RABBIDS CODING (需要美國 VPN)  
+- [Code Combat](https://codecombat.com/)  
+  <a href="https://codecombat.com/" target="_blank">
+    <img src="/F2E-book/images/ch0/cc.png" height="200" style="margin: 10px 0;">  
+  </a>
+- [RABBIDS CODING (需要美國 VPN)](https://register.ubisoft.com/rabbids-coding/)  
   <a href="https://register.ubisoft.com/rabbids-coding/" target="_blank">
     <img src="/F2E-book/images/ch0/rabbids.jpg" height="200" style="margin: 10px 0;">  
   </a>
