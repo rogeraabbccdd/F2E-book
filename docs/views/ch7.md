@@ -64,7 +64,7 @@ function sayHelloString(name) {
 ### 箭頭函式
 箭頭函式可以將 function 的宣告寫得比較簡短  
 ```js
-let sayHello = () => {
+const sayHello = () => {
     alert("Hello");
 };
 
