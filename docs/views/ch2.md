@@ -73,25 +73,20 @@ tags:
 這裡我們使用 `console.log()` 來在瀏覽器控制台輸出變數
 
 ```js
-// var 變數測試
-var x = 1;
-if (true) {
-  var x = 2;    // 一樣的名字，會覆蓋掉舊的
-  console.log(x);   // 2
-}
-console.log(x);   // 2
+// var 變數可以重複宣告，後面的會蓋過前面的
+var x = 2;
+var x = 3;
+document.write(x);
 
-// let 變數測試
-let y = 1;
-if (true) {
-  let y = 2;    // 一樣的名字，不會覆蓋掉舊的，這行的 x 只作用在 if　的 {} 內
-  console.log(y);   // 2
-}
-console.log(y);   // 1
+// let 變數不能重複宣告
+let y = 2;
+let y = 3; // 不能重複宣告
+document.write(y);
 
-// const 變數測試
+// const 不能重複宣告，且宣告後不能修改值
 const gravity = 9.8;
-gravity = 1234;    // 錯誤，const 宣告後就不能修改值
+gravity = 1234; // 宣告後不能修改值
+document.write(gravity);
 ```
 
 ## 變數資料型態
