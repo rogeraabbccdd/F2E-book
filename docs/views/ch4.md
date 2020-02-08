@@ -189,7 +189,7 @@ else {
 像上面的範例，都是比較同一個變數的不同值的話，可以用 `switch` 和 `case`，程式碼比較精簡  
 
 :::danger 注意
-switch case 雖然比 if 還好閱讀，但僅限等於的判斷
+switch case 雖然比 if 還好閱讀，但僅限一個變數的判斷
 :::
 
 ```js
