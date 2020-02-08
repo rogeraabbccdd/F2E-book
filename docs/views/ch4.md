@@ -159,9 +159,9 @@ cond4(yes)->process4->e
 轉換成中文的話就如下面的範例  
   
 <span style="color: #ff6600;">if ( '高' && '帥' && '富' && '最好能夠會煮飯') </span>{ 找了五年沒遇到 ;}  
-<span style="color: #008000;">elseif ( '高' && '帥' && '富' ) </span>{ 又找了五年....還是沒找到 (現年已30) }  
-<span style="color: #55bcfa;">elseif ( '高'  && '體貼' && '生活過的去不必太有錢' ) </span>{ 又過了 5 年 ...仍然沒有 ( 現年已35 )...}  
-<span style="color: #ff00ff;">elseif ( '只要能疼惜我就好了' ) </span>{ 仍然槓龜.....}  
+<span style="color: #008000;">else if ( '高' && '帥' && '富' ) </span>{ 又找了五年....還是沒找到 (現年已30) }  
+<span style="color: #55bcfa;">else if ( '高'  && '體貼' && '生活過的去不必太有錢' ) </span>{ 又過了 5 年 ...仍然沒有 ( 現年已35 )...}  
+<span style="color: #ff00ff;">else if ( '只要能疼惜我就好了' ) </span>{ 仍然槓龜.....}  
 <span style="color: #849b87;">else </span>{ 老娘不嫁了 ..... }
 
 -----
