@@ -55,7 +55,7 @@ let timer = setInterval(()=>{
 }, 1000)
 
 setTimeout(()=>{
-    clearInterval();
+    clearInterval(timer);
 }, 5000)
 ```
 
