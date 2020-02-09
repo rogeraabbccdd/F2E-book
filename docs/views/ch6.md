@@ -117,19 +117,9 @@ let restaurant = {
 }
 ```
 
-```js
-let str = "A,B,C,D";
-let arr = str.split("");
-```
-
-:::warning 練習
-將 `prompt()` 輸入的文字倒過來後顯示在網頁上
-:::
-
 ## 迴圈
 我們可以透過迴圈去取出陣列裡的所有資料  
 這裡多了兩個迴圈，`for of` 和 `for in`，它們個別針對陣列和 JSON 使用的迴圈  
-
 :::danger 注意
 `for of` 迴圈無法使用對 JSON 使用  
 :::
