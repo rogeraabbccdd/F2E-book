@@ -106,7 +106,7 @@ JavaScript 是網頁開發者必學的三種語言之一，也是最流行的腳
 
 ## 第一個 JavaScript 程式
 JavaScript 需要用 `<script>` 標籤包起來  
-通常會將所有 `<script>` 標籤放在 `body` 結尾標籤後面  
+通常會將所有 `<script>` 標籤放在 `body` 結尾標籤前面  
 
 ```html {5-8}
 <html>
