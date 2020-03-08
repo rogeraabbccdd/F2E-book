@@ -12,7 +12,8 @@ tags:
 <img src="/F2E-book/images/ch3/meme.png" height="300" style="margin: 10px 0;">
 
 ## 數學運算子
-這個表列出了 JavaScript 會用到的數學運算子
+這個表列出了 JavaScript 會用到的數學運算子  
+跟數學的四則運算一樣，先乘除後加減，先做的用 `()` 包起來  
 
 | 符號 | 說明 | 範例          |
 | :--- | :--- | :------------ |
