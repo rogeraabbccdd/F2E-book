@@ -49,7 +49,7 @@ if(條件){
 | a <span style="color: #ff6600;">></span> b | a <span style="color: #ff6600;">大於</span> b （數值判斷） |
 | a <span style="color: #ff6600;">＜</span> b | a <span style="color: #ff6600;">小於 </span>b （數值判斷） |
 | a <span style="color: #ff6600;">>=</span> b | a <span style="color: #ff6600;">大於</span> b  <span style="color: ;#FF1493">或是</span> a <span style="color: #ff6600;">等於</span> b |
-| a <span style="color: #ff6600;">=<</span> b | a <span style="color: #ff6600;">小於等於</span> b <span style="color: #FF1493;">或是</span> a <span style="color: #ff6600;">等於</span> b |
+| a <span style="color: #ff6600;"><=</span> b | a <span style="color: #ff6600;">小於等於</span> b <span style="color: #FF1493;">或是</span> a <span style="color: #ff6600;">等於</span> b |
 
 
 ### 邏輯運算子
