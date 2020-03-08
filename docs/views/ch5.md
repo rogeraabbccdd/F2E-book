@@ -173,3 +173,8 @@ while(true) {
 ★★★★★★★★★★★
 ```
 :::
+
+:::warning 挑戰
+挑戰印出更多種的星星  
+<img src="/F2E-book/images/ch5/java-star-pattern.png" height="300" style="margin: 10px 0;">
+:::
