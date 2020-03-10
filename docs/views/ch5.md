@@ -28,6 +28,11 @@ cond(no)->e
 
 迴圈的程式寫法如下面範例
 ```js
+for(let i=start;i<max;i=i+1){
+	// code
+}
+
+// i=i+1 可以簡寫成 i++
 for(let i=start;i<max;i++){
 	// code
 }
