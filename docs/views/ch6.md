@@ -165,8 +165,9 @@ for(let p in person) {
 ## 綜合應用
 到目前為止都是使用自己建立的陣列，所以格式很簡單，但如果是使用別人的資料就不同了  
 現在網路上有很多開放資料，如 [政府資料開放平台](https://data.gov.tw/) ，它們提供的資料格式以 JSON 為大宗  
-例如 [衛生福利部評鑑合格之醫院名單](https://data.gov.tw/dataset/6271)，就是 Array 結合 JSON  
+例如 [口罩地圖資料](https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json)，就是 Array 結合 JSON  
 
-:::warning 練習
-宣告一個 Array ，內容為上面提到的開放資料，取 5 筆就好，然後用迴圈顯示每筆資料內容  
+:::warning 作業
+宣告一個變數為前五筆口罩地圖的資料，將資料用迴圈和 `document.write()` 繪製成表格  
+只取 `name`、`address`、`phone`、`mask_adult` 和 `mask_child` 五個欄位
 :::
