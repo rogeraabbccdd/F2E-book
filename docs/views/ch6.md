@@ -117,6 +117,12 @@ let restaurant = {
 }
 ```
 
+二維陣列概念如圖，可以存放兩個面的資料，如 X 班 Y 號同學的數學成績  
+<img src="/F2E-book/images/ch6/2array.jpg" height="300" style="margin: 10px 0;">
+  
+三維陣列概念如圖，可以存放三個面的資料，如 X 年 Y 班 Z 號同學的數學成績  
+<img src="/F2E-book/images/ch6/3array.jpg" height="300" style="margin: 10px 0;">
+
 ## 迴圈
 我們可以透過迴圈去取出陣列裡的所有資料  
 這裡多了兩個迴圈，`for of` 和 `for in`，它們個別針對陣列和 JSON 使用的迴圈  
