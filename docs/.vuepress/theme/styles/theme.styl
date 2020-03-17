@@ -350,22 +350,28 @@ a.color-button
   .custom-block.tip
     color: #a0ddc1
     background-color: rgba(66, 185, 131, 0.25)
-  .custom-block.tip .custom-block-title
-    color: #66c99c;
+    .custom-block-title
+      color: #66c99c;
+    tr:nth-child(2n)
+      background: transparent !important;
   .custom-block.warning
     color: #ffefa2
     background-color: rgba(255, 229, 100, 0.25)
-  .custom-block.warning .custom-block-title
-    color: #ffd91d;
-  .custom-block.warning a
-    color: #ffdf41
+    tr:nth-child(2n)
+      background: transparent !important;
+    .custom-block-title
+      color: #ffd91d;
+    a
+      color: #ffdf41
   .custom-block.danger
     color: #f66;
     background-color: rgba(204, 0, 0, 0.25)
-  .custom-block.danger .custom-block-title
-    color: #ff2929
-  .custom-block.danger a
-    color: #ff0a0a
+    tr:nth-child(2n)
+      background: transparent !important;
+    .custom-block-title
+      color: #ff2929
+    a
+      color: #ff0a0a
   .home .feature h2,
   .home .feature p
     color: #fff;
