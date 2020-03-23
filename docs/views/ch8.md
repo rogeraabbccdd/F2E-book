@@ -100,25 +100,6 @@ arr.includes("abc");
 // 陣列是否有包含文字，回傳索引
 arr.indexOf("abc");
 
-// 排序陣列: 英文
-let letters = ["a", "c", "b", "d"];
-letters.sort();
-
-// 排序中文: 中文
-// .sort 裡面的 function 會迴圈跑過每個值，一次兩個
-// 第一次跑第 1 2 個
-// 第二次跑第 2 3 個
-// a 指的是後面的，b 指的是前面的
-// return < 0 ，a會排在b前面
-// return = 0 ，a b順序不變
-// return > 0 ，a會排在b後面。
-let ChineseNum = ["三", "一", "四", "二"];
-ChineseNum.sort((a, b)=>{
-  // localeCompare 可以依語言排序文字
-  // 如果 a 在 b 之前為 -1，相反則為 1，相等為 0
-  return a.localeCompare(b, "zh-Hant-TW");
-})
-
 // .map() 可以運算陣列的每個值後產生新的陣列
 let numbers1 = [1,2,3,4];
 numbers1 = numbers1.map(num => {
@@ -130,6 +111,37 @@ numbers1 = numbers1.map(num => {
 let numbers2 = [100,200,300,400];
 numbers2 = numbers2.filter(num => {
   return num > 200
+})
+
+// 排序陣列，預設是依第一個字排，順序是數字1~9，大寫 A~Z，小寫 A~Z
+let letters = ["a", "c", "b", "d"];
+letters.sort();
+
+// 數字小到大
+// .sort 裡面的 function 會迴圈跑過每個值，一次兩個
+// 第一次跑第 1 2 個
+// 第二次跑第 2 3 個
+// a 指的是後面的，b 指的是前面的
+// return < 0 ，a會排在b前面
+// return = 0 ，a b順序不變
+// return > 0 ，a會排在b後面。
+let nums = [100,400,300,500,120,90,10000];
+let ascnum = nums.sort((a,b)=>{
+  console.log(a,b,a-b);
+  return a-b;
+})
+
+// 數字大到小
+let descnum = nums.sort((a,b)=>{
+  return b-a;
+})
+
+// 排序中文
+let ChineseNum = ["三", "一", "四", "二"];
+ChineseNum.sort((a, b)=>{
+  // localeCompare 可以依語言字碼排序文字
+  // 如果 a 在 b 之前為 -1，相反則為 1，相等為 0
+  return a.localeCompare(b, "zh-Hant-TW");
 })
 ```
 :::warning 練習
