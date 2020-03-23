@@ -134,7 +134,10 @@ numbers2 = numbers2.filter(num => {
 ```
 :::warning 練習
 將 `prompt()` 輸入的文字移除前後空白後倒過來後顯示在網頁上  
-文字顛倒的功能請寫成 function  
+:::
+
+:::warning 挑戰
+將 `prompt()` 輸入的英文文字大寫轉小寫，小寫轉大寫後顯示在網頁上  
 :::
 ## 數字
 數字的處理需要使用 `Math` 這個內建物件  
