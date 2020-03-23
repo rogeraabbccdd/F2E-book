@@ -10,10 +10,6 @@ tags:
 這個章節的大重點在數字的隨機，因為隨機是較常遇到且較麻煩的功能  
 ## 文字
 一些常用的文字處理函式  
-:::danger 注意
-- `includes()` 裡面只能放文字，不能放正則表達式，如果要用正則表達式的話要用 `match()`  
-- `replace()` 取代文字只會取代找到的第一個，如果要全部取代的話可以用迴圈或正則表達式  
-:::
 ```js
 let str = "  Hello World "
 // 移除文字前後空白
@@ -25,8 +21,12 @@ str.toLowerCase();
 
 // 是否有包含指定文字，回傳 true 或 false
 let hello = "Hello, welcome to the world of Javascript";
+// .includes(文字)
 let strIncludesJS = str.includes("Javascript");
+// .match(正則表達式)
 let strMatchJS = str.match(/Javascript/ig);
+// .indexOf(文字, 開始位置)，找出開始位置後第幾個字出現搜尋文字
+let strindex = str.indexOf("Javascript");
 
 // 取代文字
 let xmas = "Xmas";
@@ -37,6 +37,11 @@ let xmasReplaceRegex = str.replace(/xmas/ig, 'Christmas');
 // .substr(開始, 長度)
 let greeting = "Hello my friend!";
 let sub = greeting.substr(0, 5);
+// .substring(開始位置, 結尾位置)
+let sub2 = greeting.substring(6, 8);
+// .slice(開始位置, 結尾位置)
+// 可以放負數，代表倒數
+let sub3 = greeting.slice(-7, -1);
 
 // 文字轉數字或浮點
 let strNumber = "123456";
@@ -54,6 +59,12 @@ console.log(isNaN(nan));
 let alphabet = "a,b,c,d,e,f,g";
 let alphabetArr = alphabet.split(",");
 ```
+
+:::danger 注意
+- `includes()` 裡面只能放文字，不能放正則表達式，如果要用正則表達式的話要用 `match()`  
+- `replace()` 取代文字只會取代找到的第一個，如果要全部取代的話可以用迴圈或正則表達式  
+:::
+
 :::warning 練習
 將兩個 `prompt()` 輸入的數字相加顯示在網頁上，如果輸入的不是數字，跳出錯誤訊息  
 :::
