@@ -89,18 +89,12 @@ JSON 裡面的值除了可以是一般的文字、數字外，它的值還能是
 let Ming = {
     firstName:  "小明",
     lastName:  "王",
-    skills: [],
     sayHello: function() {
         alert("你好，我的名字叫 " + this.lastName + this.firstName);
     },
-    addSkill(skill) {
-        this.skills.push(skill);
-    }
 }
 
 Ming.sayHello();
-Ming.addSkill("javascript");
-console.log(Ming.skills);
 ```
 
 上面的程式碼可以畫成像這樣的心智圖  
@@ -121,9 +115,7 @@ console.log(Ming.skills);
       {id:'root', isroot:true, topic:'person', 'background-color': 'orange'},
       {id:'sub1', parentid:'root', topic:'姓'},
       {id:'sub2', parentid:'root', topic:'名'},
-      {id:'sub3', parentid:'root', topic:'skills'},
       {id:'sub4', parentid:'root', topic:'sayHello', 'background-color': 'lightseagreen'},
-      {id:'sub5', parentid:'root', topic:'addSkill', 'background-color': 'lightseagreen'},
     ]
   }
 }
@@ -153,9 +145,6 @@ class Person {
   }
   sayHello() {
     alert("你好，我的名字叫 " + this.lastName + this.firstName);
-  }
-  addSkill(skill) {
-    this.skills.push(skill);
   }
 }
 
@@ -187,7 +176,6 @@ Mei.sayHello();
       {id:'sub1', parentid:'root', direction: 'right', topic:'姓'},
       {id:'sub2', parentid:'root', direction: 'right', topic:'名'},
       {id:'sub3', parentid:'root', direction: 'right', topic:'sayHello', 'background-color': 'lightseagreen'},
-      {id:'sub4', parentid:'root', direction: 'right', topic:'addSkill', 'background-color': 'lightseagreen'},
       {id:'Ming', parentid:'root', direction: 'left', topic:'Ming', 'background-color': 'purple'},
       {id:'Mei', parentid:'root', direction: 'left', topic:'Mei', 'background-color': 'purple'},
     ]
