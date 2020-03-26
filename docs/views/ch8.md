@@ -188,7 +188,7 @@ Math.random();
 :::warning 練習
 製作隨機數字 function，提供最小整數和最大整數，回傳一個區間內的隨機整數  
 ```js
-let rand = (min, max) => {
+const rand = (min, max) => {
   // 程式碼...
 }
 ```

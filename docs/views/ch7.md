@@ -28,7 +28,7 @@ function sayHello() {
 }
 
 // 也可以這樣宣告 function
-let sayHello = function(){
+const sayHello = function(){
     alert("Hello");
 };
 

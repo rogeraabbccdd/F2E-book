@@ -21,7 +21,7 @@ setTimeout(()=> {
 }, 5000);
 
 // 使用已定義好的函式
-let msg = () => {
+const msg = () => {
     alert("經過 5 秒囉");
 }
 setTimeout(msg, 5000);
