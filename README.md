@@ -13,7 +13,7 @@
 
 ## 課程報名
 - [109 年前端網頁開發技術 1 期](https://its.taiwanjobs.gov.tw/Course/Detail?ID=141353)
-- [109 年前端網頁開發技術 2 期](https://its.taiwanjobs.gov.tw/Course/Detail?ID=141574)
+- [109 年前端網頁開發技術 2 期](https://ttms.etraining.gov.tw/eYVTR/SearchYoung/Detail?BCM_SNO=123514)
 
 ## 連結
 - [線上閱讀](https://rogeraabbccdd.github.io/F2E-book/)
