@@ -49,6 +49,11 @@ module.exports = {
         text: "GitHub",
         link: "https://github.com/rogeraabbccdd/F2E-book",
         icon: "reco-github"
+      },
+      {
+        text: "課程報名",
+        link: "https://ttms.etraining.gov.tw/eYVTR/SearchYoung/Detail?BCM_SNO=123514",
+        icon: "reco-mail"
       }
     ],
     search: true,
