@@ -4,7 +4,9 @@
 </p>
 
 ## 教材內容
-本教材為本人於勞動部泰山職業訓練場前端網頁開發技術班的授課教材，包含以下基礎課程  
+本教材為本人於勞動部泰山職業訓練場前端網頁開發技術班的授課教材  
+本教材包含以下基礎課程，部分章節的內容不完整，詳細請報名課程  
+- Git
 - JavaScript
 - jQuery
 - Node.js
@@ -12,7 +14,6 @@
 - Vue.js
 
 ## 課程報名
-- [109 年前端網頁開發技術 1 期](https://its.taiwanjobs.gov.tw/Course/Detail?ID=141353)
 - [109 年前端網頁開發技術 2 期](https://ttms.etraining.gov.tw/eYVTR/SearchYoung/Detail?BCM_SNO=123514)
 
 ## 連結
