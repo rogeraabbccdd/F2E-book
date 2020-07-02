@@ -11,7 +11,7 @@
 - jQuery
 - Node.js
 - MongoDB
-- Vue.js
+- Vue.js 
 
 ## 課程報名
 - [109 年前端網頁開發技術 2 期](https://ttms.etraining.gov.tw/eYVTR/SearchYoung/Detail?BCM_SNO=123514)
