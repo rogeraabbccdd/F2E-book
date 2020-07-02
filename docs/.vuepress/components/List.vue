@@ -53,9 +53,13 @@ export default {
       }, 100)
     },
     _setPage (page) {
+      this.$router.replace({ query : {page} })
       this.currentPage = page
       this.$page.currentPage = page
-      this.$router.replace({ query : {page} })
+    },
+    _setPage2 (page) {
+      this.currentPage = page
+      this.$page.currentPage = page
     },
     // 获取时间的数字类型
     _getTimeNum (date) {
@@ -63,12 +67,12 @@ export default {
     }
   },
   mounted () {
-    const page = this.$route.query.page
-    if(page && page <= Math.round(this.posts / 10)) {
-      this.currentPage = page
+    const page = parseInt(this.$route.query.page)
+    if(!isNaN(page) && page <= Math.ceil(this.posts.length / 10)) {
+      this._setPage2(page)
     } else {
-      this.$router.replace({ query : {page: 1} })
-      this.currentPage = 1
+      if(this.$route.query.page != 1) this.$router.replace({ query : {page: 1} })
+      this._setPage2(1)
     }
   }
 }
