@@ -55,10 +55,20 @@ export default {
     _setPage (page) {
       this.currentPage = page
       this.$page.currentPage = page
+      this.$router.replace({ query : {page} })
     },
     // 获取时间的数字类型
     _getTimeNum (date) {
       return parseInt(new Date(date.frontmatter.date).getTime())
+    }
+  },
+  mounted () {
+    const page = this.$route.query.page
+    if(page && page <= Math.round(this.posts / 10)) {
+      this.currentPage = page
+    } else {
+      this.$router.replace({ query : {page: 1} })
+      this.currentPage = 1
     }
   }
 }
