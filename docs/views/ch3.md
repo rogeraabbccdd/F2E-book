@@ -87,8 +87,10 @@ let lastName =  "王";
 // 使用 + 將文字連接起來
 let fullName = firstName + lastName;
 
-// 在引號文字內插入變數的兩種做法
+// 使用 + 連接文字及變數
 let Hello = "你好，我的名字是 " + fullName + "請多指教";
+
+// 使用模板語法在文字中插入變數
 let Hello2 = `你好，我的名字是 ${fullName} 請多指教`;
 ```
 
