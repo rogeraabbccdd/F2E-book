@@ -71,14 +71,14 @@ JavaScript 是網頁開發者必學的三種語言之一，也是最流行的腳
 ::: demo [vanilla]
 ```html
 <html>
-  <img id="example4-img" src="https://www.runoob.com/images/pic_bulboff.gif" width="100" height="180">
+  <img id="example4-img" src="/F2E-book/images/ch1/light_off.gif" width="100" height="180">
   點擊燈泡來開關這盞燈
 </html>
 <script>
   let img = document.getElementById("example4-img");
   img.onclick = () => {
-      if(img.src.match("bulbon")) img.src = "https://www.runoob.com/images/pic_bulboff.gif";
-      else img.src = "https://www.runoob.com/images/pic_bulbon.gif";
+      if(img.src.match("on")) img.src = "/F2E-book/images/ch1/light_off.gif";
+      else img.src = "/F2E-book/images/ch1/light_on.gif";
   }
 </script>
 ```
