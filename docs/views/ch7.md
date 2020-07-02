@@ -89,7 +89,7 @@ JSON 裡面的值除了可以是一般的文字、數字外，它的值還能是
 let Ming = {
     firstName:  "小明",
     lastName:  "王",
-    sayHello: function() {
+    sayHello() {
         alert("你好，我的名字叫 " + this.lastName + this.firstName);
     },
 }
