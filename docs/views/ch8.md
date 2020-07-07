@@ -2,6 +2,8 @@
 title: Ch.8 文字、陣列與數字的處理
 tags:
  - JavaScript
+prev: ./ch7
+next: ./ch9
 ---
 
 文字、陣列與數字的處理的函式  

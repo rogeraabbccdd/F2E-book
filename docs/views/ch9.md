@@ -2,6 +2,8 @@
 title: Ch.9 計時器
 tags:
  - JavaScript
+prev: ./ch8
+next: ./ch10
 ---
 
 計時器可在一段時間後執行 function

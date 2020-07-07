@@ -2,6 +2,8 @@
 title: Ch.6 陣列與 JSON
 tags:
  - JavaScript
+prev: ./ch5
+next: ./ch7
 ---
 
 陣列是一種結構性的資料儲存空間，可以在一個變數裡儲存多筆資料  

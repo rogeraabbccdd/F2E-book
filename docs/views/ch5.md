@@ -2,6 +2,8 @@
 title: Ch.5 迴圈
 tags:
  - JavaScript
+prev: ./ch4
+next: ./ch6
 ---
 
 迴圈則可以讓程式重複的執行一樣的動作，達到指定條件才會結束  

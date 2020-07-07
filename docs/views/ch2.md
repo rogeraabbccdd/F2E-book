@@ -2,6 +2,8 @@
 title: Ch.2 變數
 tags:
  - JavaScript
+prev: ./ch1
+next: ./ch3
 ---
 
 程式就像數學的代數一樣，需要給每個資料一個名字  

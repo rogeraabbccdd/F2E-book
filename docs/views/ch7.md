@@ -2,6 +2,8 @@
 title: Ch.7 function 與物件
 tags:
  - JavaScript
+prev: ./ch6
+next: ./ch8
 ---
 
 function 可以將一段程式碼包裝起來，可以重複使用，也方便維護，寫成物件更可以將程式碼分類。  

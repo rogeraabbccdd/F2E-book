@@ -2,6 +2,8 @@
 title: Ch.3 運算子
 tags:
  - JavaScript
+prev: ./ch2
+next: ./ch4
 ---
 
 運算子用來做加減乘除的運算，JavaScript 的 `+` 還能把兩個文字或變數的連起來  

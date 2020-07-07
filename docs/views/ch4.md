@@ -2,6 +2,8 @@
 title: Ch.4 邏輯判斷式
 tags:
  - JavaScript
+prev: ./ch3
+next: ./ch5
 ---
 
 邏輯判斷式是程式運作不可或缺的部分，它可以讓程式根據不同的情況去執行不同的程式碼

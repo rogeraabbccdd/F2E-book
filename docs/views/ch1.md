@@ -2,6 +2,8 @@
 title: Ch.1 認識 JavaScript
 tags:
  - JavaScript
+prev: ./ch0
+next: ./ch2
 ---
 
 JavaScript 是網頁開發者必學的三種語言之一，也是最流行的腳本語言
