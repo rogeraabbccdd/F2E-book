@@ -73,6 +73,8 @@ let alphabetArr = alphabet.split(",");
 
 ## 陣列
 一些常用的陣列處理函式  
+<img src="/F2E-book/images/ch8/array.png" height="300" style="margin: 10px 0;">
+
 ```js
 // 陣列組成字串
 // .join(連接文字)
@@ -114,6 +116,15 @@ let numbers2 = [100,200,300,400];
 numbers2 = numbers2.filter(num => {
   return num > 200
 })
+
+// .reduce() 可以累加陣列每個元素
+// .reduce(function, 初始值)
+const arr = [1, 2, 3, 4];
+const reducer = (accumulator, currentValue) => {
+  return accumulator + currentValue
+}
+console.log(array1.reduce(reducer));     // 1 + 2 + 3 + 4 = 10 
+console.log(array1.reduce(reducer, 5));  // 5 + 1 + 2 + 3 + 4 = 15
 
 // 排序陣列，預設是依第一個字排，順序是數字1~9，大寫 A~Z，小寫 A~Z
 let letters = ["a", "c", "b", "d"];
