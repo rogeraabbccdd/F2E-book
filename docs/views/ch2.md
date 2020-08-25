@@ -103,6 +103,11 @@ document.write(gravity);
 - `float` 代表小數，或稱作浮點
 - `string` 或 `char` 代表文字字串，需要使用單引號 `'` 、雙引號 `"` 或 <code>`</code> 將文字包起來  
 - `boolean` 或簡稱 `bool`，代表布林值，只有 `true` 和 `false` 兩種
+- `null` 空值
+- `undefined` 未定義
+- `NaN` 代表非數字 `Not a Number`
+
+<img src="/F2E-book/images/ch2/datatype.jpg" height="400" style="margin: 10px 0;">  
 
 另外還有陣列 `array` 和 `json` ，在之後的章節會搭配迴圈做介紹  
 
