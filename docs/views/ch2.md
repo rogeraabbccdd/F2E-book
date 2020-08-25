@@ -66,6 +66,10 @@ next: ./ch3
 ```
 :::
 
+變數命名規範可參考：
+- [程式英文](https://github.com/EngTW/English-for-Programmers)
+- [無瑕的程式碼 JavaScript](https://github.com/AllJointTW/clean-code-javascript)
+
 ## 變數宣告
 在 JavaScript 裡，有三種變數宣告方式
 - `var` 是全域變數，如果重複宣告的話舊的會被蓋掉，使用上要非常小心
