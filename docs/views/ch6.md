@@ -184,32 +184,6 @@ let nums = [num1, num2 ...];
 :::
 
 ## 綜合應用
-到目前為止都是使用自己建立的陣列，所以格式很簡單，但如果是使用別人的資料就不同了  
-現在網路上有很多開放資料，如 [政府資料開放平台](https://data.gov.tw/) ，它們提供的資料格式以 JSON 為大宗  
-例如 [口罩地圖資料](https://raw.githubusercontent.com/kiang/pharmacies/master/json/points.json)，就是 Array 結合 JSON  
-
-宣告一個變數為前五筆口罩地圖的資料，將資料用迴圈和 `document.write()` 繪製成表格  
-只取 `name`、`address`、`phone`、`mask_adult` 和 `mask_child` 五個欄位
-```js
-// 直接將資料複製貼上就好
-let data = [
-  {
-    "type": "Feature",
-    "properties": {
-      "id": "5901012409",
-      "name": "家音藥局",
-      "phone": "02 -37652080",
-      "address": "台北市松山區民生東路5段73號",
-      // ....
-    },
-    "geometry": {
-      // ...
-    }
-  },
-  // ...
-]
-```
-
 :::warning 作業
 練習二維陣列  
 下表為某地星期一到星期四的時段一、時段二與時段三的氣溫  
