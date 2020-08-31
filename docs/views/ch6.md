@@ -173,20 +173,6 @@ for(let p in person) {
 }
 ```
 
-:::warning 練習
-練習一維陣列  
-跳出五次 `prompt()`，將使用者五次輸入的數字放進陣列  
-顯示出五個數字的最大值、最小值和加總  
-
-```js
-let num1 = prompt('num')
-let num2 = prompt('num')
-//... 
-
-let nums = [num1, num2 ...];
-```
-:::
-
 ## 綜合應用
 :::warning 練習
 宣告一個數字陣列  
