@@ -52,6 +52,14 @@ function sayHelloName(name) {
 
 // 呼叫 function
 sayHelloName("小明");
+
+// 可以設定傳入的預設值
+function sayHelloName2(name = '小華') {
+  alert("Hello, " + name);
+}
+
+// 呼叫 function
+sayHelloName();
 ```
 
 ### return
