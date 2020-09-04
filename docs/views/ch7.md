@@ -82,6 +82,10 @@ const sayHello = () => {
 
 ```
 
+:::danger 注意
+箭頭函式無法使用 `arguments`
+:::
+
 :::warning 練習
 編寫一個 function，可以判斷傳入的數字是不是偶數，是的話回傳 `true`，不是則回傳 `false`
 :::
