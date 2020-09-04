@@ -42,9 +42,11 @@ sayHello();
 我們改寫一下上面的 function，讓它可以對指定的人名打招呼  
 在這個範例裡，function 的 `()` 裡面的 `name` 會代指呼叫時傳入的第一個值  
 它是區域變數，僅在 `{}` 內有效  
+function 裡可以用 `arguments` 取得所有傳進來的資料  
 
 ```js
 function sayHelloName(name) {
+  console.log(arguments);
   alert("Hello, " + name);
 }
 
