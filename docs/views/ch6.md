@@ -92,6 +92,27 @@ console.log("這位老兄的名字叫做: " + person["name"]);
 console.log("這位老兄的資料種數: " + Object.keys(person).length);
 ```
 
+### 解構賦值
+解構賦值是一種 JavaScript 運算式，可以把陣列或物件中的資料解開擷取成為獨立變數。
+```js
+const array = [1, 2, 3, 4, 5];
+const [a, b, ...c] = array;
+console.log(a); // 1
+console.log(b); // 2
+console.log(c); // [3, 4, 5]
+
+const json = {a: 1, b:2, c:3, d: 4};
+const {a, b, ...others} = json;
+console.log(a); // 1
+console.log(b); // 2
+console.log(others); // {c: 3, d: 4}
+```
+
+:::danger 注意
+其餘元素 `...` 必須放在最後一個  
+所以 `[a, ...others, c]` 會出現錯誤
+:::
+
 ### 巢狀
 JSON 和 Array 可以依資料情況組合  
 可以想像成火車的車廂裡又放了一台火車  
