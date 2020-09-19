@@ -1,4 +1,4 @@
-# 前端網頁課程教材  ![build](https://api.travis-ci.org/rogeraabbccdd/F2E-book.svg?branch=master)
+# 前端網頁課程教材  [![Actions Status](https://github.com/rogeraabbccdd/F2E-book/workflows/Deploy/badge.svg)](https://github.com/rogeraabbccdd/F2E-book/actions)
 <p align="center">
   <img height="300" src="./docs/.vuepress/public/hero.png">
 </p>
