@@ -90,6 +90,32 @@ const sayHello = () => {
 編寫一個 function，可以判斷傳入的數字是不是偶數，是的話回傳 `true`，不是則回傳 `false`
 :::
 
+:::warning 練習
+小明喜歡數數  
+某天媽媽請他從 n 開始數，下一個數字是 n+1，再下一個數字是 n+2，以此類推  
+媽媽想知道，小明數了多少個數字後，數過的數字總和會超過 m  
+
+範例程式碼  
+```js
+const myfunc = (n, m) => {
+  // ... 在此寫你的程式碼
+}
+
+console.log(myfunc(1, 5)) // 輸出 3
+console.log(myfunc(5, 10)) // 輸出 2
+console.log(myfunc(100, 1000)) // 輸出 10
+```
+
+測試資料
+|n|m|輸出|
+|---|---|---|
+|1|5|3|
+|5|10|2|
+|100|1000|10|
+
+題目修改自 [高中生程式解題系統](https://zerojudge.tw/ShowProblem?problemid=a215)
+:::
+
 ## 物件
 上一章節我們介紹了 `JSON 物件` 這種很像陣列的東西  
 JSON 裡面的值除了可以是一般的文字、數字外，它的值還能是 function  
