@@ -14,7 +14,7 @@
 - Vue.js 
 
 ## 課程報名
-- [109 年前端網頁開發技術 2 期](https://ttms.etraining.gov.tw/eYVTR/SearchYoung/Detail?BCM_SNO=123514)
+- [110 年前端網頁開發技術 1 期](https://ttms.etraining.gov.tw/eYVTR/YR008/Detail?BCM_SNO=123719)
 
 ## 連結
 - [線上閱讀](https://rogeraabbccdd.github.io/F2E-book/)
