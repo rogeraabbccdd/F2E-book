@@ -52,7 +52,7 @@ module.exports = {
       },
       {
         text: "課程報名",
-        link: "https://ttms.etraining.gov.tw/eYVTR/SearchYoung/Detail?BCM_SNO=123514",
+        link: "https://ttms.etraining.gov.tw/eYVTR/YR008/Detail?BCM_SNO=123719",
         icon: "reco-mail"
       }
     ],
