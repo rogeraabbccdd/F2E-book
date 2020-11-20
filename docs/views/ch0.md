@@ -17,6 +17,24 @@ next: ./ch1
   <img src="/F2E-book/images/ch0/learn.png" height="300" style="margin: 10px 0;">  
 </a>
 
+## 如何問問題
+老師們不會通靈，也不可能 24 小時待命回答你的問題  
+  
+所以在你提問前，你應該  
+- 先看過錯誤訊息
+- 先搜尋過錯誤訊息是什麼意思
+- 先搜尋過錯誤的解決方法
+
+問問題前，也請注意  
+- 描述越詳細越好
+- 附上你的程式碼以及錯誤訊息
+- 如果你找到的方法不能用，把你找的方法也一起傳過來
+
+延伸閱讀  
+- [X-Y Problem](https://ithelp.ithome.com.tw/articles/10144633)
+- [不要為了提問而提問](https://dontasktoask.com/zh-tw/)
+- [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+
 ## Markdown
 Markdown 是一種輕量級標記式語言，它有純文字標記的特性，讓編寫的可讀性提高  
 目前也有很多網站都使用 Markdown 來撰寫說明文件或文章  
