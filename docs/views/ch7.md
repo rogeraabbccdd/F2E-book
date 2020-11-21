@@ -116,6 +116,19 @@ console.log(myfunc(100, 1000)) // 輸出 10
 題目修改自 [高中生程式解題系統](https://zerojudge.tw/ShowProblem?problemid=a215)
 :::
 
+### 遞迴
+使用遞迴函式是在函式中呼叫函式自己來重複執行動作  
+最好的範例就是以數學的輾轉相除法求最大公因數  
+```js
+const gcd = (a, b) => {
+  if(a%b == 0){
+    return b;
+  }else{
+    return gcd(b, a%b);
+  }
+}
+```
+
 ## 物件
 上一章節我們介紹了 `JSON 物件` 這種很像陣列的東西  
 JSON 裡面的值除了可以是一般的文字、數字外，它的值還能是 function  
