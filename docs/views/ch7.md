@@ -118,7 +118,43 @@ console.log(myfunc(100, 1000)) // 輸出 10
 
 ### 遞迴
 使用遞迴函式是在函式中呼叫函式自己來重複執行動作  
-最好的範例就是以數學的輾轉相除法求最大公因數  
+
+累加，求 `1+2+3+...+n` 的總和  
+```js
+const sum = (n) => {
+  if (n === 1) {
+    return 1;
+  }
+  else {
+    return n + sum(n - 1);
+  }
+}
+```
+
+計算階乘，`0! = 1`，`n! = 1×2×3…(n−2)×(n−1)×n`，`n! = n×(n−1)!`
+```js
+const factorial = (n) => {
+  if (n === 0) {
+    return 1;
+  }
+  else {
+    return n * factorial(n - 1);
+  }
+}
+```
+
+計算費氏數列  
+`0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, 144, 233`
+```js
+const fibonacci = (n) => {
+  if (n < 2) {
+    return n;
+  }
+  return fibonacci(n - 1) + fibonacci(n - 2);
+}
+```
+
+以輾轉相除法求最大公因數  
 ```js
 const gcd = (a, b) => {
   if(a%b == 0){
