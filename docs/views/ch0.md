@@ -40,7 +40,7 @@ next: ./ch1
 延伸閱讀  
 - [X-Y Problem](https://ithelp.ithome.com.tw/articles/10144633)
 - [不要為了提問而提問](https://dontasktoask.com/zh-tw/)
-- [提问的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way/blob/master/README-zh_CN.md)
+- [提問的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
 
 ## Markdown
 Markdown 是一種輕量級標記式語言，它有純文字標記的特性，讓編寫的可讀性提高  
