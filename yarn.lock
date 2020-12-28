@@ -6163,6 +6163,11 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
+pdfobject@^2.2.4:
+  version "2.2.4"
+  resolved "https://registry.yarnpkg.com/pdfobject/-/pdfobject-2.2.4.tgz#ccb3c191129298a471e9ccb59c88a3ee0b7c7530"
+  integrity sha512-r6Rw9CQWsrY6uqmKvlgFNoupmuRbSt9EsG0sZhSAy3cIk4WgOXyAVmebFSlLhqj6gA5NIEXL3lSEbwOOYfdUvw==
+
 performance-now@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/performance-now/-/performance-now-2.1.0.tgz#6309f4e0e5fa913ec1c69307ae364b4b377c9e7b"
