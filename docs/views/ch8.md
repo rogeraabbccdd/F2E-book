@@ -34,8 +34,11 @@ let strindex = str.indexOf("Javascript");
 
 // 取代文字
 let xmas = "Xmas";
-let xmasReplace = str.replace("Xmas", "Christmas");
-let xmasReplaceRegex = str.replace(/xmas/ig, 'Christmas');
+let xmasReplace = xmas.replace("Xmas", "Christmas");
+let xmasReplaceRegex = xmas.replace(/xmas/ig, 'Christmas');
+
+let email = "aaa@bbb.com";
+let emailReplace = email.replace(/([A-Za-z].*)@([A-Za-z].*)\.com/g, "$1@$2.tw");
 
 // 文字切割
 // .substr(開始, 長度)
