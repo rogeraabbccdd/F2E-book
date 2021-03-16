@@ -76,6 +76,13 @@ let alphabetArr = alphabet.split(",");
 <img src="/F2E-book/images/ch8/array.png" height="300" style="margin: 10px 0;">
 
 ```js
+// 迴圈
+// value 代表處理中的值，必須
+// index 代表處理中的索引
+// arr 代表陣列本身
+array.foreach((value, index, arr) => {
+  console.log(value, index, arr)
+})
 // 陣列組成字串
 // .join(連接文字)
 let elements = ['Fire', 'Wind', 'Rain'];
@@ -84,6 +91,12 @@ elements.join("-");
 // 在陣列後新增值
 let days = ["星期一", "星期二"];
 days.push("星期三");
+// 在陣列前新增值
+days.unshift("星期天");
+// 移除並回傳陣列最後一個元素
+days.pop()
+// 移除並回傳陣列第一個元素
+days.shift()
 
 // 刪除陣列索引並加入值，新值可以不加
 // .splice(開始數字, 刪除數量, 新值1, 新值2...)
