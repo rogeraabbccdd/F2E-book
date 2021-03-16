@@ -25,7 +25,9 @@ str.toLowerCase();
 let hello = "Hello, welcome to the world of Javascript";
 // .includes(文字)
 let strIncludesJS = str.includes("Javascript");
-// .match(正則表達式)
+// .match(正則表達式)，回傳一個，除非正則表達式有設定 g 或分組
+let strMatchJS = str.match(/Javascript/i);
+// .matchAll(正則表達式)，回傳多個，正則表達式必須設定 g
 let strMatchJS = str.match(/Javascript/ig);
 // .indexOf(文字, 開始位置)，找出開始位置後第幾個字出現搜尋文字
 let strindex = str.indexOf("Javascript");
@@ -63,7 +65,7 @@ let alphabetArr = alphabet.split(",");
 ```
 
 :::danger 注意
-- `includes()` 裡面只能放文字，不能放正則表達式，如果要用正則表達式的話要用 `match()`  
+- `includes()` 裡面只能放文字，不能放正則表達式，如果要用正則表達式的話要用 `match()`、`matchAll()`  
 - `replace()` 取代文字只會取代找到的第一個，如果要全部取代的話可以用迴圈或正則表達式  
 :::
 
