@@ -73,6 +73,13 @@ let alphabetArr = alphabet.split(",");
 將兩個 `prompt()` 輸入的數字相加顯示在網頁上，如果輸入的不是數字，跳出錯誤訊息  
 :::
 
+:::warning 練習
+這段文字有幾個英文母音?
+```
+Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum tincidunt mollis. Aliquam erat volutpat. Sed mattis quam eget bibendum consequat. Duis fringilla ultrices mi, in aliquet elit molestie vel. Nulla vitae accumsan quam. Maecenas pellentesque diam sit amet maximus vestibulum. Sed porttitor at est vel tincidunt. Maecenas vel placerat nunc.
+```  
+:::
+
 ## 陣列
 一些常用的陣列處理函式  
 <img src="/F2E-book/images/ch8/array.png" height="300" style="margin: 10px 0;">
