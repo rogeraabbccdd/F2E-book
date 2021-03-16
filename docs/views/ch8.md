@@ -90,7 +90,7 @@ days.push("星期三");
 let fruits = ["Apple", "Banana", "Cherry"];
 fruits.splice(1, 0, "Tomato");
 
-// 陣列連接
+// 陣列連接，產生新的陣列
 let array1 = ['a', 'b', 'c'];
 let array2 = ['d', 'e', 'f'];
 let array3 = array1.concat(array2);
@@ -157,6 +157,23 @@ ChineseNum.sort((a, b)=>{
   return a.localeCompare(b, "zh-Hant-TW");
 })
 ```
+
+:::danger 注意
+陣列和 JSON 無法直接用 `=` 複製，必須使用產生新陣列或新 JSON 的函式複製  
+```js
+const array1 = [1, 4, 9, 16]
+const array2 = array1
+array1.push(25)
+console.log(array2)
+
+const json1 = { a:1, b:2, c:3 }
+const json2 = json1
+json1.d = 4
+console.log(json2)
+```
+<img src="/F2E-book/images/ch8/array.gif" height="300" style="margin: 10px 0;">
+:::
+
 :::warning 練習
 將 `prompt()` 輸入的文字移除前後空白後倒過來後顯示在網頁上  
 :::
