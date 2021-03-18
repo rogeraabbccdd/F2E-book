@@ -12,6 +12,8 @@ next: ./ch9
 這個章節的大重點在數字的隨機，因為隨機是較常遇到且較麻煩的功能  
 ## 文字
 一些常用的文字處理函式  
+正則表達式語法可參考 [Learn Regex](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)  
+
 ```js
 let str = "  Hello World "
 // 移除文字前後空白
