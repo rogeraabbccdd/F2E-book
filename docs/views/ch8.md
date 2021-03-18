@@ -77,10 +77,20 @@ let alphabetArr = alphabet.split(",");
 :::
 
 :::warning 練習
-這段文字有幾個英文母音?
+製作凱薩密碼 (Caesar Cipher) 加密工具  
+使用者先輸入英文，再明文及數字密鑰，在網頁上顯示加密後的訊息  
+
+範例:
 ```
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam interdum tincidunt mollis. Aliquam erat volutpat. Sed mattis quam eget bibendum consequat. Duis fringilla ultrices mi, in aliquet elit molestie vel. Nulla vitae accumsan quam. Maecenas pellentesque diam sit amet maximus vestibulum. Sed porttitor at est vel tincidunt. Maecenas vel placerat nunc.
-```  
+密鑰: 3
+明文: meet me after the toga party
+密文: PHHW PH DIWHU WKH WRJD SDUWB
+```
+
+提示:
+- `字串.charCodeAt(索引)` 可取得指定文字的字元數字編號  
+- `String.fromCharCode(數字)` 可將字元編號轉回文字  
+- 英文大寫 A-Z 的編號是連續的，小寫 A-Z 也是，但是英文大小寫編號間有其他字
 :::
 
 ## 陣列
