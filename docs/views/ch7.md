@@ -118,6 +118,42 @@ console.log(myfunc(number1, number2))
 題目修改自 [高中生程式解題系統](https://zerojudge.tw/ShowProblem?problemid=a215)
 ::: 
 
+:::warning 練習
+製作易經數字卦占卜程式  
+使用者輸入三個數字後，將數字以陣列方式傳進 function  
+並將處理後的上卦名、下卦名、變爻用陣列回傳  
+
+數字卦占卜方式：  
+- 輸入三個三位數數字
+- 將前兩個數字各除以 8，最後一個除以 6
+- 如果整除，則餘數即為除數 8 或 6
+- 各數字算完的餘數照八卦的順序選取卦
+- 八卦順序為乾一、兌二、離三、震四、巽五、坎六、艮七、坤八
+
+範例：  
+- 取三個數字 435 692 734  
+- 下卦為 435 除以 8 的餘數，為 3，離卦
+- 上卦為 692 除以 8 的餘數，為 4，震卦
+- 變爻為 734 除以 6 的餘數，為 2，第二爻
+- 卜問出來的卦即是離下震上的雷火豐卦，可參考[易學網解卦](https://www.eee-learning.com/book/neweee55)
+
+範例程式碼  
+```js
+const gua = (array) => {
+  // ... 在此寫你的程式碼
+}
+
+const number1 = parseInt(prompt('第一個數字'))
+const number2 = parseInt(prompt('第二個數字'))
+const number3 = parseInt(prompt('第三個數字'))
+const numbers = [number1, number2, number3]
+const result = gua(numbers)
+console.log(result[0]) // 輸出 離
+console.log(result[1]) // 輸出 震
+console.log(result[2]) // 輸出 2
+```
+:::
+
 ### 遞迴
 使用遞迴函式是在函式中呼叫函式自己來重複執行動作  
 
