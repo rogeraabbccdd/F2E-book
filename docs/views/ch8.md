@@ -80,7 +80,7 @@ let alphabetArr = alphabet.split(",");
 
 :::warning 練習
 製作凱薩密碼 (Caesar Cipher) 加密工具  
-使用者先輸入英文，再明文及數字密鑰，在網頁上顯示加密後的訊息  
+使用者先輸入英文明文，再數字密鑰，在網頁上顯示加密後的訊息  
 
 範例:
 ```
