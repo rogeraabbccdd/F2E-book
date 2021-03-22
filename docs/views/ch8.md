@@ -272,9 +272,13 @@ const decrypt = (text) => {
 
 const input = prompt('輸入文字')
 console.log(decrypt(input))
-// 輸出 146821
-// 輸出 598701
 ```
+
+測試資料
+|輸入|輸出|
+|---|---|
+|POKEMON|146821|
+|TYPHOON|598701|
 
 題目修改自 [高中生程式解題系統](https://zerojudge.tw/ShowProblem?problemid=a065)
 :::
