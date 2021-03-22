@@ -105,7 +105,7 @@ const calculate = (n, m) => {
 
 const number1 = parseInt(prompt('n'))
 const number2 = parseInt(prompt('m'))
-console.log(myfunc(number1, number2))
+console.log(calculate(number1, number2))
 ```
 
 測試資料
