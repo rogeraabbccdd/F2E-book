@@ -112,7 +112,7 @@ let alphabetArr = alphabet.split(",");
 // value 代表處理中的值，必須
 // index 代表處理中的索引
 // arr 代表陣列本身
-array.foreach((value, index, arr) => {
+array.forEach((value, index, arr) => {
   console.log(value, index, arr)
 })
 // 陣列組成字串
