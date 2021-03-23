@@ -144,9 +144,9 @@ let array3 = array1.concat(array2);
 let numbers = ["1", "2", "3"];
 numbers.reverse();
 
-// 陣列是否有包含文字
+// 陣列是否有包含指定的元素
 arr.includes("abc");
-// 陣列是否有包含文字，回傳索引
+// 陣列是否有包含指定的元素，回傳索引
 arr.indexOf("abc");
 
 // .map() 可以運算陣列的每個值後產生新的陣列
