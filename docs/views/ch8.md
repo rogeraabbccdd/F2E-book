@@ -83,7 +83,7 @@ let alphabetArr = alphabet.split(",");
 將兩個 `prompt()` 輸入的數字相加顯示在網頁上，如果輸入的不是數字，跳出錯誤訊息  
 :::
 
-:::warning 練習
+:::warning 挑戰
 製作凱薩密碼 (Caesar Cipher) 加密工具  
 使用者先輸入英文明文，再輸入數字密鑰  
 請編寫一個 function 處理資料  
