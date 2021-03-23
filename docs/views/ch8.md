@@ -30,7 +30,12 @@ let strIncludesJS = str.includes("Javascript");
 // .match(正則表達式)，回傳一個，除非正則表達式有設定 g 或分組
 let strMatchJS = str.match(/Javascript/i);
 // .matchAll(正則表達式)，回傳多個，正則表達式必須設定 g
-let strMatchJS = str.match(/Javascript/ig);
+// 會得到 RegExpStringIterator {}
+// 必須用迴圈或運算子取得資料
+let strMatchAll = str.matchAll(/Javascript/ig)
+for (let match of strMatchAll) {
+  console.log(match)
+}
 // .indexOf(文字, 開始位置)，找出開始位置後第幾個字出現搜尋文字
 let strindex = str.indexOf("Javascript");
 
