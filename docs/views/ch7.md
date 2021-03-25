@@ -86,6 +86,11 @@ const sayHello = () => {
 箭頭函式無法使用 `arguments`
 :::
 
+:::danger 注意
+function 處理資料時盡量不要使用外部的變數，只針對傳入的資料做處理  
+這種不會影響到外部的資料的 function 叫做 **Pure Function**
+:::
+
 :::warning 練習
 編寫一個 function，可以判斷傳入的數字是不是偶數，是的話回傳 `true`，不是則回傳 `false`
 :::
