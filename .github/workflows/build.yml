@@ -17,3 +17,4 @@ jobs:
         with:
           branch: gh-pages
           folder: public
+          single-commit: true
