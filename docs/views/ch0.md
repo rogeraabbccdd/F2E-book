@@ -17,6 +17,17 @@ next: ./ch1
   <img src="/F2E-book/images/ch0/learn.png" height="300" style="margin: 10px 0;">  
 </a>
 
+## Markdown
+Markdown 是一種輕量級標記式語言，它有純文字標記的特性，讓編寫的可讀性提高  
+目前也有很多網站都使用 Markdown 來撰寫說明文件或文章  
+在寫程式的筆記時，使用 Markdwon 比使用 Word 等還要有效率  
+
+工具:
+- [Markdown Here](https://markdown-here.com/)，用 Markdown 語法寫 email
+- [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)，將 Markdown 轉成 pdf
+- [HackMD](https://hackmd.io/)，線上筆記
+- [HackMD Markdwon 語法大全](https://hackmd.io/@mrcoding/ryZE7k8cN)
+
 ## 如何問問題
 老師們不會通靈，也不可能 24 小時待命回答你的問題  
 老師們也不是電腦，不要問程式這樣寫行不行，實際跑跑看就知道行不行了  
@@ -41,18 +52,6 @@ next: ./ch1
 - [X-Y Problem](https://ithelp.ithome.com.tw/articles/10144633)
 - [不要為了提問而提問](https://dontasktoask.com/zh-tw/)
 - [提問的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
-
-## Markdown
-Markdown 是一種輕量級標記式語言，它有純文字標記的特性，讓編寫的可讀性提高  
-目前也有很多網站都使用 Markdown 來撰寫說明文件或文章  
-在寫程式的筆記時，使用 Markdwon 比使用 Word 等還要有效率  
-
-工具:
-- [Markdown Here](https://markdown-here.com/)，用 Markdown 語法寫 email
-- [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)，將 Markdown 轉成 pdf
-- [HackMD](https://hackmd.io/)，線上筆記
-- [HackMD Markdwon 語法大全](https://hackmd.io/@mrcoding/ryZE7k8cN)
-
 
 ## 認識程式設計
 透過小遊戲認識程式設計
