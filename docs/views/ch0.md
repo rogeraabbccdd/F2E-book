@@ -50,6 +50,21 @@ Markdown 是一種輕量級標記式語言，它有純文字標記的特性，�
 - 如果你找到的方法不能用，把你找的方法也一起傳過來
 - 如果你覺得打字描述太慢，你可以直接進語音頻道開螢幕分享，或是 Live Share
 
+當你要附上你的程式碼時，可以的話千萬不要傳白底黑字的純文字  
+程式碼和一般的文章不同，白底黑字非常難閱讀  
+有非常多地方提供程式碼分享服務，例如  
+- [Pastebin](https://pastebin.com/)
+- [GitHub Gist](https://gist.github.com/)
+- [JSFiddle](https://jsfiddle.net/)
+- [CodePen](https://codepen.io/)
+- [Wandbox](https://wandbox.org/)
+
+Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markdown 語法  
+當你在 Discord 傳程式碼問老師時請使用程式碼標記  
+比較一下兩張圖，哪張圖的程式碼比較容易閱讀  
+<img src="/F2E-book/images/ch0/discord-bad.png" style="margin: 10px 0;">  
+<img src="/F2E-book/images/ch0/discord-good.png" style="margin: 10px 0;">  
+
 延伸閱讀  
 - [X-Y Problem](https://ithelp.ithome.com.tw/articles/10144633)
 - [不要為了提問而提問](https://dontasktoask.com/zh-tw/)
