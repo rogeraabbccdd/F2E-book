@@ -1,5 +1,5 @@
 --- 
-title: Ch.6 陣列與 JSON
+title: Ch.6 陣列與物件
 tags:
  - JavaScript
 prev: ./ch5
@@ -10,8 +10,8 @@ next: ./ch7
 <!-- more -->
 ## 陣列
 可以想像陣列是一台火車，每節車廂就是一筆資料，火車長度沒有限制，所以可以依需求連結好幾節車廂  
-JavaScript 的陣列有兩種，一種是 `[]` 包起來的 `Array`，另一種是 `{}` 包起來的 `JSON 物件`  
-`JSON 物件` 的詳細運用之後會介紹，這裡就先把它當作是進階版的陣列就好    
+JavaScript 的陣列有兩種，一種是 `[]` 包起來的 `Array`，另一種是 `{}` 包起來的 `物件`  
+`物件` 的詳細運用之後會介紹，這裡就先把它當作是進階版的陣列就好    
 
 ### Array
 下面是一個簡單的陣列，把好幾種便當放到陣列裡  
@@ -55,9 +55,9 @@ console.log("第 0 個便當是" + bendons[0]);
 好像可以用上一章節的某東西一次輸出所有資料...?
 :::
 
-### JSON
-有時候陣列的內容不是像上面的 Array 那樣是同一系列的，這個時候就會需要用到 `JSON`  
-使用 `JSON` 的話，索引能放文字，能更清楚的區分每個資料  
+### 物件
+有時候陣列的內容不是像上面的 Array 那樣是同一系列的，這個時候就會需要用到 `JSON` 物件  
+使用 `JSON` 物件的話，索引能放文字，能更清楚的區分每個資料  
 ```js
 let person = { 
     name: "王小明", 
@@ -66,20 +66,20 @@ let person = {
 }
 ```
 
-如果把上面的 JSON 想像成一台火車，那麼這台火車...
+如果把上面的 物件想像成一台火車，那麼這台火車...
 - 火車的名字叫做 `person`，有 `3` 節車廂
 - 第 `name` 節車廂的東西為 `王小明`;
 - 第 `age` 節車廂的東西為 `25`;
 - 第 `number` 節車廂的東西為 `24`;
 
 :::danger 注意
-JSON 無法直接使用 `.length` 取得長度，也不能用 `[第幾個]` 取得資料  
+物件無法直接使用 `.length` 取得長度，也不能用 `[第幾個]` 取得資料  
 但是可以用 `["索引名"]` 取得某索引的資料  
 :::
 
-在 JSON 變數名後加上 `.索引名` ，就可以取得該索引的資料  
-使用 `Object.keys(變數).length` 就能得知這個 JSON 有多大  
-`Object` 是程式內建變數，後面接 `.keys()`，就會把指定的 JSON 索引名組成陣列，後面再接 `.length` 就能取的長度了  
+在 物件變數名後加上 `.索引名` ，就可以取得該索引的資料  
+使用 `Object.keys(變數).length` 就能得知這個 物件有多大  
+`Object` 是程式內建變數，後面接 `.keys()`，就會把指定的 物件索引名組成陣列，後面再接 `.length` 就能取的長度了  
 
 ```js
 let person = { 
@@ -101,8 +101,8 @@ console.log(a); // 1
 console.log(b); // 2
 console.log(c); // [3, 4, 5]
 
-const json = {a: 1, b:2, c:3, d: 4};
-const {a, b, ...others} = json;
+const object = {a: 1, b:2, c:3, d: 4};
+const {a, b, ...others} = object;
 console.log(a); // 1
 console.log(b); // 2
 console.log(others); // {c: 3, d: 4}
@@ -114,10 +114,10 @@ console.log(others); // {c: 3, d: 4}
 :::
 
 ### 巢狀
-JSON 和 Array 可以依資料情況組合  
+物件和 Array 可以依資料情況組合  
 可以想像成火車的車廂裡又放了一台火車  
 ```js
-// Array 內放 JSON
+// Array 內放 物件
 let people = [
     { 
         name: "小明", 
@@ -131,7 +131,7 @@ let people = [
     }
 ];
 
-// JSON 內放 Array
+// 物件內放 Array
 let restaurant = {
     name: "好好吃便當店",
     tel: "02-21345678",
@@ -146,18 +146,18 @@ let restaurant = {
 <img src="/F2E-book/images/ch6/3array.jpg" height="300" style="margin: 10px 0;">
 
 :::danger 注意
-目前網路上給開發者使用的公開資料大多是 JSON 和陣列的結合，如 [政府資料開放平台](https://data.gov.tw/) 和 [KKTIX 活動資訊 API](https://kktix.com/events.json)
+目前網路上給開發者使用的公開資料大多是 物件和陣列的結合，如 [政府資料開放平台](https://data.gov.tw/) 和 [KKTIX 活動資訊 API](https://kktix.com/events.json)
 :::
 
 ## 迴圈
 我們可以透過迴圈去取出陣列裡的所有資料  
-這裡多了兩個迴圈，`for of` 和 `for in`，它們個別針對陣列和 JSON 使用的迴圈  
+這裡多了兩個迴圈，`for of` 和 `for in`，它們個別針對陣列和 物件使用的迴圈  
 :::danger 注意
-`for of` 迴圈無法使用對 JSON 使用  
+`for of` 迴圈無法使用對 物件使用  
 :::
 
 ### for
-這種迴圈僅適用 Array，因為 JSON 無法用數字索引取值  
+這種迴圈僅適用 Array，因為 物件無法用數字索引取值  
 ```js
 let bendons = ["雞排飯", "排骨飯", "魚排飯"];
 for(let i=0;i<bendons.length;i++) {

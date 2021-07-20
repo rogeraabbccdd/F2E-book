@@ -109,7 +109,7 @@ document.write(gravity);
 
 <img src="/F2E-book/images/ch2/datatype.jpg" height="400" style="margin: 10px 0;">  
 
-另外還有陣列 `array` 和 `json` ，在之後的章節會搭配迴圈做介紹  
+另外還有陣列 `array` 和 `物件` ，在之後的章節會搭配迴圈做介紹  
 
 :::danger 注意
 單引號和雙引號內的文字不能換行，只有 <code>`</code> 可以
