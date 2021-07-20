@@ -107,6 +107,25 @@ let alphabetArr = alphabet.split(",");
 一些常用的陣列處理函式  
 <img src="/F2E-book/images/ch8/array.png" height="300" style="margin: 10px 0;">
 
+:::danger 注意
+`.forEach` 必須使用索引才能修改陣列內容
+```js
+// 無效
+const array = [1, 2, 3]
+array.forEach((value, index, arr) => {
+  value = 4
+})
+console.log(array)
+
+// 有效
+array.forEach((value, index, arr) => {
+  array[index] = 4
+})
+console.log(array)
+```
+:::
+
+
 ```js
 // 迴圈
 // value 代表處理中的值，必須
