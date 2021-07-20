@@ -194,6 +194,17 @@ for(let p in person) {
 }
 ```
 
+:::danger 注意
+`for of` 迴圈不能修改陣列內個別值
+```js
+let string = "Hello";
+for(let s of string) {
+  s = 'a'
+}
+console.log(string) // 仍然是 Hello
+```
+:::
+
 ## 綜合應用
 :::warning 練習
 宣告一個數字陣列  
