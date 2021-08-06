@@ -102,9 +102,9 @@ console.log(b); // 2
 console.log(c); // [3, 4, 5]
 
 const object = {a: 1, b:2, c:3, d: 4};
-const {a, b, ...others} = object;
+const {a, b: newValue, ...others} = object;
 console.log(a); // 1
-console.log(b); // 2
+console.log(newValue); // 2，將 b 重新命名為 newValue
 console.log(others); // {c: 3, d: 4}
 ```
 
