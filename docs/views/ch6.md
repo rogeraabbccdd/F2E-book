@@ -149,6 +149,19 @@ let restaurant = {
 目前網路上給開發者使用的公開資料大多是 物件和陣列的結合，如 [政府資料開放平台](https://data.gov.tw/) 和 [KKTIX 活動資訊 API](https://kktix.com/events.json)
 :::
 
+### 可選串連 (Optional_chaining)
+當要存取的陣列索引或物件屬性不存在時，使用可選串連 `?.` 可以避免出現錯誤
+```js
+const user = {}
+console.log(user.data.account) // Uncaught TypeError: Cannot read property 'account' of undefined
+console.log(user.data?.account) // undefined
+console.log(user.data?.['account']) // undefined
+
+const arr = []
+console.log(arr[0].data) // Uncaught TypeError: Cannot read property 'data' of undefined
+console.log(arr[0]?.data) // undefined
+```
+
 ## 迴圈
 我們可以透過迴圈去取出陣列裡的所有資料  
 這裡多了兩個迴圈，`for of` 和 `for in`，它們個別針對陣列和 物件使用的迴圈  
