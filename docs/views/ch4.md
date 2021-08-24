@@ -90,15 +90,74 @@ else {
 }
 ```
 
-邏輯運算子的 `||` 也可以用在賦值
+### 短路求值
+邏輯運算子也可以用在賦值  
 ```js
-let c = null
-// 如果 c 的值不是 null、undefined、false 或 0
-// d 就被賦值為 c
-// 否則 d 就是 10
-let d = c || 10
+// ||，只要有一個的條件成立，是 true，就是那個
+let x = a || b || c
+
+// 等同於
+let x;
+if (a){
+    x = a;
+} else if (b){
+    x = b;
+} else {
+    x = c;
+}
+
+// 範例
+let x = undefined
+let y = x || 'abc'
+console.log(y) // abc
+
+let x = true
+let y = x || 'abc'
+console.log(y) // true
+
+let x = false
+let y = x || 'abc'
+console.log(y) // abc
 ```
- 
+```js
+// &&，如果第一個成立就是第一個，接著比對第二個，如果第二個成立就是第二個，以此類推
+let x = a && b && c
+
+// 等同於
+let x = a;
+if(a){
+    x = b;
+    if(b){
+        x = c;
+    }
+}
+
+// 範例
+let x = 'abc'
+let y = 'abc' && 'def'
+console.log(y) // def
+x && console.log('有x') // 有x
+
+let x = undefined
+x && console.log(123) // undefined
+
+let x = 123
+x && console.log('有x') // 會執行 console 輸出
+```
+```js
+// ??，類似 ||，找第一個有定義的值，只要不是 null 和 undefined 就會回傳
+let x = a ?? b ?? c
+
+// 範例
+let x = 'abc'
+let y = x ?? 'def'
+console.log(y) // abc
+
+let x = false
+let y = x ?? 'abc'
+console.log(y) // false
+```
+
 :::warning 練習
 試試看把數字 `10` 也修改成變數  
 再修改一下數字大小、把數字用引號包起來，或把 `==` 換成 `===` 看看會發生什麼事
