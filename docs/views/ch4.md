@@ -170,19 +170,35 @@ cond4(yes)->process4->e
 
 實際應用在程式裡面  
 這裡使用了一個新涵式 `prompt()` ，它會跳出一個輸入視窗，使用者可以輸入文字，變數接收到的資料型態為文字  
+
 ```js
-let answer = prompt("請輸入答案數字: \n東漢末年，劉備、關羽與何人互有盟約，史稱\n1. 宜蘭三結義\n2. 桃園三結義\n3. 新竹三結義\n4. 苗栗三結義");
-if(answer === "2") {
-    alert("恭喜答對囉");
-}
-else if(answer === "1" || answer === "3"  || answer === "4" ){
-    alert("答錯囉");
-}
-else {
-    alert("沒有這個選項喔");
+const age = prompt('請輸入年齡')
+
+// 錯誤的判斷寫法，永遠都是普遍級
+// if (age >= 0) {
+//   document.write('<img src="普遍級.jpg">')
+// } else if (age >= 6) {
+//   document.write('<img src="保護級.jpg">')
+// } else if (age >= 12) {
+//   document.write('<img src="輔12級.jpg">')
+// } else if (age >= 15) {
+//   document.write('<img src="輔15級.jpg">')
+// } else if (age >= 18) {
+//   document.write('<img src="限制級.jpg">')
+// }
+
+if (age >= 18) {
+    document.write('<img src="限制級.jpg">')
+} else if (age >= 15) {
+    document.write('<img src="輔15級.jpg">')
+} else if (age >= 12) {
+    document.write('<img src="輔12級.jpg">')
+} else if (age >= 6) {
+    document.write('<img src="保護級.jpg">')
+} else if (age >= 0) {
+    document.write('<img src="普遍級.jpg">')
 }
 ```
-
 :::warning 練習
 使用 `prompt()` 製作一個選擇題
 :::
@@ -196,19 +212,23 @@ switch case 雖然比 if 還好閱讀，但僅限一個變數的判斷
 
 ```js
 let lang = "tw"; //試著抽換其他國家代碼
-switch (lang) {
-	case "jp":
-		console.log("愛洗爹路唷");
-		break;
-	case "kr":
-		console.log("沙拉黑唷");
-		break;
-	case "tw":
-		console.log("我好喜歡你唷");
-		break;
-	default:
-		console.log("sorry,你的語言我不會");
-		break;
+switch(lang) {
+    case 'tw':
+        document.write('台灣')
+        break
+    case 'jp':
+        document.write('日本')
+        break
+    case 'kr':
+        document.write('韓國')
+        break
+    case 'us':
+    case 'usa':
+        document.write('美國')
+        break
+    default:
+        document.write('跨謀')
+        break
 }
 ```
 
