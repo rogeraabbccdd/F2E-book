@@ -90,74 +90,6 @@ else {
 }
 ```
 
-### 短路求值
-邏輯運算子也可以用在賦值  
-```js
-// ||，只要有一個的條件成立，是 true，就是那個
-let x = a || b || c
-
-// 等同於
-let x;
-if (a){
-    x = a;
-} else if (b){
-    x = b;
-} else {
-    x = c;
-}
-
-// 範例
-let x = undefined
-let y = x || 'abc'
-console.log(y) // abc
-
-let x = true
-let y = x || 'abc'
-console.log(y) // true
-
-let x = false
-let y = x || 'abc'
-console.log(y) // abc
-```
-```js
-// &&，如果第一個成立就是第一個，接著比對第二個，如果第二個成立就是第二個，以此類推
-let x = a && b && c
-
-// 等同於
-let x = a;
-if(a){
-    x = b;
-    if(b){
-        x = c;
-    }
-}
-
-// 範例
-let x = 'abc'
-let y = 'abc' && 'def'
-console.log(y) // def
-x && console.log('有x') // 有x
-
-let x = undefined
-x && console.log(123) // undefined
-
-let x = 123
-x && console.log('有x') // 會執行 console 輸出
-```
-```js
-// ??，類似 ||，找第一個有定義的值，只要不是 null 和 undefined 就會回傳
-let x = a ?? b ?? c
-
-// 範例
-let x = 'abc'
-let y = x ?? 'def'
-console.log(y) // abc
-
-let x = false
-let y = x ?? 'abc'
-console.log(y) // false
-```
-
 :::warning 練習
 試試看把數字 `10` 也修改成變數  
 再修改一下數字大小、把數字用引號包起來，或把 `==` 換成 `===` 看看會發生什麼事
@@ -314,6 +246,36 @@ if(weather === "rain"){
 else {
     alert("今天出太陽，有沒有帶傘都沒關係");
 }
+```
+
+### 短路求值
+邏輯運算子也可以用在賦值  
+```js
+// Boolean() 會回傳 false 的狀況
+// false、0、""、null、undefined、NaN
+
+// || 回傳第一個 Boolean() 判斷是 true 的值
+// 如果全部都是 false 則回傳最後一個值
+let x = undefined // Boolean(undefined) = false
+let y = 123       // Boolean(123) = true
+let z = x || y || 'abc'
+console.log(z)
+
+// && 回傳第一個 Boolean() 判斷是 false 的值
+// 如果全部都是 true 則回傳最後一個值
+let a = 456         // Boolean(456) = true
+let b = undefined   // Boolean(undefined) = false
+let c = 789         // Boolean(789) = true
+let d = a && b && c
+console.log(d)
+
+// ?? 空值合併運算子，回傳第一個非 null 和非 undefined 的值
+// 如果都沒有則回傳最後一個值
+let i = ''
+let j = 100
+let k = null
+let l = k ?? i ?? j
+console.log(l)
 ```
 
 ## 綜合應用
