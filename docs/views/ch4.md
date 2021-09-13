@@ -113,11 +113,13 @@ alert(msg);
 當條件有多筆需要判斷時，你可以用 `()` 組合判斷式  
 想想看下面的判斷式的意思  
 ```js
-let isRich = true;
-let isFat = true;
-let isGoodAtCoding = true;
-if( (!isFat && isGoodAtCoding) || isRich ) {
-    alert("交到女朋友!");
+const isFat = confirm('你是肥宅嗎')
+const isGoodAtCoding = confirm('你會寫 CODE 嗎')
+const isRich = confirm('你有錢錢嗎')
+if ( (isGoodAtCoding && !isFat) || isRich ) {
+    document.write('人生勝利')
+} else {
+    document.write('加油，好嗎')
 }
 ```
 
