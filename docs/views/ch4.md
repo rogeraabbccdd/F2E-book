@@ -311,28 +311,32 @@ console.log(l)
 
 下面是運用上面兩個涵式製作的問答題的範例  
 ```js
-// 一開始 100 分
-let score = 100;.
+let score = 0
 
-let q1 = prompt("1 + 1 = ?");
-if(q1 === "2"){
-    alert("恭喜你答對!");
-}
-else {
-    alert("答錯囉，扣你 10 分!");
-    score -= 10;
+const ans1 = confirm('鳳梨是食物嗎')
+if (ans1) {
+    score += 10
+    alert('答對了')
+} else {
+    alert('答錯了')
 }
 
-let q2 = confirm("鳳梨披薩是不是食物?");
-if(q2) {
-    alert("對，鳳梨披薩不是食物");
-}
-else {
-    alert("答錯囉，扣你 10 分!");
-    score -= 10;
+const ans2 = confirm('披薩是食物嗎')
+if (ans2) {
+    score += 10
+    alert('答對了')
+} else {
+    alert('答錯了')
 }
 
-alert(`遊戲結束，你得到了 ${score} 分!`);
+const ans3 = confirm('鳳梨披薩是食物嗎')
+if (ans3) {
+    score = 0
+    document.write('你輸了')
+} else {
+    score += 10
+    document.write(`恭喜過關，你得了 ${score} 分`)
+}
 ```
 
 :::warning 練習
