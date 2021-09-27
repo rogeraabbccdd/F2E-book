@@ -162,25 +162,6 @@ console.log(result[2]) // 輸出 2
 
 :::warning 練習
 請寫一個 function 判斷輸入的文字是不是正著讀和反著讀都一樣的迴文  
-
-```js
-const isPalindrome = (text) => {
-  // ... 在此寫你的程式碼
-}
-const result = isPalindrome(prompt('輸入文字'))
-console.log(result)
-```
-
-測試資料
-|文字|輸出|
-|---|---|
-|abba|true|
-|abcd|false|
-|abcba|true|
-:::
-
-:::warning 練習
-請寫一個 function 判斷輸入的文字是不是正著讀和反著讀都一樣的迴文  
 `for`、`for of` 和 `for in` 可以迴圈文字，但是迴圈時不能改文字內單個字的值  
 
 ```js
