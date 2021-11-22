@@ -35,5 +35,8 @@
     "vuepress-plugin-reading-progress": "^1.0.7",
     "vuepress-plugin-ribbon": "^0.0.6",
     "vuepress-plugin-smooth-scroll": "^0.0.7"
+  },
+  "engines": {
+    "node": "< 17.0.0"
   }
 }
