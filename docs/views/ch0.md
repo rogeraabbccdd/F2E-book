@@ -61,6 +61,7 @@ Markdown 是一種輕量級標記式語言，它有純文字標記的特性，�
 
 Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markdown 語法  
 當你在 Discord 傳程式碼問老師時請使用程式碼標記  
+<img src="/F2E-book/images/ch0/discord-code.png" style="margin: 10px 0;">  
 比較一下兩張圖，哪張圖的程式碼比較容易閱讀  
 <img src="/F2E-book/images/ch0/discord-bad.png" style="margin: 10px 0;">  
 <img src="/F2E-book/images/ch0/discord-good.png" style="margin: 10px 0;">  
