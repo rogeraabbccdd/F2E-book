@@ -243,6 +243,7 @@ ChineseNum.sort((a, b)=>{
 :::danger 注意
 陣列和 JSON 無法直接用 `=` 複製，必須使用產生新陣列或新 JSON 的函式複製  
 ```js
+// 淺層複製
 const array1 = [1, 4, 9, 16]
 const array2 = array1
 array1.push(25)
@@ -252,6 +253,35 @@ const json1 = { a:1, b:2, c:3 }
 const json2 = json1
 json1.d = 4
 console.log(json2)
+
+// 深層複製
+const arr1 = ['a', 'b', 'c', 'd']
+const arr2 = arr1.map(item => {
+  return item
+})
+const arr2 = arr1.filter(item => {
+  return true
+})
+const arr2 = arr1.slice()
+const arr2 = Array.from(arr1)
+const arr2 = arr1.concat()
+console.log(arr1, arr2)
+
+const obj1 = { a:1, b:2, c:3 }
+const obj2 = Object.assign({}, obj1)
+obj2.a = 11
+console.log(obj1, obj2)
+
+// JSON.stringify 將陣列轉成文字
+const text = JSON.stringify(arr1)
+console.log(text)
+// JSON.parse 將文字轉成陣列
+const textarr = JSON.parse(text)
+console.log(textarr)
+
+const obj2 = JSON.parse(JSON.stringify(obj1))
+obj2.a = 11
+console.log(obj2)
 ```
 <img src="/F2E-book/images/ch8/array.gif" height="300" style="margin: 10px 0;">
 :::
