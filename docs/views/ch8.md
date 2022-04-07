@@ -154,6 +154,10 @@ days.shift()
 let fruits = ["Apple", "Banana", "Cherry"];
 fruits.splice(1, 0, "Tomato");
 
+// .slice(開始位置, 結束位置)
+// 將開始到結束間的所有東西複製新的陣列
+const slicedFruits = arr1.fruits(1, 3)
+
 // 陣列連接，產生新的陣列
 let array1 = ['a', 'b', 'c'];
 let array2 = ['d', 'e', 'f'];
@@ -167,6 +171,20 @@ numbers.reverse();
 arr.includes("abc");
 // 陣列是否有包含指定的元素，回傳索引
 arr.indexOf("abc");
+
+// .some(function)
+// 跟 foreach 一樣跑迴圈，function 必須要 return true 或 false
+// 回傳是否有東西跑 function 時回傳 true
+const hasStudent = people.some((value, index, array) => {
+  return value.job === 'student'
+})
+
+// .findIndex(function)
+// 跟 foreach 一樣跑迴圈，function 必須要 return true 或 false
+// 回傳跑 function 時是 true 的第一個東西的索引值
+const hasStudentIndex = people.some((value, index, array) => {
+  return value.job === 'student'
+})
 
 // .map() 可以運算陣列的每個值後產生新的陣列
 let numbers1 = [1,2,3,4];
