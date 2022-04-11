@@ -156,7 +156,7 @@ fruits.splice(1, 0, "Tomato");
 
 // .slice(開始位置, 結束位置)
 // 將開始到結束間的所有東西複製新的陣列
-const slicedFruits = arr1.fruits(1, 3)
+const slicedFruits = arr1.slice(1, 3)
 
 // 陣列連接，產生新的陣列
 let array1 = ['a', 'b', 'c'];
