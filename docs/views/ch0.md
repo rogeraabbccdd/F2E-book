@@ -13,9 +13,18 @@ next: ./ch1
 
 ## 學習方法
 程式語言和以往學校的國英數不一樣，需要大量的實作練習，不是死背就能學會的  
-<a href="https://app.perapera.ai/watch/youtube-ZJqVQJwvwNI" target="_blank">
-  <img src="/F2E-book/images/ch0/learn.png" height="300" style="margin: 10px 0;">  
-</a>
+
+程式學習三大原則 
+- 不要死背，學習程式不像以往學校考試，作弊是可以的，隨時能查閱網路上的資料，現在也有許多 AI 輔助程式開發
+- 輸入後立刻輸出，學到的東西要立刻實作加深印象，不要只看不做
+- 只需要學習必要的部分就好，例如需要做一個簡單的時鐘，不需要從課本的第一頁看到最後一頁
+
+程式學習五步驟 
+- 思考想要開發的項目
+- 搜尋相關技術資料，或是詢問相關工程師、參加相關社群等
+- 使用低技術門檻的教材學習，例如 Udemy、MDN、W3Schools 等
+- 進行實作
+- 完成後再次嘗試開發新的項目
 
 ## Markdown
 Markdown 是一種輕量級標記式語言，它有純文字標記的特性，讓編寫的可讀性提高  
@@ -58,6 +67,7 @@ Markdown 是一種輕量級標記式語言，它有純文字標記的特性，�
 - [JSFiddle](https://jsfiddle.net/)
 - [CodePen](https://codepen.io/)
 - [Wandbox](https://wandbox.org/)
+- [Mongo Playground](https://mongoplayground.net/)
 
 Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markdown 語法  
 當你在 Discord 傳程式碼問老師時請使用程式碼標記  
@@ -85,7 +95,7 @@ Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markd
   <a href="https://codecombat.com/" target="_blank">
     <img src="/F2E-book/images/ch0/cc.png" height="200" style="margin: 10px 0;">  
   </a>
-- [RABBIDS CODING (需要美國 VPN)](https://register.ubisoft.com/rabbids-coding/)  
+- [RABBIDS CODING](https://register.ubisoft.com/rabbids-coding/)  
   <a href="https://register.ubisoft.com/rabbids-coding/" target="_blank">
     <img src="/F2E-book/images/ch0/rabbids.jpg" height="200" style="margin: 10px 0;">  
   </a>
