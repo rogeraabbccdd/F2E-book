@@ -1,16 +1,9 @@
---- 
-title: Ch.5 迴圈
-tags:
- - JavaScript
-prev: ./ch4
-next: ./ch6
----
+# Ch.5 迴圈
 
 迴圈則可以讓程式重複的執行一樣的動作，達到指定條件才會結束  
-<!-- more -->
 常用的迴圈有 `for` 、 `while` 和 `do while` 三種  
-下一章節還有兩種陣列用的迴圈  
 我們需要依照程式的情況來選擇使用不同的迴圈  
+
 ## for
 `for` 迴圈通常會用在有固定執行次數的迴圈   
 @flowstart

@@ -1,13 +1,6 @@
---- 
-title: Ch.9 計時器
-tags:
- - JavaScript
-prev: ./ch8
-next: ./ch10
----
+# 計時器
 
 計時器可在一段時間後執行 function
-<!-- more -->
 
 ## 一般計時器
 `setTimeout()` 可以在延遲一段時間後執行 function  

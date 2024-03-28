@@ -1,19 +1,10 @@
---- 
-title: Ch.7 function 與物件
-tags:
- - JavaScript
-prev: ./ch6
-next: ./ch8
----
+# function 與物件
 
 function 可以將一段程式碼包裝起來，可以重複使用，也方便維護，寫成物件更可以將程式碼分類。  
-<!-- more -->
+
 ## function
 當你發現你的程式有很多地方使用一樣的程式碼時，就能將它們用 function 包起來  
 不僅增加易讀性，也能讓程式碼看起來更精簡  
-
-~~如果打字慢的話，也能用 function 將很長的程式與法包起來，解省打字量~~  
-好孩子不要學，這招是考試時用的  
 
 ### 第一個 function
 這是一個簡單的 function，function 由 `名稱`、`()` 和 `{}` 組成  

@@ -1,15 +1,7 @@
---- 
-title: Ch.8 文字、陣列與數字的處理
-tags:
- - JavaScript
-prev: ./ch7
-next: ./ch9
----
+# Ch.8 文字、陣列與數字的處理
 
-文字、陣列與數字的處理的函式  
-<!-- more -->
-資料處理的函示非常多，以後的課程還會介紹其他函式  
-這個章節的大重點在數字的隨機，因為隨機是較常遇到且較麻煩的功能  
+文字、陣列與數字型態的資料處理的函式  
+
 ## 文字
 一些常用的文字處理函式  
 正則表達式語法可參考 [Learn Regex](https://github.com/ziishaned/learn-regex/blob/master/translations/README-cn.md)  

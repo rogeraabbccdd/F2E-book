@@ -1,13 +1,6 @@
---- 
-title: Ch.3 運算子
-tags:
- - JavaScript
-prev: ./ch2
-next: ./ch4
----
+# 運算子
 
 運算子用來做加減乘除的運算，JavaScript 的 `+` 還能把兩個文字或變數的連起來  
-<!-- more -->
 就如同前面所提到的， JavaScript 裡的 `+` 有兩種功能  
 所以在使用上要特別注意資料的型態是文字還是數字  
 
