@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "jsmind": "^0.8.3",
-    "pdfobject": "^2.3.0"
+    "pdfobject": "^2.3.0",
+    "treeviz": "2.2.0"
   }
 }
