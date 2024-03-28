@@ -101,10 +101,10 @@ JavaScript 是網頁開發者必學的三種語言之一，也是最流行的腳
 - 規範標準不一，有 `CommonJS` 和 `ECMAScript` 等
 - JavaScript 程式結尾可以不加 `;`，程式在執行時會自動補上，但是會發生補錯位置的情況
 - `+` 號不只可以做數學運算，還可以連接文字  
-  <img src="/F2E-book/images/ch1/meme_js.jpeg" height="400" style="margin: 10px 0;">  
+  <img src="/images/ch1/meme_js.jpeg" height="400" style="margin: 10px 0;">  
 - 以 Node.js 開發的專案套件佔了空間一大半  
-  <img src="/F2E-book/images/ch1/meme_node1.png" height="300" style="margin: 10px 0;">  
-  <img src="/F2E-book/images/ch1/meme_node2.png" height="300" style="margin: 10px 0;">
+  <img src="/images/ch1/meme_node1.png" height="300" style="margin: 10px 0;">  
+  <img src="/images/ch1/meme_node2.png" height="300" style="margin: 10px 0;">
 
 ## 第一個 JavaScript 程式
 JavaScript 需要用 `<script>` 標籤包起來  

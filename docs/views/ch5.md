@@ -79,7 +79,7 @@ for(let i=0;i<10;i++) {
 先判斷是否符合條件，符合的話才執行程式碼，執行後後再判斷要不要執行下一次  
 用於不確定執行次數的迴圈  
 
-<img src="/F2E-book/images/ch5/while_alive.png" height="300" style="margin: 10px 0;">
+<img src="/images/ch5/while_alive.png" height="300" style="margin: 10px 0;">
 
 @flowstart
 st=>start: 開始
@@ -139,7 +139,7 @@ do {
 - `while` 只有條件，適合自訂遊戲規則，做比較彈性，只要你有能力控制迴圈結束都可以用
 - `do while` 跟 `while` 一樣適合自訂遊戲規則，只差別於第一次進入檢查條件
 
-<img src="/F2E-book/images/ch5/while.jpg" height="300" style="margin: 10px 0;">
+<img src="/images/ch5/while.jpg" height="300" style="margin: 10px 0;">
 
 ## break 與 continue
 `break` 可以打斷迴圈的執行，`continue` 可以略一次執行  
@@ -249,5 +249,5 @@ while(true) {
 
 :::warning 挑戰
 挑戰印出更多種的星星  
-<img src="/F2E-book/images/ch5/java-star-pattern.png" height="300" style="margin: 10px 0;">
+<img src="/images/ch5/java-star-pattern.png" height="300" style="margin: 10px 0;">
 :::

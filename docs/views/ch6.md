@@ -140,10 +140,10 @@ let restaurant = {
 ```
 
 二維陣列概念如圖，可以存放兩個面的資料，如 X 班 Y 號同學的數學成績  
-<img src="/F2E-book/images/ch6/2array.jpg" height="300" style="margin: 10px 0;">
+<img src="/images/ch6/2array.jpg" height="300" style="margin: 10px 0;">
   
 三維陣列概念如圖，可以存放三個面的資料，如 X 年 Y 班 Z 號同學的數學成績  
-<img src="/F2E-book/images/ch6/3array.jpg" height="300" style="margin: 10px 0;">
+<img src="/images/ch6/3array.jpg" height="300" style="margin: 10px 0;">
 
 :::danger 注意
 目前網路上給開發者使用的公開資料大多是 物件和陣列的結合，如 [政府資料開放平台](https://data.gov.tw/) 和 [KKTIX 活動資訊 API](https://kktix.com/events.json)

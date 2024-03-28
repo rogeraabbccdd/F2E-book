@@ -11,7 +11,7 @@ next: ./ch4
 就如同前面所提到的， JavaScript 裡的 `+` 有兩種功能  
 所以在使用上要特別注意資料的型態是文字還是數字  
 
-<img src="/F2E-book/images/ch3/meme.png" height="300" style="margin: 10px 0;">
+<img src="/images/ch3/meme.png" height="300" style="margin: 10px 0;">
 
 ## 數學運算子
 這個表列出了 JavaScript 會用到的數學運算子  

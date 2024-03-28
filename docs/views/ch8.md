@@ -105,7 +105,7 @@ let alphabetArr = alphabet.split(",");
 
 ## 陣列
 一些常用的陣列處理函式  
-<img src="/F2E-book/images/ch8/array.png" height="300" style="margin: 10px 0;">
+<img src="/images/ch8/array.png" height="300" style="margin: 10px 0;">
 
 :::danger 注意
 `.forEach` 必須使用索引才能修改陣列內容
@@ -283,7 +283,7 @@ const obj2 = JSON.parse(JSON.stringify(obj1))
 obj2.a = 11
 console.log(obj2)
 ```
-<img src="/F2E-book/images/ch8/array.gif" height="300" style="margin: 10px 0;">
+<img src="/images/ch8/array.gif" height="300" style="margin: 10px 0;">
 :::
 
 :::warning 練習
