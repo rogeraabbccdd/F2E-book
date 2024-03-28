@@ -93,5 +93,8 @@ export default defineConfig({
     socialLinks: [
       { icon: 'github', link: 'https://github.com/rogeraabbccdd/F2E-book' }
     ]
+  },
+  markdown: {
+    lineNumbers: true
   }
 })
