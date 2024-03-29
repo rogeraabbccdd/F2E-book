@@ -1,4 +1,5 @@
 import { defineConfig } from 'vitepress'
+import { flowchartPlugin } from './plugins/flowchart.mjs'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -94,7 +95,11 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/rogeraabbccdd/F2E-book' }
     ]
   },
+  lastUpdated: true,
   markdown: {
-    lineNumbers: true
+    lineNumbers: true,
+    config: (md) => {
+      md.use(flowchartPlugin)
+    }
   }
 })
