@@ -1,6 +1,6 @@
 # 前端網頁課程教材  [![Actions Status](https://github.com/rogeraabbccdd/F2E-book/workflows/Deploy/badge.svg)](https://github.com/rogeraabbccdd/F2E-book/actions)
 <p align="center">
-  <img height="300" src="./docs/.vuepress/public/hero.png">
+  <img height="300" src="./docs/public/hero.png">
 </p>
 
 ## 教材內容
