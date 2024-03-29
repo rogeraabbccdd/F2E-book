@@ -13,7 +13,6 @@ jmnode
 </style>
 
 <script setup>
-import jsMind from "jsmind"
 import "jsmind/style/jsmind.css"
 import { onMounted } from 'vue'
 
@@ -23,7 +22,9 @@ const props = defineProps({
   }
 })
 
-onMounted(() => {
+onMounted(async () => {
+  const { default: jsMind } = await import("jsmind")
+  console.log(jsMind)
   const jm = new jsMind(props.mindData.options);
   jm.show(props.mindData.mind);
 })
