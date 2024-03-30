@@ -4,6 +4,7 @@ import Mindmap from '../components/Mindmap.vue'
 import PDF from '../components/PDF.vue'
 import Tree from '../components/Tree.vue'
 import $ from 'jquery'
+import './custom.sass'
 
 export default {
   ...DefaultTheme,
