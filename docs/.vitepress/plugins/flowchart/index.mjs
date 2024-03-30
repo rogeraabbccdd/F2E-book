@@ -12,7 +12,6 @@ export const flowchartPlugin = (md, options = {}) => {
     const token = tokens[idx]
     const key = `flowchart_${hash(idx)}`
     const { content, info } = token
-    console.log(content)
     return `<FlowChart id="${key}" code="${content}" preset="${info.trim() || 'vue'}"></FlowChart>`
   }
 

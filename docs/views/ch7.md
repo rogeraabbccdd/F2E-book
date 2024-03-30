@@ -1,7 +1,3 @@
-<script setup>
-import Mindmap from '../components/Mindmap.vue'
-</script>
-
 # function 與物件
 
 function 可以將一段程式碼包裝起來，可以重複使用，也方便維護，寫成物件更可以將程式碼分類。  

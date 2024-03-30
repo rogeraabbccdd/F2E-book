@@ -40,7 +40,7 @@
 </template>
 
 <script setup>
-import presets from './FlowChartPresets/index'
+import presets from '../plugins/flowchart/presets/index'
 import { ref, onMounted } from 'vue'
 
 const props = defineProps({
