@@ -101,6 +101,7 @@ export default defineConfig({
     search: {
       provider: 'local',
       options: {
+        detailedView: true,
         translations: {
           button: {
             buttonText: '搜尋內容',
