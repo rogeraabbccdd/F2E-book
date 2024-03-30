@@ -96,7 +96,10 @@ export default defineConfig({
 
     socialLinks: [
       { icon: 'github', link: 'https://github.com/rogeraabbccdd/F2E-book' }
-    ]
+    ],
+    search: {
+      provider: 'local'
+    }
   },
   lastUpdated: true,
   markdown: {
