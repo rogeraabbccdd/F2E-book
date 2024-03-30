@@ -1,5 +1,8 @@
 import { defineConfig } from 'vitepress'
-import { flowchartPlugin } from './plugins/flowchart.mjs'
+import { flowchartPlugin } from './plugins/flowchart/index.mjs'
+import MarkdownItContainer from 'markdown-it-container'
+import { demoBlockPlugin } from './plugins/demo-block/plugin.mjs'
+import { fileURLToPath, URL } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
@@ -100,6 +103,19 @@ export default defineConfig({
     lineNumbers: true,
     config: (md) => {
       md.use(flowchartPlugin)
+      md.use(MarkdownItContainer, 'demo', demoBlockPlugin)
+    }
+  },
+  vite: {
+    resolve: {
+      alias: [
+        {
+          find: /^.*\/VPContent\.vue$/,
+          replacement: fileURLToPath(
+            new URL('./components/theme/VPContent.vue', import.meta.url)
+          )
+        }
+      ]
     }
   }
 })

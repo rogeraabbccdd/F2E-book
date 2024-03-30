@@ -1,0 +1,199 @@
+@media (max-width: 1000px) {
+  .vitepress-plugin-demo-block__h_code {
+    display: none;
+  }
+  .vitepress-plugin-demo-block__app {
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+}
+
+.vitepress-plugin-demo-block__wrapper {
+  margin-top: 10px;
+  border: 1px solid #ebebeb;
+  border-radius: 4px;
+  transition: all .2s;
+
+  &.vitepress-plugin-demo-block__horizontal {
+    .vitepress-plugin-demo-block__display {
+      height: 400px;
+      display: flex;
+
+      .vitepress-plugin-demo-block__app {
+        width: 300px;
+        border: 1px solid #ebebeb;
+        box-shadow: 1px 1px 3px #ebebeb;
+        margin-right: 5px;
+        overflow: auto;
+      }
+
+      .vitepress-plugin-demo-block__h_code {
+        flex: 1;
+        overflow: auto;
+        height: 100%;
+
+        > pre {
+          overflow: visible;
+        }
+      }
+    }
+  }
+
+  .vitepress-plugin-demo-block__display {
+    max-height: 400px;
+    overflow: auto;
+  }
+  div {
+    box-sizing: border-box;
+  }
+
+  &:hover {
+    box-shadow: 0 0 11px rgba(33,33,33,.2);
+  }
+
+  .vitepress-plugin-demo-block__code {
+    overflow: hidden;
+    height: 0;
+    padding: 0 !important;
+    background-color: #282c34;
+    border-radius: 0 !important;
+    transition: height .5s;
+
+    pre {
+      margin: 0 !important;
+    }
+  }
+
+  .vitepress-plugin-demo-block__display {
+    padding: 20px;
+    border-bottom: 1px solid #ebebeb;
+  }
+
+  .vitepress-plugin-demo-block__footer {
+    position: relative;
+    text-align: center;
+
+    &.vitepress-plugin-demo-block__show-link {
+      .vitepress-plugin-demo-block__jsfiddle,
+      .vitepress-plugin-demo-block__codepen {
+        opacity: 1;
+      }
+
+      .vitepress-plugin-demo-block__expand::before {
+        border-top: none;
+        border-right: 6px solid transparent;
+        border-bottom: 6px solid #ccc;
+        border-left: 6px solid transparent;
+      }
+    }
+
+    &:hover {
+      .vitepress-plugin-demo-block__jsfiddle,
+      .vitepress-plugin-demo-block__codepen,
+      .vitepress-plugin-demo-block__expand span,
+      .vitepress-plugin-demo-block__expand {
+        opacity: 1;
+      }
+
+      .vitepress-plugin-demo-block__expand::before {
+        border-top-color: var(--vp-c-brand-1) !important;
+        border-bottom-color: var(--vp-c-brand-1) !important;
+      }
+
+      svg {
+        fill: var(--vp-c-brand-1) !important;
+      }
+    }
+
+    .vitepress-plugin-demo-block__expand-text {
+      transition: all .5s;
+      opacity: 0;
+    }
+
+    form:nth-last-child(2) {
+      right: 50px;
+    }
+
+    form:last-child {
+      right: 10px;
+    }
+
+    .vitepress-plugin-demo-block__button {
+      border-color: transparent;
+      background-color: transparent;
+      font-size: 14px;
+      color: var(--vp-c-brand-1);
+      cursor: pointer;
+      outline: none;
+      margin: 0;
+      width: 46px;
+      position: relative;
+  
+      &:hover::before {
+        content: attr(data-tip);
+        white-space: nowrap;
+        position: absolute;
+        top: -30px;
+        left: 50%;
+        color: #eee;
+        line-height: 1;
+        z-index: 1000;
+        border-radius: 4px;
+        padding: 6px;
+        transform: translateX(-50%);
+        background-color: rgba(0, 0, 0, .8)
+      }
+    
+      &:hover::after {
+        content: '' !important;
+        display: block;
+        position: absolute;
+        left: 50%;
+        top: -5px;
+        transform: translateX(-50%);
+        border: 5px solid transparent;
+        border-top-color: rgba(0, 0, 0, .8);
+      }
+
+      svg {
+        width: 34px;
+        height: 20px;
+        fill: #ccc;
+      }
+    }
+
+    .vitepress-plugin-demo-block__jsfiddle,
+    .vitepress-plugin-demo-block__codepen {
+      position: absolute;
+      top: 10px;
+      transition: all .5s;
+    }
+
+    .vitepress-plugin-demo-block__expand {
+      position: relative;
+      width: 100px;
+      height: 40px;
+      margin: 0;
+      color: var(--vp-c-brand-1);
+      font-size: 14px;
+      background-color: transparent;
+      border-color: transparent;
+      outline: none;
+      transition: all .5s;
+      cursor: pointer;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        width: 0;
+        height: 0;
+        border-top: 6px solid #ccc;
+        border-right: 6px solid transparent;
+        border-left: 6px solid transparent;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}
