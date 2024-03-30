@@ -11,6 +11,9 @@ dependencies:
   hash-sum:
     specifier: ^2.0.0
     version: 2.0.0
+  jquery:
+    specifier: ^3.7.1
+    version: 3.7.1
   jsmind:
     specifier: ^0.8.3
     version: 0.8.3
@@ -1058,6 +1061,10 @@ packages:
     resolution: {integrity: sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==}
     engines: {node: '>=0.12.0'}
     dev: true
+
+  /jquery@3.7.1:
+    resolution: {integrity: sha512-m4avr8yL8kmFN8psrbFFFmB/If14iN5o9nw/NgnnM+kybDJpRsAynV2BsfpTYrTRysYUdADVD7CkUUizgkpLfg==}
+    dev: false
 
   /jsmind@0.8.3:
     resolution: {integrity: sha512-0Dvj4y4zATZ2sNXF7xDm6ROExPtMF+9puxEsh/2dRHuOXPXSWhwVaDzBeOyUIneFWqnbHlx6HjD8/vv8NlQVlg==}
