@@ -99,8 +99,72 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/rogeraabbccdd/F2E-book' }
     ],
     search: {
-      provider: 'local'
-    }
+      provider: 'local',
+      options: {
+        translations: {
+          button: {
+            buttonText: '搜尋內容',
+            buttonAriaLabel: '搜尋內容'
+          },
+          modal: {
+            displayDetails: "顯示詳細結果",
+            resetButtonTitle: '清除查詢條件',
+            backButtonTitle: '關閉搜尋',
+            noResultsText: '無法找到相關結果',
+            searchBox: {
+              resetButtonTitle: '清除查詢條件',
+              resetButtonAriaLabel: '清除查詢條件',
+              cancelButtonText: '取消',
+              cancelButtonAriaLabel: '取消'
+            },
+            startScreen: {
+              recentSearchesTitle: '搜尋記錄',
+              noRecentSearchesText: '沒有搜尋記錄',
+              saveRecentSearchButtonTitle: '儲存至搜尋記錄',
+              removeRecentSearchButtonTitle: '從搜尋記錄中移除',
+              favoriteSearchesTitle: '收藏',
+              removeFavoriteSearchButtonTitle: '從收藏中移除'
+            },
+            errorScreen: {
+              titleText: '無法擷取結果',
+              helpText: '你可能需要檢查你的網路連線'
+            },
+            footer: {
+              selectText: '選擇',
+              navigateText: '切換',
+              closeText: '關閉',
+              searchByText: '搜尋提供者'
+            },
+            noResultsScreen: {
+              noResultsText: '無法找到相關結果',
+              suggestedQueryText: '你可以嘗試查詢',
+              reportMissingResultsText: '你認為這個查詢應該有結果？',
+              reportMissingResultsLinkText: '回報問題'
+            }
+          }
+        }
+      }
+    },
+    docFooter: {
+      prev: '上一頁',
+      next: '下一頁'
+    },
+    outline: {
+      label: '頁面導覽'
+    },
+    lastUpdated: {
+      text: '最後更新於',
+      formatOptions: {
+        dateStyle: 'short',
+        timeStyle: 'medium'
+      }
+    },
+    langMenuLabel: '多語言',
+    returnToTopLabel: '回到頂部',
+    sidebarMenuLabel: '選單',
+    darkModeSwitchLabel: '主題',
+    lightModeSwitchTitle: '切換到淺色模式',
+    darkModeSwitchTitle: '切換到深色模式'
   },
   lastUpdated: true,
   markdown: {
