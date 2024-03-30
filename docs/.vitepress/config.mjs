@@ -6,6 +6,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  appearance: 'dark',
   title: "前端班課程講義",
   description: "進入 JavaScript 的世界",
   themeConfig: {
