@@ -13,6 +13,8 @@ export default {
     app.component('Mindmap', Mindmap)
     app.component('PDF', PDF)
     app.component('Tree', Tree)
-    window.$ = $
+    if (!import.meta.env.SSR) {
+      window.$ = $
+    }
   }
 }
