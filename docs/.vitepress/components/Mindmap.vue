@@ -24,7 +24,6 @@ const props = defineProps({
 
 onMounted(async () => {
   const { default: jsMind } = await import("jsmind")
-  console.log(jsMind)
   const jm = new jsMind(props.mindData.options);
   jm.show(props.mindData.mind);
 })
