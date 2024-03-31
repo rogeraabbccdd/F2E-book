@@ -14,7 +14,7 @@ hero:
   actions:
     - theme: brand
       text: 開始
-      link: /views/ch0
+      link: /intro/before-start
     - theme: alt
       text: 報名課程
       link: https://wdaweb.github.io/

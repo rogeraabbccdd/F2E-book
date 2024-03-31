@@ -18,79 +18,79 @@ export default defineConfig({
       {
         text: '前言',
         items: [
-          { text: '在開始之前', link: '/views/ch0' },
+          { text: '在開始之前', link: '/intro/before-start' },
         ]
       },
       {
-        text: '基礎 JavaScript',
+        text: 'JavaScript 基礎',
         items: [
-          { text: '認識 JavaScript', link: '/views/ch1' },
-          { text: '變數', link: '/views/ch2' },
-          { text: '運算子', link: '/views/ch3' },
-          { text: '邏輯判斷式', link: '/views/ch4' },
-          { text: '迴圈', link: '/views/ch5' },
-          { text: '陣列與物件', link: '/views/ch6' },
-          { text: 'function 與物件', link: '/views/ch7' },
-          { text: '文字、陣列與數字的處理', link: '/views/ch8' },
-          { text: '計時器', link: '/views/ch9' },
+          { text: '認識 JavaScript', link: '/basic/javascript' },
+          { text: '變數', link: '/basic/variable' },
+          { text: '運算子', link: '/basic/operator' },
+          { text: '邏輯判斷式', link: '/basic/condition' },
+          { text: '迴圈', link: '/basic/loop' },
+          { text: '陣列與物件', link: '/basic/array-object' },
+          { text: 'function 與類別', link: '/basic/function-class' },
+          { text: '資料處理', link: '/basic/data' },
+          { text: '計時器', link: '/basic/timer' },
         ]
       },
       {
-        text: 'JavaScript 網頁互動',
+        text: 'JavaScript 網頁操作',
         items: [
-          { text: '操作 BOM 與 DOM', link: '/views/ch10' },
-          { text: '日期和時鐘', link: '/views/ch11' },
-          { text: '事件', link: '/views/ch12' },
-          { text: 'Observer', link: '/views/ch13' },
+          { text: 'BOM 與 DOM', link: '/interaction/bom-dom' },
+          { text: '日期', link: '/interaction/date' },
+          { text: '事件', link: '/interaction/events' },
+          { text: 'Observer', link: '/interaction/observer' },
         ]
       },
       {
         text: 'jQuery',
         items: [
-          { text: 'jQuery 的 DOM 操作', link: '/views/ch14' },
-          { text: 'jQuery 的動畫', link: '/views/ch15' },
-          { text: '打殭屍小遊戲', link: '/views/ch16' },
-          { text: '翻牌記憶小遊戲', link: '/views/ch17' },
+          { text: 'jQuery - DOM', link: '/jquery/dom' },
+          { text: 'jQuery - 動畫', link: '/jquery/animation' },
+          { text: '打殭屍小遊戲', link: '/jquery/zombie' },
+          { text: '翻牌記憶小遊戲', link: '/jquery/cards' },
         ]
       },
       {
-        text: '進階 JavaScript',
+        text: 'JavaScript 進階',
         items: [
-          { text: 'HTTP 請求與 AJAX', link: '/views/ch18' },
-          { text: '進階 JavaScript 語法', link: '/views/ch19' },
+          { text: 'HTTP 請求', link: '/advanced/ajax' },
+          { text: '進階語法', link: '/advanced/advanced' },
         ]
       },
       {
         text: 'Node.js',
         items: [
-          { text: '認識 Node.js', link: '/views/ch20' },
-          { text: '開放資料 LINE 機器人', link: '/views/ch21' },
+          { text: '認識 Node.js', link: '/node/intro' },
+          { text: 'LINE 機器人', link: '/node/line' },
         ]
       },
       {
         text: 'Vue.js',
         items: [
-          { text: '基礎 Vue.js', link: '/views/ch22' },
-          { text: 'Vite 與單元件檔案', link: '/views/ch23' },
-          { text: 'Vite 的套件使用', link: '/views/ch24' },
-          { text: 'Vue 的路由、狀態與 PWA', link: '/views/ch25' },
+          { text: '基礎語法', link: '/vue/basic' },
+          { text: 'Vite 與單元件檔案', link: '/vue/vite-sfc' },
+          { text: '套件', link: '/vue/packages' },
+          { text: '路由、狀態與 PWA', link: '/vue/router-pinia-pwa' },
         ]
       },
       {
         text: '資料庫 API',
         items: [
-          { text: 'MongoDB 的安裝與操作', link: '/views/ch26' },
-          { text: '資料庫 API', link: '/views/ch27' },
-          { text: '進階 API', link: '/views/ch28' },
+          { text: 'MongoDB 的安裝與操作', link: '/database/mongo' },
+          { text: '基礎 API', link: '/database/api-basic' },
+          { text: '進階 API', link: '/database/api-advanced' },
         ]
       },
       {
         text: '其他',
         items: [
-          { text: 'VuePress 網站', link: '/views/ch29' },
-          { text: 'Git 版本控管', link: '/views/ch30' },
-          { text: '預處理器', link: '/views/ch31' },
-          { text: 'Nuxt.js', link: '/views/ch32' },
+          { text: 'VuePress 網站', link: '/others/vuepress' },
+          { text: 'Git 版本控管', link: '/others/git' },
+          { text: '預處理器', link: '/others/pre-processor' },
+          { text: 'Nuxt.js', link: '/others/nuxt' },
         ]
       },
     ],
