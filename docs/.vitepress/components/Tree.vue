@@ -3,7 +3,6 @@
 </template>
 
 <script setup>
-import * as Treeviz from 'treeviz'
 import { ref, onMounted } from 'vue'
 
 const elTree = ref(null)
@@ -20,7 +19,8 @@ const props = defineProps({
   }
 })
 
-onMounted(() => {
+onMounted(async () => {
+  const { default: Treeviz } = await import('treeviz')
   const tree = Treeviz.create({
     htmlId: props.id,
     idKey: "id",
