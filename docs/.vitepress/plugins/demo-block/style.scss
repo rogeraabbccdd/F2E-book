@@ -42,6 +42,12 @@
   .vitepress-plugin-demo-block__display {
     max-height: 400px;
     overflow: auto;
+    input[type=button] {
+      background-color: buttonface;
+      padding-block: 1px;
+      padding-inline: 6px;
+      cursor: pointer;
+    }
   }
   div {
     box-sizing: border-box;
