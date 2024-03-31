@@ -13,11 +13,11 @@ jobs:
           node-version: 16
       - name: Install and Build
         run: |
-          yarn
-          yarn build
+          pnpm install
+          pnpm run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: public
+          folder: dist
           single-commit: true
