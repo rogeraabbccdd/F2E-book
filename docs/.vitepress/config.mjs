@@ -34,7 +34,9 @@ export default defineConfig({
           { text: '陣列與物件', link: '/basic/array-object' },
           { text: 'function', link: '/basic/function' },
           { text: '物件導向', link: '/basic/class' },
-          { text: '資料處理', link: '/basic/data' },
+          { text: '資料處理 - 文字', link: '/basic/data-string' },
+          { text: '資料處理 - 陣列', link: '/basic/data-array' },
+          { text: '資料處理 - 數字', link: '/basic/data-number' },
           { text: '計時器', link: '/basic/timer' },
         ]
       },
