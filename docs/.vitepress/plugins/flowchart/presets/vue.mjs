@@ -21,7 +21,7 @@ export default Object.assign({}, base, {
       'class': 'operation-element',
       'font-color': 'white',
       'fill': '#00BC7D',
-      'line-width': '0px'
+      // 'line-width': '0px'
     },
     inputoutput: {
       'class': 'inputoutput-element',
