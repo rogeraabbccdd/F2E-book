@@ -1,4 +1,4 @@
-# Ch.5 迴圈
+# 迴圈
 
 迴圈則可以讓程式重複的執行一樣的動作，達到指定條件才會結束  
 常用的迴圈有 `for` 、 `while` 和 `do while` 三種  
@@ -8,8 +8,8 @@
 `for` 迴圈通常會用在有固定執行次數的迴圈   
 @flowstart
 st=>start: 開始
-start=>operation: i = start
-cond=>condition: i < max
+start=>operation: i = 初始值
+cond=>condition: 符合執行條件
 code=>inputoutput: 執行
 plus=>operation: i++
 e=>end: 結束
@@ -23,29 +23,33 @@ cond(no)->e
 
 迴圈的程式寫法如下面範例
 ```js
-for(let i=start;i<max;i=i+1){
+for(let i = start; i < max; i = i + 1) {
 	// code
 }
 
 // i=i+1 可以簡寫成 i++
-for(let i=start;i<max;i++){
+for(let i = start; i < max; i++) {
 	// code
 }
 ```
 
-`()` 內宣告了這個迴圈執行的三種動作，以 `;` 分隔
-- 宣告變數：宣告了一個變數 `i` ，這裡的 `i` 的意思是索引 `index`
+`()` 內宣告了迴圈執行的三種動作，以 `;` 分隔
+- 宣告變數：宣告了一個變數 `i`，意思是索引 `index`
 - 執行條件: 迴圈執行的條件
 - 離開動作：`{}` 內的程式碼處理完後，會執行這個動作
 
-再看看實際應用的程式碼，想想看這段程式碼會輸出什麼  
-`document.write()` 可以在網頁上寫上內容，`()` 裡面如果是放 HTML 文字的話就能輸出 HTML 元素  
-
 ```js
-for(let i=0;i<10;i++) {
-	document.write(i);
+for(let i = 0; i < 10; i++) {
+  document.write(i)
 }
 ```
+
+:::tip TIP
+當回圈內的 `{}` 只有一行程式碼時，可以省略 `{}`
+```js
+for(let i = 0; i < 10; i++) document.write(i)
+```
+:::
 
 :::warning 練習
 試試看自己寫一個迴圈，輸出這四個數字: 1, 4, 7, 10
@@ -56,23 +60,24 @@ for(let i=0;i<10;i++) {
 :::
 
 ## 巢狀 for
-如果 `for(A)` 迴圈裡面又有一個 `for(B)` 迴圈，可以處理更複雜的二維資料  
+如果 `for` 迴圈裡面又有一個 `for` 迴圈，可以處理更複雜的二維資料  
+
 ::: warning 練習
-想一想，怎麼用兩個 for 迴圈製作一個九九乘法表。  
-以下兩種練習，請同學依照順序挑戰  
+製作一個九九乘法表
 - 一行一行的算式
 - 製作成表格
 :::
 
-:::warning 挑戰
-上面兩種都完成的同學，試著結合剛剛的顏色漸變星星，將九九乘法表表格加上顏色漸變背景
-:::
 ## while
 這種迴圈結構較簡單，只有一個執行條件  
 先判斷是否符合條件，符合的話才執行程式碼，執行後後再判斷要不要執行下一次  
 用於不確定執行次數的迴圈  
 
-<img src="/images/ch5/while_alive.png" height="300" style="margin: 10px 0;">
+<ImageFigure
+  src="/images/ch5/while_alive.png"
+  alt="while 迴圈範例"
+  title="while 迴圈範例"
+>while 迴圈範例</ImageFigure>
 
 @flowstart
 st=>start: 開始
@@ -88,19 +93,13 @@ cond(no)->e
 
 下面這個範例，使用者輸入 `end` 才會結束  
 ```js
-let input = "";
-while(input !== "end"){
-  input = prompt("輸入 end 結束，不然煩死你");
+let input = ''
+let count = 0
+while (input !== '123') {
+  input = prompt('123')
+  count++
 }
-```
-
-`while` 也可以模仿 `for` 的動作  
-```js
-let i = 0;
-while(i <= 10) {
-  document.write(i);
-  i++;
-}
+document.write(`輸入了${count}次`)
 ```
 
 ## do while
@@ -119,48 +118,77 @@ cond(yes)->code
 cond(no, left)->e
 @flowend
 
-下面這個範例試將上面的 `while` 用 `do while` 改寫  
 ```js
-let input = "";
+let input = ''
+let count = 0
 do {
-  input = prompt("輸入 end 結束，不然煩死你");
-} while(input !== "end")
+  input = prompt('123')
+  count++
+} while (input !== '123')
 ```
 
 ## 比較
-- `for` 一行就清楚表示遊戲規則，思緒上會比較清晰，適合簡單的迴圈控制變數增加減少行為
-- `while` 只有條件，適合自訂遊戲規則，做比較彈性，只要你有能力控制迴圈結束都可以用
-- `do while` 跟 `while` 一樣適合自訂遊戲規則，只差別於第一次進入檢查條件
+- `for` 適合固定次數的迴圈
+- `while` 適合不確定次數的迴圈
+- `do while` 適合不確定次數，且至少執行一次的迴圈
 
-<img src="/images/ch5/while.jpg" height="300" style="margin: 10px 0;">
+<ImageFigure
+  src="/images/ch5/while.jpg"
+  alt="while 與 do while 差異"
+  title="while 與 do while 差異"
+>while 與 do while 差異</ImageFigure>
 
 ## break 與 continue
-`break` 可以打斷迴圈的執行，`continue` 可以略一次執行  
-這兩個涵式在所有迴圈內都可以使用  
+- `break` 打斷迴圈的執行
+- `continue` 略過一次執行  
+
 ```js
 // 當 i 等於 5 時，跳過這次迴圈
-for(let i=0;i<10;i++) {
+for(let i = 0; i < 10; i++) {
   if(i === 5) {
     continue;
   }
-	document.write(i);
-}
-
-// 猜猜神秘數字，讓使用者猜測神秘數字是多少，猜對才打斷迴圈
-let count = 1;
-let num = 123;
-while(true) {
-  let answer = prompt(`第 ${count} 次猜測，猜猜看秘密數字是多少`);
-  if(answer == num){
-    break;
-  }
-  count++;
+  document.write(i);
 }
 ```
+```js
+for (let i = 1; i < 10; i++) {
+  if (i === 5) break
+  document.write(i + '<br>')
+}
+```
+
+:::danger 注意
+多層迴圈時，`break` 與 `continue` 只會影響出現語法的那層迴圈  
+需要對迴圈命名，才能控制到指定的迴圈
+```js
+for (let i = 1; i <= 5; i++) {
+  for (let j = 1; j <= 5; j++) {
+    // 多層迴圈時 continue 只會影響出現語法的那層迴圈
+    // continue 會直接跳到 j++ 後進下一次 j 迴圈
+    if (i === 2) continue
+    document.write(`${i}x${j}=${i*j}<br>`)
+  }
+}
+
+// 將外層迴圈命名為 loop1
+// 將內層迴圈命名為 loop2
+loop1: for (let i = 1; i <= 5; i++) {
+  loop2: for (let j = 1; j <= 5; j++) {
+    // 指定對 loop1 迴圈 continue
+    // continue 會直接跳到 i++ 後進下一次 i 迴圈
+    if (i === 2) continue loop1
+    console.log(`${i}, ${j}`)
+  }
+}
+```
+:::
+
+## 綜合應用
 :::warning 練習
 試試看自己寫一個猜數字遊戲，並加入太大、太小等提示訊息
 :::
-## 綜合應用
+
 :::warning 練習
 一球從 100 公尺高度自由落下，每次落地後反跳回原高度的一半再落下，請問  
 - 第 10 次落地時，共經過多少公尺？
@@ -192,7 +220,7 @@ while(true) {
 :::
 
 :::warning 練習
-有四個數字，分別為 1、2、3 和 4  
+有四個數字，分別為 1、2、3、4  
 請使用這四個數字組成數字不重複的三位數  
 
 ```
@@ -238,9 +266,4 @@ while(true) {
 // 如果輸入 22
 0 1 1 2 3 5 8 13 21
 ```
-:::
-
-:::warning 挑戰
-挑戰印出更多種的星星  
-<img src="/images/ch5/java-star-pattern.png" height="300" style="margin: 10px 0;">
 :::
