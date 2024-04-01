@@ -1,40 +1,70 @@
-# Ch.4 邏輯判斷式
+# 邏輯判斷式
 
 邏輯判斷式是程式運作不可或缺的部分，它可以讓程式根據不同的情況去執行不同的程式碼
 
-## 基礎判斷式
-我們先從中文句子以及基本運算子來認識判斷式  
+## 認識語法
+當中文句型為  
+  
+> <span style="color:#ff6600">如果</span><span style="color:#FF1493"> ( 條件 ) </span> { 條件成立時的動作 } <span style="color:#ff6600"> 否則</span> <span>{ 條件不成立時的動作 }</span>
+  
+> <span style="color:#ff6600">如果</span><span style="color:#FF1493"> ( 外面下雨 ) </span> { 在家裡待著電影 } <span style="color:#ff6600"> 否則</span> <span>{ 出門和爬山 }</span>
 
-### 從中文句子認識語法
-一個簡單的一個條件判斷式會長這樣  
+翻譯成程式就是  
+  
 ```js
-if(條件){
-    條件成立時的程式碼
-} else{
-    條件不成立時的程式碼
+if (條件) {
+  條件成立時的程式碼
+} else {
+  條件不成立時的程式碼
 }
 ```
-這段程式碼翻譯成中文會式這樣子  
-   
-<span style="color:#ff6600">如果</span><span style="color:#FF1493"> ( 條件 ) </span> { 條件成立時的動作 } <span style="color:#ff6600"> 否則</span> { 條件不成立時的動作 }
-   
-其實這段邏輯大家都應該經常使用到，只是不知道轉換成程式的語法怎麼寫而已  
-以下面這句話舉例  
 
-> 如果外面下雨，我們就去看電影，否則我們就去爬山
+```js
+if (外面下雨) {
+  在家裡待著電影
+} else {
+  出門
+  去爬山
+}
+```
+- `if` 代表如果，後面接判斷式，如果成立，就會裡面的執行程式碼
+- `else` 代表否則，當 `if` 不成立時，就會裡面的執行程式碼
 
-整個句子的邏輯就會是
-
-<span style="color:#ff6600">如果</span><span style="color:#FF1493"> ( 外面下雨 ) </span> { 我們就去看電影 } <span style="color:#ff6600"> 否則</span> { 我們就去爬山 }
-
-`else` 是非必要的，要看狀況使用，例如  
-   
-<span style="color:#ff6600">如果</span><span style="color:#FF1493"> ( 可以決定交作業時間 ) </span> { 我希望永遠不必交 }
-
-### 比較運算子
-:::danger 注意
-請注意符號的擺放位置  比如 `a >= b`  不能寫成  `a => b` 這樣就代表另外的意思了
+:::tip TIP
+當判斷式後的 `{}` 內只有一行程式碼時，可以省略 `{}`
+```js
+if (條件) 執行程式碼
+else  執行程式碼
+```
+上面的範例可以寫成
+```js
+if (外面下雨) 在家裡待著電影
+else {
+  出門
+  去爬山
+}
+```
 :::
+
+`else` 和中文 `否則` 一樣是非必要的  
+  
+> <span style="color:#ff6600">如果</span><span style="color:#FF1493"> ( 可以決定交作業時間 ) </span> <span>{ 我希望永遠不必交 }</span>
+
+```js
+if (可以決定交作業時間) {
+  我希望永遠不必交
+}
+```
+
+## 比較運算子
+比較運算子是用來比較兩個值的大小  
+運算的結果會是布林值 `true` 或 `false`
+
+:::danger 注意
+請注意符號的擺放位置，例如 `a >= b` 不能寫成 `a => b`  
+`=>` 代表 function 的箭頭函式，不是比較運算子
+:::
+
 | 符號 | 說明 |
 |:---|:---|
 | a <span style="color: #ff6600;">==</span> b | a <span style="color: #ff6600;">等於</span> b |
@@ -47,79 +77,127 @@ if(條件){
 | a <span style="color: #ff6600;">>=</span> b | a <span style="color: #ff6600;">大於</span> b  <span style="color: ;#FF1493">或是</span> a <span style="color: #ff6600;">等於</span> b |
 | a <span style="color: #ff6600;"><=</span> b | a <span style="color: #ff6600;">小於等於</span> b <span style="color: #FF1493;">或是</span> a <span style="color: #ff6600;">等於</span> b |
 
+數字大小比較範例  
+```js
+const a = 10, b = 20
+if (a > b) {
+  console.log('a 大於 b')
+} else {
+  console.log('a 不大於 b')
+}
+```
 
-### 邏輯運算子
+資料型態比較範例  
+
+```js
+const a = 100, b = '100'
+if (a == b) {
+  console.log('a == b')
+} else {
+  console.log('a != b')
+}
+if (a === b) {
+  console.log('a === b')
+} else {
+  console.log('a !== b')
+}
+```
+
+若判斷的是布林值，可以直接用 `if(變數)` 來判斷  
+
+```js
+const ok = false
+// if (ok) --> if (ok === true)
+if (ok) {
+  console.log('ok')
+}
+// if (!ok) --> if (ok === false)
+if (!ok) {
+  console.log('not ok')
+}
+```
+
+## 邏輯運算子
+邏輯運算子是用來組合多個比較運算子的結果  
+運算的結果會是布林值 `true` 或 `false`
+
 | 符號 | 說明 | 舉例 |
 |:---|:---|:---|
 | a <span style="color: #ff6600;">&&</span> b | a <span style="color: #ff6600;">與</span> b ，必須符合兩者 | 如果颱風天沒颳風也沒下雨，我就去看電影 |
 | a <span style="color: #ff6600;">&#124;&#124;</span> b | a <span style="color: #ff6600;">或</span> b，符合其中一個 | A: 晚餐吃什麼？ B: 便當或麵都可以 |
 | <span style="color: #ff6600;">!</span>a | 否定、相反 | A: 你假日想做什麼事？ B: 除了練習程式外，其他都可以 |
 
-相反式的幾個程式範例，使用 `!` 前綴並將內容用 `()` 包起來，想想看以下判斷式的結果是什麼  
-- `!(a==b)`
-- `!(a>b)`
-- `!(a>=b)`
-- `!(a<b)`
-
-數字大小比較的範例  
+`&&` 範例
 ```js
-let a = 10;
-if(a <= 10){
-    console.log("a 小於等於 10");
-}
-else {
-    console.log("a 大於 10");
+const rain = false, wind = true
+if (!rain && !wind) console.log('看電影')
+else                console.log('在家發呆')
+```
+`||` 範例
+```js
+const dinner = '便當'
+if (dinner === '炸雞' || dinner === '可樂') {
+  console.log('好耶')
+} else {
+  console.log('不好耶')
 }
 ```
 
-資料型態比較的範例
+相反式範例
 ```js
-let a = 10;
-let b = "10"
-if(a === b){
-    console.log("a 和 b 的型態一樣且值相等");
-}
-else {
-    console.log("a 和 b 的型態不一樣，且值不相等");
-}
+!(a==b)
+!(a>b)
+!(a>=b)
+!(a<b)
 ```
 
-:::warning 練習
-試試看把數字 `10` 也修改成變數  
-再修改一下數字大小、把數字用引號包起來，或把 `==` 換成 `===` 看看會發生什麼事
-:::
-
-
-## 進階判斷式
-### 三元運算子
+## 三元運算子
 如果是 2 選 1 的判斷式，可以運用三元運算子，節省程式碼文字  
-<img src="/images/ch4/meme.jpg" height="300" style="margin: 10px 0;">
-   
+
+<ImageFigure
+  src="/images/ch4/meme.jpg"
+  title="三元運算子"
+  alt="三元運算子"
+>三元運算子</ImageFigure>
+
+語法規則為  
+  
 > 條件 <span style="color:#FF1493">?</span> 成立時執行的程式 <span style="color:#ff6600">:</span> 否定時執行的程式  
    
 ```js
-let cool = confirm("你覺得你很 帥/美 嗎?");
-let msg = cool ? "你好 帥哥/美女" : "別看不起自己，你其實很 帥/美";
-alert(msg);
+const like = confirm('你喜歡 JavaScript 嗎')
+
+// 使用三元運算子前
+if (message) {
+  console.log('喜歡')
+} else {
+  console.log('不喜歡')
+}
+
+// 使用三元運算子後，將結果放在變數
+const message = like ? '喜歡' : '不喜歡'
+console.log(message)
+
+// 使用三元運算子後，直接印出結果
+console.log(like ? '喜歡' : '不喜歡')
 ```
 
-### 多條件式
+## 多條件式
 當條件有多筆需要判斷時，你可以用 `()` 組合判斷式  
-想想看下面的判斷式的意思  
 ```js
-const isFat = confirm('你是肥宅嗎')
-const isGoodAtCoding = confirm('你會寫 CODE 嗎')
-const isRich = confirm('你有錢錢嗎')
-if ( (isGoodAtCoding && !isFat) || isRich ) {
-    document.write('人生勝利')
+const coding = confirm('你會寫 code 嗎')
+const game = confirm('你有玩原神嗎')
+const player = confirm('你是可莉玩家嗎')
+if ((game && player) || coding) {
+  console.log('酷欸')
 } else {
-    document.write('加油，好嗎')
+  console.log('加油')
 }
 ```
 
-### 判斷式條件的延伸
-前面的判斷式，都是 2 選 1，但很多時候，遇到 3 選 1 、4 選 1 或更多的時候，就需要用到 `else if`  
-程式執行的流程會是這個樣子  
+## 判斷式條件的延伸
+前面的判斷式，都是 2 選 1  
+但很多時候，遇到 3 選 1 、4 選 1 或更多的時候，就需要用到 `else if`  
 
 @flowstart
 st=>start: 開始
@@ -143,96 +221,129 @@ cond3(no)->cond4
 cond4(yes)->process4->e
 @flowend
 
------  
-
-用程式的寫法的話就是
-
-<span style="color: #ff6600;">if( 條件一 )</span> { 符合時執行程式碼 }  
+程式寫法範例
+><span style="color: #ff6600;">if( 條件一 )</span> { 符合時執行程式碼 }  
 <span style="color: #008000;">else if ( 條件二 )</span> { 符合時執行程式碼 }  
 <span style="color: #55bcfa;">else if ( 條件三 )</span> { 符合時執行程式碼 }  
-<span style="color: #ff00ff;">else</span>{ 以上都不符合時執行程式碼 }  
-  
------
+<span style="color: #ff00ff;">else</span> <span>{ 以上都不符合時執行程式碼 }</span>  
 
-轉換成中文的話就如下面的範例  
-  
-<span style="color: #ff6600;">if ( 成績 >= 95 ) </span>{ 你的成績是 S 級 }  
+成績標準範例
+><span style="color: #ff6600;">if ( 成績 >= 95 ) </span>{ 你的成績是 S 級 }  
 <span style="color: #008000;">else if ( 成績 >= 90 ) </span>{ 你的成績是 A 級 }  
 <span style="color: #55bcfa;">else if ( 成績 >= 80 ) </span>{ 你的成績是 B 級 }  
-<span style="color: #ff00ff;">else if ( 成績 >= 70 ) </span>{ 你的成績是 C 級 }  
-<span style="color: #849b87;">else </span>{ 你的成績是 D 級 }
+<span style="color: #ff00ff;">else</span> <span>{ 你的成績是 C 級 }</span>  
 
------
-
-實際應用在程式裡面  
-這裡使用了一個新涵式 `prompt()` ，它會跳出一個輸入視窗，使用者可以輸入文字，變數接收到的資料型態為文字  
+年齡分級判斷範例，編寫的時候要注意判斷順序
 
 ```js
 const age = prompt('請輸入年齡')
 
 // 錯誤的判斷寫法，永遠都是普遍級
-// if (age >= 0) {
-//   document.write('<img src="普遍級.jpg">')
-// } else if (age >= 6) {
-//   document.write('<img src="保護級.jpg">')
-// } else if (age >= 12) {
-//   document.write('<img src="輔12級.jpg">')
-// } else if (age >= 15) {
-//   document.write('<img src="輔15級.jpg">')
-// } else if (age >= 18) {
-//   document.write('<img src="限制級.jpg">')
-// }
-
-if (age >= 18) {
-    document.write('<img src="限制級.jpg">')
-} else if (age >= 15) {
-    document.write('<img src="輔15級.jpg">')
-} else if (age >= 12) {
-    document.write('<img src="輔12級.jpg">')
+if (age >= 0) {
+  document.write('普遍級')
 } else if (age >= 6) {
-    document.write('<img src="保護級.jpg">')
+  document.write('保護級')
+} else if (age >= 12) {
+  document.write('輔12級')
+} else if (age >= 15) {
+  document.write('輔15級')
+} else if (age >= 18) {
+  document.write('限制級')
+}
+
+// 正確寫法
+if (age >= 18) {
+    document.write('限制級')
+} else if (age >= 15) {
+    document.write('輔15級')
+} else if (age >= 12) {
+    document.write('輔12級')
+} else if (age >= 6) {
+    document.write('保護級')
 } else if (age >= 0) {
-    document.write('<img src="普遍級.jpg">')
+    document.write('普遍級')
 }
 ```
+
 :::warning 練習
 使用 `prompt()` 製作一個選擇題
 :::
 
-### switch case
-像上面的範例，都是比較同一個變數的不同值的話，可以用 `switch` 和 `case`，程式碼比較精簡  
-
-:::danger 注意
-switch case 雖然比 if 還好閱讀，但僅限一個變數的判斷
-:::
-
+## switch case
+`switch` 是另一種判斷式，可以用來判斷多個條件  
+執行時會將 `()` 內的變數值，和 `case` 後面的值做比較  
+- 從符合的 `case` 開始往下執行，直到遇到 `break` 為止，順序會影響執行  
+- 如果沒有符合的 `case`，就會執行 `default` 的程式碼
+  
+語言判斷，使用 `if` 寫法
 ```js
-let lang = "tw"; //試著抽換其他國家代碼
-switch(lang) {
-    case 'tw':
-        document.write('台灣')
-        break
-    case 'jp':
-        document.write('日本')
-        break
-    case 'kr':
-        document.write('韓國')
-        break
-    case 'us':
-    case 'usa':
-        document.write('美國')
-        break
-    default:
-        document.write('跨謀')
-        break
+if (lang === 'zh-tw') {
+  document.write('台灣中文')
+} else if (lang === 'ja-jp') {
+  document.write('日本日文')
+} else if (lang === 'en-us' || lang === 'en') {
+  document.write('英文')
+} else {
+  document.write('窩不知道')
+}
+```
+語言判斷，使用三元運算子寫法
+```js
+const message = 
+  lang === 'zh-tw' ? '台灣中文' : 
+  lang === 'ja-jp' ? '日本日文' :
+  (lang === 'en-us' || lang === 'en') ? '英文' : '窩不知道'
+document.write(message)
+```
+語言判斷，使用 `switch` 寫法
+```js
+switch (lang) {
+  case 'zh-tw':
+    document.write('台灣中文')
+    break
+  case 'jp':
+    document.write('日本')
+  case 'ja-jp':
+    document.write('日本日文')
+    break
+  case 'en-us':
+  case 'en':
+    document.write('英文')
+    break
+  default:
+    document.write('窩不知道')
+    break
+}
+```
+年齡分級判斷範例
+```js
+const age = 18
+// 不能寫 switch (age)，只能寫 switch (true)
+// 當寫 switch(age) 時
+// age === (age >= 18)
+// 18 === (18 >= 18)
+// 18 === true
+// false
+switch (true) {
+  case (age >= 18):
+    document.write('限制級')
+    break
+  case (age >= 15):
+    document.write('輔15級')
+    break
+  case (age >= 12):
+    document.write('輔12級')
+    break
+  case (age >= 16):
+    document.write('保護級')
+    break
+  case (age >= 0):
+    document.write('普遍級')
+    break
 }
 ```
 
-:::warning 練習
-將你剛才的選擇題用 switch case 改寫
-:::
-
-### 巢狀判斷式
+## 巢狀判斷式
 判斷式裡面還可以再使用判斷式，做更詳細的判斷  
 @flowstart
 st=>start: 開始
@@ -248,62 +359,64 @@ cond1(no)->process1->e
 @flowend
 
 ```js
-let weather = "rain";
-let hasUmbrella = false;
+const weather = 'rain'
+const umbrella = false
 
-if(weather === "rain"){
-    if(hasUmbrella) {
-        alert("我有帶傘，下雨也不怕");
-    }
-    else {
-        alert("下雨又沒帶傘，你完蛋囉");
-    }
-}
-else {
-    alert("今天出太陽，有沒有帶傘都沒關係");
+if (weather === 'rain') {
+  if (umbrella) {
+    document.write('下雨，有傘，沒事')
+  } else {
+    document.write('下雨，沒傘，有事')
+  }
+} else {
+  document.write('沒下雨，沒差')
 }
 ```
 
-### 短路求值
+## 短路求值
 邏輯運算子也可以用在賦值  
+- `||` 取第一個 `Boolean()` 判斷為 true 的值
+- `&&` 取第一個 `Boolean()` 判斷為 false 的值
+- `??` 取第一個不是 `null` 也不是 `undefined` 的值
+
+以下為 `Boolean()` 判斷為 `false` 的狀況
+- `false`
+- `0`
+- `""`
+- `null`
+- `undefined`
+- `NaN`
+
+`||` 使用範例
 ```js
-// Boolean() 會回傳 false 的狀況
-// false、0、""、null、undefined、NaN
-
-// || 回傳第一個 Boolean() 判斷是 true 的值
-// 如果全部都是 false 則回傳最後一個值
-let x = undefined // Boolean(undefined) = false
-let y = 123       // Boolean(123) = true
-let z = x || y || 'abc'
+const x = null || 0 || undefined || 123 || 'abc' || 'dfgd' || false
+console.log(x)
+```
+`&&` 使用範例
+```js
+const y = 'abc' && 123 && 456 && false && 'def' && undefined
+console.log(y)
+```
+`??` 使用範例
+```js
+const z = undefined ?? null ?? false ?? 'abc' ?? 123 ?? 456 ?? false ?? 'def'
 console.log(z)
+```
+實際應用範例
+```js
+// 使用短路求值前，需要判斷變數是否有值
+let name = prompt('請輸入名字')
+if (name === '' || name === null) {
+  name = '路人'
+}
 
-// && 回傳第一個 Boolean() 判斷是 false 的值
-// 如果全部都是 true 則回傳最後一個值
-let a = 456         // Boolean(456) = true
-let b = undefined   // Boolean(undefined) = false
-let c = 789         // Boolean(789) = true
-let d = a && b && c
-console.log(d)
-
-// ?? 空值合併運算子，回傳第一個非 null 和非 undefined 的值
-// 如果都沒有則回傳最後一個值
-let i = ''
-let j = 100
-let k = null
-let l = k ?? i ?? j
-console.log(l)
+// 使用短路求值後
+const name = prompt('請輸入名字') || '路人'
+console.log(name)
 ```
 
 ## 綜合應用
-`prompt()` 會跳出一個輸入視窗，使用者可以輸入文字，資料型態為文字  
-`confirm()` 會跳出一個確認視窗，使用者可以點確認或取消，資料型態為布林值  
-以上兩個函式 `()` 內都是放視窗文字  
-
-:::danger 注意
-`confirm()` 的功能比較像讓使用者確認資訊，我們這邊把它當作簡單的是非題使用  
-:::
-
-下面是運用上面兩個涵式製作的問答題的範例  
+使用判斷式製作問答題  
 ```js
 let score = 0
 
@@ -339,5 +452,5 @@ if (ans3) {
 :::
 
 :::warning 作業
-改寫上面的問答範例，自己設計 5 道題目，遊戲結束後會顯示得分
+自己設計 5 道題目問答題或選擇題，遊戲結束後會顯示得分
 :::
