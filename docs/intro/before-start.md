@@ -1,8 +1,8 @@
 # 在開始之前
-課程介紹、程式的學習方法與程式小遊戲
+在正式開始之前，我們先來了解一下這門課程的內容和學習方法
 
 ## 課程介紹
-&emsp;  
+
 <iframe id="iframe_container" frameborder="0" webkitallowfullscreen="" mozallowfullscreen="" allowfullscreen="" allow="autoplay; fullscreen" width="100%" height="400" src="https://prezi.com/embed/gamdn55yj8di/?bgcolor=ffffff&amp;lock_to_path=1&amp;autoplay=0&amp;autohide_ctrls=0&amp;landing_data=bHVZZmNaNDBIWnNjdEVENDRhZDFNZGNIUE43MHdLNWpsdFJLb2ZHanI0aTBTbU8ySEMzQkppSWtqaVZCRDRZNGFnPT0&amp;landing_sign=52mlrVIKQxwQuXuJYIW4Y4XI4UjnDVsMnseYiCRnQzs"></iframe>
 
 ## 學習方法
@@ -11,7 +11,7 @@
 程式學習三大原則 
 - 不要死背，學習程式不像以往學校考試，作弊是可以的，隨時能查閱網路上的資料，現在也有許多 AI 輔助程式開發
 - 輸入後立刻輸出，學到的東西要立刻實作加深印象，不要只看不做
-- 只需要學習必要的部分就好，例如需要做一個簡單的時鐘，不需要從課本的第一頁看到最後一頁
+- 只學習必要的部分，例如做一個簡單的時鐘，不需要從課本的第一頁看到最後一頁
 
 程式學習五步驟 
 - 思考想要開發的項目
@@ -21,15 +21,16 @@
 - 完成後再次嘗試開發新的項目
 
 ## Markdown
-Markdown 是一種輕量級標記式語言，它有純文字標記的特性，讓編寫的可讀性提高  
-目前也有很多網站都使用 Markdown 來撰寫說明文件或文章  
-在寫程式的筆記時，使用 Markdwon 比使用 Word 等還要有效率  
+Markdown 是一種輕量級標記式語言  
+目前有很多網站使用這個語法撰寫說明文件或文章，例如這個網站就是使用 Markdown 製作  
+在寫程式相關的筆記時，使用 Markdwon 比 Word 還要方便快速  
 
-工具:
+相關連結:
 - [Markdown Here](https://markdown-here.com/)，用 Markdown 語法寫 email
 - [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)，將 Markdown 轉成 pdf
 - [HackMD](https://hackmd.io/)，線上筆記
 - [HackMD Markdwon 語法大全](https://hackmd.io/@mrcoding/ryZE7k8cN)
+- [Discord Markdown 語法](https://support.discord.com/hc/zh-tw/articles/210298617-Markdown-%E8%AA%9E%E6%B3%95%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8-%E6%96%87%E5%AD%97%E6%A0%BC%E5%BC%8F-%E7%B2%97%E9%AB%94-%E6%96%9C%E9%AB%94-%E5%BA%95%E7%B7%9A)
 
 ## 如何問問題
 老師們不會通靈，也不可能 24 小時待命回答你的問題  
@@ -64,32 +65,46 @@ Markdown 是一種輕量級標記式語言，它有純文字標記的特性，�
 - [Mongo Playground](https://mongoplayground.net/)
 
 Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markdown 語法  
-當你在 Discord 傳程式碼問老師時請使用程式碼標記  
-<img src="/images/ch0/discord-code.png" style="margin: 10px 0;">  
-比較一下兩張圖，哪張圖的程式碼比較容易閱讀  
-<img src="/images/ch0/discord-bad.png" style="margin: 10px 0;">  
-<img src="/images/ch0/discord-good.png" style="margin: 10px 0;">  
+當你在 Discord 傳程式碼時請使用程式碼標記，方便同學與老師閱讀  
+
+<ImageFigure src="/images/ch0/discord-bad.png" alt="錯誤示範" title="錯誤示範" caption="錯誤示範"></ImageFigure>
+<ImageFigure src="/images/ch0/discord-good.png" alt="正確示範" title="正確示範" caption="正確示範"></ImageFigure>
 
 延伸閱讀  
 - [X-Y Problem](https://ithelp.ithome.com.tw/articles/10144633)
 - [不要為了提問而提問](https://dontasktoask.com/zh-tw/)
 - [提問的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
 
-## 認識程式設計
-透過小遊戲認識程式設計
-- [Google 首頁遊戲](https://www.google.com/doodles/celebrating-50-years-of-kids-coding)  
-  <a href="https://www.google.com/doodles/celebrating-50-years-of-kids-coding" target="_blank">
-    <img src="/images/ch0/googlegame.gif" height="200" style="margin: 10px 0;">  
-  </a>
-- [Code.org 的一小時玩程式活動](https://code.org/hourofcode/overview)  
-  <a href="https://code.org/hourofcode/overview" target="_blank">
-    <img src="/images/ch0/flappy.jpg" height="200" style="margin: 10px 0;">  
-  </a>
-- [Code Combat](https://codecombat.com/)  
-  <a href="https://codecombat.com/" target="_blank">
-    <img src="/images/ch0/cc.png" height="200" style="margin: 10px 0;">  
-  </a>
-- [RABBIDS CODING](https://register.ubisoft.com/rabbids-coding/)  
-  <a href="https://register.ubisoft.com/rabbids-coding/" target="_blank">
-    <img src="/images/ch0/rabbids.jpg" height="200" style="margin: 10px 0;">  
-  </a>
+## 程式設計小遊戲
+<ImageFigure
+  src="/images/ch0/googlegame.gif"
+  alt="Google 小遊戲" title="Google 小遊戲"
+  link="https://www.google.com/doodles/celebrating-50-years-of-kids-coding"
+>
+  Google 小遊戲
+</ImageFigure>
+
+<ImageFigure
+  src="/images/ch0/flappy.jpg"
+  alt="Code.org 一小時玩程式" title="Code.org 一小時玩程式"
+  link="https://code.org/hourofcode/overview"
+>
+  Code.org 一小時玩程式
+</ImageFigure>
+
+<ImageFigure
+  src="/images/ch0/cc.png"
+  alt="Code Combat" title="Code Combat"
+  link="https://codecombat.com/"
+>
+  Code Combat
+</ImageFigure>
+
+<ImageFigure
+  src="/images/ch0/rabbids.jpg"
+  alt="RABBIDS CODING" title="RABBIDS CODING"
+  link="https://register.ubisoft.com/rabbids-coding/"
+>
+  RABBIDS CODING
+</ImageFigure>
+
