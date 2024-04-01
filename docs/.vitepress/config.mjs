@@ -26,7 +26,7 @@ export default defineConfig({
       {
         text: 'JavaScript 基礎',
         items: [
-          { text: '認識 JavaScript', link: '/basic/javascript' },
+          { text: '認識 JavaScript', link: '/basic/intro' },
           { text: '變數', link: '/basic/variable' },
           { text: '運算子', link: '/basic/operator' },
           { text: '邏輯判斷式', link: '/basic/condition' },
