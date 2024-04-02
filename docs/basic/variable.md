@@ -125,7 +125,7 @@ let b = 1
 console.log(b)          // 2
 ```
 
-## 變數資料型態
+## 資料型態
 在程式語言裡的值都有資料型態，最基本的型態有下面幾種   
 
 - `number` 或 `int` 代表整數數字
@@ -145,22 +145,22 @@ console.log(b)          // 2
 
 ```js
 // 文字需用引號包起來
-const str1 = "文字";
-const str2 = '文字';
-const str3 = `文字`;
+const str1 = "文字"
+const str2 = '文字'
+const str3 = `文字`
 // ` 內的文字可以換行
 const str4 = `aa
-aa`;
+aa`
 
 // 數字
-const int = 123;
-const float = 123.456;
+const int = 123
+const float = 123.456
 
 // 布林值
-const bool = true;
+const bool = true
 
 // 使用 typeof 查看變數的資料型態
-console.log(typeof int);
+console.log(typeof int)
 ```
 
 <ImageFigure
