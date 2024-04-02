@@ -2,7 +2,7 @@
 
 function 可以將一段程式碼包裝起來，可以重複使用，也方便維護，寫成物件更可以將程式碼分類。  
 
-## 認識語法
+## 語法
 function 由下列幾個部分組成  
 - `名稱` 跟變數宣告一樣，給這個 function 一個名稱，建議以程式碼的功能命名
 - `()` 放傳入 function 的值
@@ -339,7 +339,7 @@ console.log(gcd(2002, 847))
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/kCooBR9xwUE?t=176" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-## var
+## var 區域
 `var` 其實是以 function 為區域的區域變數
 ```js
 var a = 1
