@@ -20,7 +20,7 @@ const props = defineProps({
 })
 
 onMounted(async () => {
-  const { default: Treeviz } = await import('treeviz')
+  const Treeviz = await import('treeviz')
   const tree = Treeviz.create({
     htmlId: props.id,
     idKey: "id",
