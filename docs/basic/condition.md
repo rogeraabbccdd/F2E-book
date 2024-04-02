@@ -415,7 +415,7 @@ const name = prompt('請輸入名字') || '路人'
 console.log(name)
 ```
 
-## 綜合應用
+## 綜合練習
 使用判斷式製作問答題  
 ```js
 let score = 0
