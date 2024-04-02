@@ -45,7 +45,7 @@ export default defineConfig({
         items: [
           { text: 'BOM', link: '/interaction/bom' },
           { text: 'DOM', link: '/interaction/dom' },
-          { text: '日期', link: '/interaction/date' },
+          { text: '時鐘', link: '/interaction/clock' },
           { text: '事件', link: '/interaction/events' },
           { text: 'Observer', link: '/interaction/observer' },
         ]
