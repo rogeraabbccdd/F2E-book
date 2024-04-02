@@ -43,7 +43,8 @@ export default defineConfig({
       {
         text: 'JavaScript 網頁操作',
         items: [
-          { text: 'BOM 與 DOM', link: '/interaction/bom-dom' },
+          { text: 'BOM', link: '/interaction/bom' },
+          { text: 'DOM', link: '/interaction/dom' },
           { text: '日期', link: '/interaction/date' },
           { text: '事件', link: '/interaction/events' },
           { text: 'Observer', link: '/interaction/observer' },
