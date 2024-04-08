@@ -3,7 +3,28 @@
 Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行指定的 function  
 
 ## Mutation Observer
-當觀察的 DOM 元素變動時會觸發
+當觀察的 DOM 元素變動時會執行指定的 function  
+不會立即執行，會先儲存變動記錄，等到所有變動都完成後再執行  
+- 使用 `new MutationObserver(function)` 建立
+  - function 內的 `mutations` 參數是一個陣列，裡面包含所有變動的紀錄
+  - 變動的記錄包含的資訊
+    - `type` 變動類型
+    - `target` 變動的元素
+    - `addedNodes` 被新增的節點
+    - `removedNodes` 被移除的節點
+    - `attributeName` 變動的屬性
+    - `oldValue` 變動前的值
+- `.observe(元素, 設定)` 使用設定觀察指定的元素
+  - `childList` 是否觀察下一層元素的增減
+  - `subtree` 是否觀察所有內層元素
+  - `attributes` 是否觀察屬性變動
+  - `characterData` 是否觀察內容變動
+  - `attributeOldValue` 是否紀錄舊屬性
+  - `characterDataOldValue` 是否紀錄舊內容
+  - `attributeFilter` 指定觀察的屬性名稱，沒設定就是全部
+- `.takeRecords()` 取得並移除已經發生但尚未處理記錄
+- `.disconnect()` 停止觀察
+
 ::: demo [vanilla]
 ```html
 <html>
@@ -19,11 +40,8 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
   }
 </style>
 <script>
-  // 取得要觀察的元素
   const div = document.getElementById('div-mutation')
 
-  // 建立一個觀察者
-  // new MutationObserver(觀察到變更時執行的 function)
   const observer = new MutationObserver(mutations => {
     for (const mutation of mutations) {
       // type - 變動類型
@@ -54,12 +72,10 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
     // attributeFilter: ['href']
   })
 
-  // 停止觀察
   // observer.disconnect()
 
   const btn = document.getElementById('btn-mutation')
   btn.addEventListener('click', () => {
-    // 修改元素，檢查是否觸發觀察者
     div.innerText += 'a'
   })
 </script>
@@ -67,7 +83,22 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
 :::
 
 ## Resize Observer
-當觀察的 DOM 元素縮放時會觸發
+當觀察的 DOM 元素縮放時會觸發  
+- 使用 `new ResizeObserver(function)` 建立
+  - function 的 `mutations` 參數陣列，裡面包含所有變動的紀錄
+    - `target` 變動的元素
+    - `contentRect` 元素的寬高與座標
+    - `borderBoxSize.blockSize` 元素的高度
+    - `borderBoxSize.inlineSize` 元素的寬度
+    - `contentBoxSize.blockSize` 元素的高度
+    - `contentBoxSize.inlineSize` 元素的寬度
+- `.observe(元素, 設定)` 使用設定觀察指定的元素
+  - 設定以 `box` 調整觀察元素的寬高計算方式
+    - `content-box` 元素的寬高不包含邊框
+    - `border-box` 元素的寬高包含邊框
+- `.disconnect()` 停止觀察
+- `.unobserve(元素)` 停止觀察某元素
+
 ::: demo [vanilla]
 ```html
 <html>
@@ -134,6 +165,18 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
 
 ## Intersection Observer
 當元素相交時會觸發
+- 使用 `new IntersectionObserver(function, 設定)` 建立
+  - function 參數
+    - `entries` 是一個陣列，裡面包含所有相交的元素
+    - `owner` 是 `IntersectionObserver` 的設定
+  - 設定參數
+    - `root` 以哪個元素為依據，預設為 null，表示以瀏覽器的可視窗口作為依據
+    - `rootMargin` 計算相交時的偏移量
+    - `threshold` 設定觸發的比例門檻，若設定為 0.5，則元素 50% 出現和離開就會觸發，也可以設定為陣列
+- `.observe(元素)` 觀察元素
+- `.disconnect()` 停止觀察
+- `.unobserve(元素)` 停止觀察某元素
+
 ::: demo [vanilla]
 ```html
 <html>
@@ -165,11 +208,9 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
 <script>
   // 取得要觀察的元素
   const div = document.getElementById('intersection-target')
-
   const info = document.getElementById('intersection-info')
 
   // 建立一個觀察者
-  // new IntersectionObserver(觀察到變更時執行的 function, 設定)
   // entries - 相交的元素
   // owner - IntersectionObserver 設定
   const observer = new IntersectionObserver((entries, owner) => {
@@ -194,9 +235,7 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
     threshold: 0.5,
   })
 
-  // 停止觀察
   // observer.disconnect()
-  // 停止觀察某元素
   // observer.unobserve(div1)
 
   observer.observe(div)
@@ -204,7 +243,7 @@ Observer 監視器，可以觀察 DOM 元素的變化，當元素變化時執行
 ```
 :::
 
-## 應用
+## 應用範例
 圖片 Lazy load
 ::: demo [vanilla]
 ```html
