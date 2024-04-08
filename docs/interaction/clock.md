@@ -79,7 +79,6 @@ console.log("現在時間是 " + string2)
   background-image: url(https://images.unsplash.com/photo-1489549132488-d00b7eee80f1?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&dl=diego-ph-222506-unsplash.jpg);
   background-size: cover;
   background-position: center 60%;
-  background-attachment: fixed;
   overflow: hidden;
 }
 
