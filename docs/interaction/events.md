@@ -10,43 +10,33 @@
 - 驗證使用者輸入內容
 - 阻止事件的發生
 
-以下是幾個常用的事件  
+以下是常用的事件  
 | 事件        | 說明                 |
 | ----------- | -------------------- |
-| onclick     | 滑鼠點擊             |
-| onkeydown   | 鍵盤按鍵按下去時     |
-| onkeyup     | 鍵盤按鍵放開時       |
-| onmouseover | 滑鼠移到 HTML 元素上 |
-| onmouseout | 滑鼠移開 HTML 元素   |
-| onfocus     | 滑鼠點到輸入欄位     |
-| onblur      | 滑鼠點輸入欄位外     |
-| onchange    | 元素改變時           |
-| oninput     | 表單欄位輸入時       |
-| onsubmit    | 表單送出時           |
-| oncopy      | 複製時               |
+| click     | 滑鼠點擊             |
+| keydown   | 鍵盤按鍵按下去時     |
+| keyup     | 鍵盤按鍵放開時       |
+| mouseover | 滑鼠移到 HTML 元素上 |
+| mouseout | 滑鼠移開 HTML 元素   |
+| focus     | 滑鼠點到輸入欄位     |
+| blur      | 滑鼠點輸入欄位外     |
+| change    | 元素改變時           |
+| input     | 表單欄位輸入時       |
+| submit    | 表單送出時           |
+| copy      | 複製時               |
 
 ## 行內事件
 HTML 元素的事件可以像 CSS 的行內樣式一樣，寫在標籤內  
 只要加上事件名，就能在雙引號內寫上要執行的 JavaScript 程式碼  
 事件裡的 `this` 在這裡會代表發生事件的元素  
 
-::: demo [vanilla]
 ```html
-<html>
-    <input type="button" value="點我" onclick="alert('你點了按鈕，好棒')">
-    <input type="button" value="點我看時間" onclick="this.value = new Date().toLocaleString('zh-tw')">
-</html>
-```
-:::
-
-如果像上面的第二個例子，雙引號內的程式碼太長的話會影響閱讀  
-所以我們可以將雙引號內的程式碼改寫成 function  
-
-```html
+<input type="button" value="點我" onclick="alert('你點了按鈕，好棒')">
+<input type="button" value="點我看時間" onclick="this.value = new Date().toLocaleString('zh-tw')">
 <input type="button" value="點我看時間" onclick="time(this)">
 <script>
-const time = (elem) => {
-    elem.value = new Date().toLocaleString('zh-tw');
+const time = (el) => {
+    el.value = new Date().toLocaleString('zh-tw');
 }
 </script>
 ```
@@ -55,69 +45,100 @@ const time = (elem) => {
 如果一次要為 100 個元素綁定事件，且每個都寫在標籤裡，不只會影響閱讀，還會讓維護變得更麻煩  
 所以我們可以使用 JavaScript 的 DOM 一次完成  
 
-:::danger 注意
-如果是使用 `getElementsByClassName()` 這類結果是陣列的函式抓取 DOM 的話  
-需要使用迴圈為每個東西添加事件綁定
-::: 
+```html
+<input type="button" value="按鈕" class="btns">
+<input type="button" value="按鈕" class="btns">
+<input type="button" value="按鈕" class="btns">
+<input type="button" value="按鈕" class="btns">
+<input type="button" value="按鈕" class="btns">
+<script>
+const btns = document.getElementsByClassName("btns");
+for(const btn of btns){
+  btn.onclick = () => {
+    alert("你點了按鈕，你好棒");
+  }
+}
+</script>
+```
+
+也能在 BOM 綁定事件  
+```js
+window.onload = () => {
+  alert("網頁載入完成")
+}
+```
+
+## 事件監聽
+事件監聽相比事件綁定更為彈性，可以為同一個元素綁定多個事件
+- `.addEventListener(function)` 增加事件監聽器至元素
+- `.removeEventListener(function)` 從元素移除事件監聽器
+
+```js
+const onBtnClick1 = () => {
+  alert('click1')
+}
+const onBtnClick2 = () => {
+  alert('click2')
+}
+btn.addEventListener('click', onBtnClick1)
+btn.addEventListener('click', onBtnClick2)
+
+btn.removeEventListener('click', onBtnClick1)
+btn.removeEventListener('click', onBtnClick2)
+```
+
+## Event 物件
+`event` 包含了事件的資訊  
+- 鍵盤類事件可以取得按下的按鍵 [JavaScript Key Code Event Tool](https://www.toptal.com/developers/keycode)
+- 滑鼠類事件可以取得滑鼠座標  
+  - `clientX`、`clientY` 滑鼠在瀏覽器視窗的座標
+  - `pageX`、`pageY` 滑鼠在整個網頁的座標
+  - `screenX`、`screenY` 滑鼠在螢幕的座標
+  - `offsetX`、`offsetY` 滑鼠在元素內的座標
 
 ::: demo [vanilla]
 ```html
 <html>
-    <input type="button" value="按鈕" class="btns">
-    <input type="button" value="按鈕" class="btns">
-    <input type="button" value="按鈕" class="btns">
-    <input type="button" value="按鈕" class="btns">
-    <input type="button" value="按鈕" class="btns">
+  看看你按哪個鍵: <span id="key"></span>
 </html>
 <script>
-const btns = document.getElementsByClassName("btns");
-for(let btn of btns){
-    btn.onclick = () => {
-        alert("你點了按鈕，你好棒");
-    }
+const p = document.getElementById("key");
+document.onkeydown = (e) => {
+  p.innerText = e.key;
 }
 </script>
 ```
 :::
 
-也能在 BOM 綁定事件  
-```js
-window.onload = () => {
-    alert("網頁載入完成");
-}
-```
-
-## event 物件
-`event` 包含了事件的資訊  
-像是使用者的鍵盤事件按了哪個按鍵、事件目標，也能阻止事情發生  
-可以將它帶入 function 內，以取得事件的相關資訊  
+## 預設動作
+某些網頁元素有預設動作，可以使用 `event.preventDefault()` 阻止
+- 點 `a` 連結會跳頁
+- 在 `form` 中按 `submit` 會送出表單至 `action` 屬性指定的網址
 
 ::: demo [vanilla]
 ```html
 <html>
-    點連結不會跳頁: <a href="https://google.com" id="mylink">連結</a> <br>
-    看看你按哪個鍵: <span id="key"></span>
+  點連結不會跳頁: <a href="https://google.com" id="mylink">連結</a>
 </html>
 <script>
 const link = document.getElementById("mylink");
-const p = document.getElementById("key");
 link.onclick = (e) => {
-    // 阻止事件預設動作
-    e.preventDefault();
-    console.log(e.target);
-}
-document.onkeydown = (e) => {
-    p.innerText = e.key;
+  // 阻止事件預設動作
+  e.preventDefault();
+  console.log(e.target);
 }
 </script>
 ```
 :::
 
 ## 事件冒泡
-事件冒泡指的是「從啟動事件的元素節點開始，逐層往上傳遞」，直到整個網頁的根節點 `document`  
-事件冒泡問題可以透過 `event.stopPropagation()` 解決
+事件冒泡指的是事件逐層往上傳遞，直到根元素的過程
   
-<img src="/images/ch12/bubble.png" height="300" style="margin: 10px 0;">
+<ImageFigure
+  src="/images/ch12/bubble.png"
+  alt="事件運作方式"
+  title="事件運作方式"
+>事件運作方式</ImageFigure>
   
 ::: demo [vanilla]
 ```html
@@ -146,7 +167,7 @@ inner.addEventListener('click', () => {
   display: block;
   width: 300px;
   height: 300px;
-  background-color: #f00;
+  background-color: blue;
 }
 
 #bubble-inner {
@@ -154,7 +175,7 @@ inner.addEventListener('click', () => {
   display: block;
   width: 150px;
   height: 150px;
-  background-color: #00f;
+  background-color: skyblue;
   top: 75px;
   left: 75px;
 }
@@ -162,95 +183,31 @@ inner.addEventListener('click', () => {
 ```
 :::
 
-## 網頁讀取進度
-可以用下列事件偵測網頁讀取進度  
+## 網頁載入狀態
+`document.readyState` 代表目前網頁載入狀態  
+搭配 `document.onreadystatechange` 可以偵測網頁讀取進度  
+進度分為三種
+- `loading` 讀取中
+- `interactive` 解析完檔案，圖片等資源下載中
+- `complete` 完成
+
+:::danger 注意
+只能偵測狀態，無法偵測圖片等資源的載入進度  
+所以需要透過其他方式製作載入進度的功能
+:::
+
 ```js
-// 當準備狀態變更時
-// loading 讀取中
-// interactive 解析完檔案了，不過圖片等資源下載中
-// complete 完成
 document.onreadystatechange = () => {
   console.log(document.readyState)
 }
 ```
 
-## 尋找看不見的貓咪
-按下開始按鈕後，在藍色區域裡尋找看不見的貓咪，滑鼠離貓越近聲音越大  
-::: demo [vanilla]
-```html
-<html>
-  <input type="button" value="開始" id="start">
-  <div id="gamearea">
-    <img src="/images/ch12/cat.jpg" alt="" width="100" id="cat">
-  </div>
-  <audio src="/assets/ch12/meow.mp3" volume="0.0" id="audio"></audio>
-</html>
-<script>
-const gamearea = document.getElementById('gamearea')
-const btnStart = document.getElementById('start')
-const cat = document.getElementById('cat')
-const audio = document.getElementById('audio')
-let start = false
-let timer = 0
-let seconds = 0
+## 應用範例
+- 尋找貓咪遊戲
+- 網頁捲動背景視差效果
+- 網頁載入進度條
 
-const catX = Math.round(Math.random()* (gamearea.offsetWidth-300))
-const catY = Math.round(Math.random()* (gamearea.offsetHeight-200))
-
-cat.style.left = catX + 'px'
-cat.style.top = catY + 'px'
-
-// 頁面最長距離^2 = 寬^2 + 高^2
-const max = Math.round(Math.sqrt(Math.pow(gamearea.offsetWidth, 2) + Math.pow(gamearea.offsetHeight, 2)))
-
-gamearea.onmousemove = (event) => {
-  const mouseX = event.offsetX
-  const mouseY = event.offsetY
-  
-  const disX = Math.abs(mouseX - catX)
-  const disY = Math.abs(mouseY - catY)
-
-  const dis = Math.round(Math.sqrt(Math.pow(disX, 2) + Math.pow(disY, 2)))
-
-  audio.volume = 1 - (dis / max)
-}
-
-btnStart.onclick = () => {
-  btnStart.style.display = 'none'
-  start = true
-  timer = setInterval(() => {
-    seconds++
-    if (seconds % 5 == 0) {
-      audio.play()
-    }
-  }, 100)
-}
-
-cat.onclick = () => {
-  if (!start) return
-  clearInterval(timer)
-  cat.style.opacity = 1
-  cat.onclick = null
-  alert(`你花了 ${seconds/10} 秒`)
-}
-</script>
-<style>
-#cat {
-  position: absolute;
-  user-select: none;
-  -webkit-user-drag: none;
-  opacity: 0;
-}
-#gamearea {
-  width: 100%;
-  height: 300px;
-  position: relative;
-  border: 1px solid blue;
-}
-</style>
-```
-:::
-
+## 綜合練習
 :::warning 練習
 製作猜拳遊戲，網頁有三個按鈕，分別是剪刀、石頭和布  
 按鈕點下去後電腦隨機出拳，將電腦出拳和勝負結果用 `alert()` 顯示  
