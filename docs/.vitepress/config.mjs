@@ -95,7 +95,7 @@ export default defineConfig({
         items: [
           { text: 'VuePress 網站', link: '/others/vuepress' },
           { text: 'Git 版本控管', link: '/others/git' },
-          { text: '預處理器', link: '/others/pre-processor' },
+          { text: 'Pug', link: '/others/pug' },
           { text: 'Nuxt.js', link: '/others/nuxt' },
         ]
       },
