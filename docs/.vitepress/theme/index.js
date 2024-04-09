@@ -1,4 +1,5 @@
 import DefaultTheme from 'vitepress/theme'
+import googleAnalytics from 'vitepress-plugin-google-analytics'
 import FlowChart from '../components/FlowChart.vue'
 import Mindmap from '../components/Mindmap.vue'
 import PDF from '../components/PDF.vue'
@@ -10,6 +11,9 @@ import './custom.sass'
 export default {
   ...DefaultTheme,
   enhanceApp({ app, router, siteData }) {
+    googleAnalytics({
+      id: 'G-SV22CZB2YX',
+    }),
     app.component('FlowChart', FlowChart)
     app.component('Mindmap', Mindmap)
     app.component('PDF', PDF)

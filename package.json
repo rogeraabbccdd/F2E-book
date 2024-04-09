@@ -16,7 +16,8 @@
   "devDependencies": {
     "markdown-it-container": "^4.0.0",
     "sass": "^1.72.0",
-    "vitepress": "^1.0.1"
+    "vitepress": "^1.0.1",
+    "vitepress-plugin-google-analytics": "^1.0.2"
   },
   "dependencies": {
     "flowchart.js": "^1.18.0",
