@@ -1,6 +1,6 @@
 # jQuery - DOM
 
-### 抓取
+## 抓取
 使用 `$(選擇器)` 抓取元素
 - `.length` 取到的元素數量
 - `.eq(索引)` 指定取到的第幾個元素
@@ -25,7 +25,7 @@
 - `.closest(選擇器)` 上層第一個符合選擇器的元素
 
 :::danger 注意
-指定第幾個元素一定要使用 `.eq()`，不要直接用 `[索引]`
+指定第幾個元素一定要使用 `.eq()`，不要直接用 `[索引]`  
 使用 `[索引]` 會變成原生 JS 的 DOM 元素
 ```js
 console.log($('div')[0].innerText)
@@ -95,7 +95,7 @@ $("#target").parentsUntil("#target2")
 $("#target").closest("div")
 ```
 
-### 修改
+## 修改
 - `.text()` 文字
 - `.html()` HTML
 - `.val()` 輸入欄位的值
@@ -169,7 +169,7 @@ $('<p>後面</p>').insertAfter('#target')
 $('#target').remove()
 ```
 
-### 事件
+## 事件
 - 部分常用事件已經有對應的函式
   - `.click()`
   - `.submit()`
