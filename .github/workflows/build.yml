@@ -8,16 +8,17 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+      - uses: oven-sh/setup-bun@v1
+      - uses: oven-sh/setup-bun@v1
         with:
-          node-version: 16
+          bun-version: latest
       - name: Install and Build
         run: |
-          pnpm install
-          pnpm run build
+          bun install
+          bun run build
       - name: Deploy
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
-          folder: dist
+          folder: docs/.vitepress/dist
           single-commit: true
