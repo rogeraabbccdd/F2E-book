@@ -6,92 +6,107 @@
 ::: demo [vanilla]
 ```html
 <html>
-    <div id="game"></div>
+    <div id="game-cards"></div>
 </html>
 <style>
-#game {
+#game-cards {
     width: 300px;
 }
 
 .card {
     width: 50px;
     height: 90px;
-    /* 設定子元素在 3D 空間內 */
-    transform-style: preserve-3d;
     position: relative;
-    transition: transform 0.5s;
     float: left;
     margin: 10px;
+    /* 設定子元素在 3D 空間內 */
+    transform-style: preserve-3d;
+    transition: transform 1s;
 }
-
-.card-open {
-    transform: rotateY(180deg);
-}
-
 .card-front {
     width: 100%;
     height: 100%;
-    background-image: url(/images/ch17/Red_back.jpg);
-    background-position: center;
+    background-image: url(/F2E-book/images/ch17/1S.jpg);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
-    -webkit-backface-visibility: hidden;
+    /* 隱藏背面 */
     backface-visibility: hidden;
 }
-
 .card-back {
     width: 100%;
     height: 100%;
-    background-position: center;
+    background-image: url(/F2E-book/images/ch17/Red_back.jpg);
     background-size: contain;
     background-repeat: no-repeat;
+    background-position: center;
     position: absolute;
     transform: rotateY(180deg);
-    -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
+}
+.card-close {
+    transform: rotateY(180deg);
 }
 </style>
 <script>
-    $(function(){
-        for(let i=0;i<16;i++) {
-            $("#game").append(`<div class="card">
-                    <div class="card-front"></div>
-                    <div class="card-back"></div>
-                </div>
-            `)
+    for (let i = 0; i < 16; i++) {
+      $('#game-cards').append(`
+        <div class="card card-close">
+          <div class="card-front"></div>
+          <div class="card-back"></div>
+        </div>
+      `)
+    }
+
+    // 決定每張的數字
+    $('.card').each(function (index) {
+      const number = index % 8 + 1
+      $(this).find('.card-front').css('background-image', `url(/F2E-book/images/ch17/${number}S.jpg)`)
+      $(this).attr('data-number', number)
+    })
+
+    // 打亂
+    for (let i = 0; i < 20; i++) {
+      const randomA = Math.round(Math.random() * 15)
+      const randomB = Math.round(Math.random() * 15)
+      $('.card').eq(randomA).insertAfter( $('.card').eq(randomB) )
+    }
+
+    // 翻牌
+    $('#game-cards').on('click', '.card', function () {
+      if (
+        // .card 沒有 .card-close 代表被翻開
+        // 如果已翻開數小於兩張
+        $('.card:not(.card-close)').length < 2 &&
+        // 且這張牌還沒翻開
+        $(this).hasClass('card-close') &&
+        // 這張牌還沒配對
+        !$(this).hasClass('card-ok')
+      ) {
+        $(this).removeClass('card-close')
+      }
+
+      // 如果翻開兩張了
+      if ($('.card:not(.card-close)').length === 2) {
+        // 如果兩張一樣
+        if (
+          $('.card:not(.card-close)').eq(0).attr('data-number') ===
+          $('.card:not(.card-close)').eq(1).attr('data-number')
+        ) {
+          $('.card:not(.card-close)').addClass('card-ok')
+          $('.card:not(.card-close)').fadeTo(1000, 0)
         }
 
-        for(let i=0;i<$(".card").length;i++){
-            let add = i % ( $(".card").length / 2 ) + 1;
-            $(".card").eq(i).find(".card-back").css("background-image", `url(/images/ch17/${add}S.jpg)`);
-            $(".card").eq(i).attr("data-card", add);
-
-            let target = Math.floor( Math.random()*$(".card").length );
-            $(".card").eq(target).insertAfter( $(".card").eq(i) );
-        }
-
-        $("#game").on("click", ".card", function(){
-            if( $(".card-open").length < 2 && !$(this).hasClass("card-open") ){
-                $(this).addClass("card-open");
-            }
-
-            if($(".card-open").length === 2 ) {
-                setTimeout(()=>{
-                    $(".card-open").removeClass("card-open");
-                }, 1000)
-
-                if($(".card-open").eq(0).attr("data-card") === $(".card-open").eq(1).attr("data-card") ){
-                    $(".card-open").fadeTo(1000, 0).addClass("card-clear");
-                }
-            }
-            
-            if( $(".card-clear").length == $(".card").length ){
-                setTimeout(() => {
-                    alert("恭喜過關");
-                }, 500);
-            }
-        })
+        setTimeout(function () {
+          // 翻回來
+          $('.card:not(.card-close)').addClass('card-close')
+          // 過關判斷
+          if ( $('.card-ok').length === $('.card').length ) {
+            alert('過關')
+          }
+        }, 1000)
+      }
     })
 </script>
 ```
