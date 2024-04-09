@@ -1,27 +1,26 @@
 # 打殭屍小遊戲
 
-
 製作打殭屍小遊戲，練習 jQuery 的 DOM 操作和動畫  
 
 ## 範例
 ::: demo [vanilla]
 ```html
 <html>
-    <div id="game"></div>
+    <div id="game-zombie"></div>
     <input type="button" value="開始遊戲" id="start">
     <p> 分數: <span id="score">0</span> 分</p>
     <p> 剩餘 <span id="sec">30</span> 秒</p>
 </html>
 <style>
-    #game {
+    #game-zombie {
         width: 400px;
         height: 400px;
         background: black;
-        cursor: url(/images/ch16/cursor.png) 50 50, auto;
+        cursor: url(/F2E-book/images/ch16/cursor.png) 50 50, auto;
         overflow: hidden;
         position: relative;
     }
-    #game img {
+    #game-zombie img {
         height: 150px;
         position: absolute;
     }
@@ -77,13 +76,13 @@
                     $(this).attr("disabled", false);
                     setTimeout(()=>{
                         alert("時間到");
-                        $("#game img").remove();
+                        $("#game-zombie img").remove();
                     }, 100)
                 }
 
                 let num = rand(10);
                 if(num > 5) {
-                    $("#game").append(`<img src="/images/ch16/1.gif" id="zb${zbid}">`);
+                    $("#game-zombie").append(`<img src="/F2E-book/images/ch16/kodai_sacabambaspis.png" id="zb${zbid}">`);
                     $(`#zb${zbid}`).css({ 
                         left: rand(70)+"%", 
                         top: rand(70)+"%"
@@ -94,8 +93,8 @@
             }, 1000)
         })
 
-        $("#game").on("click", "img", function(){
-            $(this).attr("src", "/images/ch16/blood.png");
+        $("#game-zombie").on("click", "img", function(){
+            $(this).attr("src", "/F2E-book/images/ch16/blood.png");
             $(this).stop();
             $(this).css("pointer-events", "none");
             score++;
