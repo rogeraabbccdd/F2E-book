@@ -1,118 +1,199 @@
-# jQuery 的 DOM 操作
+# jQuery - DOM
 
-jQuery 是一個 JavaScript 函式庫  
-
-## jQuery 介紹
-jQuery 是一個 JavaScript 函式庫  
-可以簡化 DOM 操作的程式碼，並提供一些方便的函式  
-<img src="/images/ch14/domnjquery.jpg" height="500" style="margin: 10px 0;">
-
-## DOM
 ### 抓取
-jquery 抓取 DOM 非常簡單，只要使用 `$()` 就好，裡面放 CSS 選擇器文字  
-如 `$("h1")`、`$(".class")` 和 `$("#id")`  
-### 修改
+使用 `$(選擇器)` 抓取元素
+- `.length` 取到的元素數量
+- `.eq(索引)` 指定取到的第幾個元素
+- `.index()` 取得元素是同一層的第幾個
+- `.each(function)` 迴圈每個元素
+  - `index` 迴圈到的索引
+  - `element` 迴圈到的元素，也可以用 `this` 代表
+- `.filter(選擇器)` 篩選符合條件的元素
+- `.not(選擇器)` 篩選不符合條件的元素
+- `.find(選擇器)` 在所有下層找符合指定選擇器的元素
+- `.children(選擇器)` 在下一層找符合指定選擇器的元素，不填就是所有
+- `.prev(選擇器)` 同一層前一個，可以用選擇器過濾，不填就是所有
+- `.prevAll(選擇器)` 同一層前面所有，可以用選擇器過濾，不填就是所有
+- `.prevUntil(選擇器)` 同一層前面直到選擇器間的東西，不含頭尾
+- `.next(選擇器)` 同一層後一個，可以用選擇器過濾，不填就是所有
+- `.nextAll(選擇器)` 同一層後面所有，可以用選擇器過濾，不填就是所有
+- `.nextUntil(選擇器)` 同一層後面直到選擇器間的東西，不含頭尾
+- `.siblings()` 同一層的其他東西
+- `.parent()` 上一層，可以用選擇器過濾
+- `.parents()` 所有上層，可以用選擇器過濾
+- `.parentsUntil(選擇器)` 往上層找直到選擇器間的東西
+- `.closest(選擇器)` 上層第一個符合選擇器的元素
+
+:::danger 注意
+指定第幾個元素一定要使用 `.eq()`，不要直接用 `[索引]`
+使用 `[索引]` 會變成原生 JS 的 DOM 元素
 ```js
-// 如果選擇器有不只一個東西，用 .eq() 指定第幾個
-// 就像原生 JS 的 document.getElementsByClassName 取其中一個要用 [] 一樣
-// .text() 文字，括號裡沒東西是取值，有東西是設值
-console.log( $("h1").eq(0).text() );
-$("h1").eq(1).text("Hi");
+console.log($('div')[0].innerText)
+console.log($('div').eq(0).text())
+```
+:::
 
-// .html() HTML，括號裡沒東西是取值，有東西是設值
-console.log( $("h1").eq(2).html() );
-$("h1").eq(2).html("<a href='https://google.com'>Google</a>");
+:::danger 注意
+jquery 函式內的 function 盡量不要使用箭頭函式  
+因為可以使用 `$(this)` 代表迴圈到的元素或發生事件的元素
+:::
 
-// .val() 輸入欄位的值，括號裡沒東西是取值，有東西是設值
-$("#mytext").val("Hello");
+```js
+// 第三個 h1
+$("h1").eq(2)
 
-// .attr() 標籤屬性
-// 括號裡第一個是放屬性名稱，如果有第二個的話，就是改值
-console.log( $("#myimg").attr("src") );
-$("#myimg").attr("src", "https://www.imgworlds.com/wp-content/uploads/2015/12/18-CONTACTUS-HEADER.jpg");
+// 第一個 .class
+$(".class").eq(0)
 
-// .css() 以行內樣式修改css
-$("h1").css("color", "red");
-$("h1").css({ "color": "red", "font-size": "50px" });
-console.log( $("h1").css("color") );
+// #id
+$("#id")
 
-// .addClass() 新增 class
-// 每個要新增的 class 以空白分隔
-$("h1").eq(0).addClass("blue big");
+// .index() 取得元素是同一層的第幾個
+$('.card').index()
 
-// .removeClass() 移除 class
-// 每個要新增的 class 以空白分隔
-$("h1").eq(0).removeClass("blue");
+// .each() 迴圈每個元素
+$('div').each(function(index, element){
+  console.log(index, element, $(this))
+})
 
-// .hasClass() 是否有 class
-$("h1").eq(0).hasClass("blue big");
+// .filter() 篩選符合條件的元素
+$('div').filter('.card')
+
+// .not() 篩選不符合條件的元素
+$('a').not('.nav')
 
 // .find() 在裡面找符合指定選擇器的元素
-$("#ul1").find("li").eq(2);
+$("#target").find("div").eq(2)
 
-// .prev() 同一層的上一個東西
-// .prevAll() 同一層的所有上面的東西，()裡面可以放選擇器篩選
-// .next() 同一層的下一個東西
-// .nextAll() 同一層的所有下面的東西，()裡面可以放選擇器篩選
-myli.prev().css("color", "red");
-myli.nextAll(".lili").css("color", "red");
+// .children() 在下一層找符合指定選擇器的元素
+$("#target").children(".card")
 
-// .siblings() 同一層的其他東西，()裡面可以放選擇器篩選
-const myli2 = $("#ul2 li").eq(2);
-myli2.siblings().css("color", "red");
+// .prev() 同一層前一個
+$('#target').prev()
+// .prevAll() 同一層前面所有
+$('#target').prevAll()
+// .prevUntil() 同一層前面直到選擇器間的東西
+$('#target').prevUntil('#target2')
 
-// .prepend() 裡面的第一個東西前插入 html
-// .append() 裡面的最後一個東西後插入 html
-// .insertBefore() 把東西放到指定的前面
-// .insertAfter() 把東西放到指定的後面
-$("#addul3").on("click", function(){
-    $("#ul3").prepend("<li>前面新的</li>");
-    $("#ul3").append("<li>後面新的</li>");
-    $('<p>前面</p>').insertBefore('#ul3')
-    $('<p>後面</p>').insertAfter('#ul3')
-})
+// .next() 同一層後一個
+$('#target').next()
+// .nextAll() 同一層後面所有
+$('#target').nextAll()
+// .nextUntil() 同一層後面直到選擇器間的東西
+$('#target').nextUntil('#target2')
+
+// .siblings() 同一層的其他東西
+$('#target').siblings()
 
 // .parent() 上一層
-// .parents() 所有上層，()裡面可以放選擇器篩選
-// .closest()  ()裡面可以放選擇器篩選出來最近的一個
-$("#ul3").parent().css("background", "blue");
-$("#ul3").parents().css("background", "blue");
-$("#ul3").parents("div").css("background", "blue");
-$("#ul3").closest("body").css("background", "blue");
-
-$("#abc").on("click", function(){
-    $(this).parent().remove();
-})
+$("#target").parent()
+// .parents() 所有上層
+$("#target").parents()
+// .parentsUntil() 往上層找直到選擇器間的東西
+$("#target").parentsUntil("#target2")
+// .closest() 選擇器篩選出來最近的一個
+$("#target").closest("div")
 ```
 
-:::warning 練習
-兩個 ul，裡面各 5 個 li  
-從第 2 個 ul 的第 3 個 li 開始
-改變第 1 個 ul 的第 4 個 li 的顏色  
-請從下面範例程式碼修改  
+### 修改
+- `.text()` 文字
+- `.html()` HTML
+- `.val()` 輸入欄位的值
+- `.attr()` 標籤屬性
+- `.css()` 行內樣式
+- `.addClass()` 新增 class
+- `.removeClass()` 移除 class
+- `.hasClass()` 是否有 class
+- `.prepend()` 裡面的第一個東西前插入 html
+- `.append()` 裡面的最後一個東西後插入 html
+- `.insertBefore(元素或HTML)` 把東西放到指定的前面，填現有的元素是移動，HTML 是新增
+- `.insertAfter(元素或HTML)` 把東西放到指定的後面，填現有的元素是移動，HTML 是新增
+- `.remove()` 刪除元素
+
+:::tip TIP
+jQuery 可以一次對選擇到的元素做修改，不需要使用迴圈
 ```js
-$("ul").eq(??)  ......  .css("color", "red")
+$('li').each(function() {
+  $(this).addClass('text-red');
+});
+
+$('li').addClass('text-red');
 ```
 :::
+
+```js
+// .text() 取得文字
+console.log( $('h1').eq(0).text() )
+// .text() 修改文字
+$('h1').eq(1).text('Hi');
+
+// .html() 取得 HTML
+console.log( $('h1').eq(2).html() )
+// .html() 修改 HTML
+$('h1').eq(2).html('<a href='https://google.com'>Google</a>');
+
+// .val() 取得輸入欄位的值
+console.log( $('#input-password').val() )
+// .val() 修改輸入欄位的值
+$('#input-password').val('Hello')
+
+// .attr() 取得標籤屬性
+console.log( $('#img').attr('src') )
+// .attr() 修改標籤屬性
+$('#img').attr('src', 'picsum.jpg')
+
+// .css() 取得行內樣式
+console.log( $('h1').css('color') )
+// .css() 修改行內樣式
+$('h1').css('color', 'red')
+// .css() 修改多個行內樣式
+$('h1').css({ 'color': 'red', 'font-size': '50px' })
+
+// .addClass() 新增 class
+$('h1').eq(0).addClass('blue big');
+// .removeClass() 移除 class
+$('h1').eq(0).removeClass('blue');
+// .hasClass() 是否有 class
+$('h1').eq(0).hasClass('blue big');
+
+// .prepend() 裡面的第一個東西前插入 html
+$("#target").prepend("<p>前面新的</p>")
+// .append() 裡面的最後一個東西後插入 html
+$("#target").append("<p>後面新的</p>")
+// .insertBefore() 把東西放到指定的前面
+$('<p>前面</p>').insertBefore('#target')
+// .insertAfter() 把東西放到指定的後面
+$('<p>後面</p>').insertAfter('#target')
+
+// .remove() 刪除元素
+$('#target').remove()
+```
 
 ### 事件
-:::danger 注意
-jquery 函式內的 function 盡量不要使用箭頭函式
-:::
+- 部分常用事件已經有對應的函式
+  - `.click()`
+  - `.submit()`
+  - `.load()`
+  - `.mouseenter()`
+  - `.mouseleave()`
+  - `.mousemove()`
+- 其他事件需使用 `.on()` 綁定
+
 ```js
 // 使用事件的函式
 // .事件名稱(function(){})
 // 有 function 是事件處理，沒有則是觸發事件 
 // 只有部分常用事件有這種寫法
-$("#mybtn").click(function(){});
+$('#mybtn').click(function(){});
 
 // 使用 .on()
 // .on(事件名稱, function(){})
-$("#mybtn").on("click", function(){
-    alert("你好棒");
+$('#mybtn').on('click', function(){
+  alert('你好棒');
 })
 ```
 
+## 綜合練習
 :::warning 練習
 點按鈕換圖片
 - 原本圖片是科技高中校長
@@ -132,8 +213,6 @@ $("#mybtn").on("click", function(){
 可能會用到函式:
 - `.show()` 顯示div
 - `.hide()` 隱藏div
-- `.text()` 更換標籤內容文字
-- `.index()` 可以取得元素是同一層的第幾個
 
 兩種做法:
 1. 點按鈕換文字
