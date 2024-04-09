@@ -1,8 +1,8 @@
-# Git 版本控管
+# Git
 
 學習版本控管觀念、GitHub 及 GitKraken 工具
 
-## Git
+## 介紹
 <img src="/images/ch30/git.png" height="200" style="margin: 10px 0;">  
 
 Git 是一種分散式版本的版本控制系統，有免費、體積小、分散式的優點 
