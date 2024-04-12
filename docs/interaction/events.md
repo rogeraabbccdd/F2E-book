@@ -20,7 +20,7 @@
 | mouseout | 滑鼠移開 HTML 元素   |
 | focus     | 滑鼠點到輸入欄位     |
 | blur      | 滑鼠點輸入欄位外     |
-| change    | 元素改變時           |
+| change    | 表單欄位改變時           |
 | input     | 表單欄位輸入時       |
 | submit    | 表單送出時           |
 | copy      | 複製時               |
