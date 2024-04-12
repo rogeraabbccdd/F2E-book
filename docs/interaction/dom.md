@@ -118,8 +118,8 @@ document.getElementById("item2").previousElementSibling
   - `.add("class")` 新增 class
   - `.remove("class")` 移除 class
   - `.replace("old", "new")` 取代 class
-  - `.toggle("class")` 開關
-  - `.contains("class")` 是否有該
+  - `.toggle("class")` 切換 class，有就移除，沒有就新增
+  - `.contains("class")` 是否有 class
 
 :::tip TIP
 `.style` 只能取得行內樣式  
@@ -185,7 +185,8 @@ element.classList.toggle("red");
 
 ## 元素移動
 - `document.createElement(標籤名)` 新增一個元素，需另外使用語法 DOM
-- `.appendChild(元素)` 在內部最後面插入一個元素
+- `.appendChild(元素)`、`.append()` 在內部最後面插入元素
+- `.prependChild(元素)`、`.prepend()` 在內部最前面插入元素
 - `.replaceChild(新元素, 舊元素)` 在內部替換元素
 - `.insertBefore(新元素, 參考元素)` 在內部最前面插入一個元素，並指定插入位置，用於新增或移動元素
   - 參考元素為 null 時，等同於 `appendChild`
@@ -196,6 +197,9 @@ element.classList.toggle("red");
   - `afterend` 元素後標籤之後
 - `.remove()` 移除元素
 - `.removeChild(子元素)` 移除元素內的子元素，回傳被刪除的元素
+
+:::tip TIP
+:::
 
 ```js
 const p = document.createElement("p")
