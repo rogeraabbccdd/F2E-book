@@ -185,8 +185,8 @@ element.classList.toggle("red");
 
 ## 元素移動
 - `document.createElement(標籤名)` 新增一個元素，需另外使用語法 DOM
-- `.appendChild(元素)`、`.append()` 在內部最後面插入元素
-- `.prependChild(元素)`、`.prepend()` 在內部最前面插入元素
+- `.appendChild(元素)`、`.append(元素)` 在內部最後面插入元素
+- `.prependChild(元素)`、`.prepend(元素)` 在內部最前面插入元素
 - `.replaceChild(新元素, 舊元素)` 在內部替換元素
 - `.insertBefore(新元素, 參考元素)` 在內部最前面插入一個元素，並指定插入位置，用於新增或移動元素
   - 參考元素為 null 時，等同於 `appendChild`
@@ -199,6 +199,20 @@ element.classList.toggle("red");
 - `.removeChild(子元素)` 移除元素內的子元素，回傳被刪除的元素
 
 :::tip TIP
+- `.append()` 和 `.prepend()` 可以一次放入多個元素或文字
+- `.appendChild()` 和 `.prependChild()` 只能放入一個元素
+```js
+const p = document.createElement("p")
+element.append(p, 'Text1', 'Text2')
+
+const div = document.createElement("div")
+element.appendChild(div)
+```
+:::
+
+:::tip TIP
+當 HTML 元素非常多時，使用 `.innerHTML` 的速度會比這些語法慢  
+因為 `.innerHTML` 需要對整個元素重新解析，而這些語法只需要對單一元素操作  
 :::
 
 ```js
