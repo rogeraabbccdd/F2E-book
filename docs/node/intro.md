@@ -1,11 +1,47 @@
 # 認識 Node.js
 
-認識 Node.js 的結構
+認識 Node.js
 
-## 結構
+## 介紹
+Node.js 是一個可以讓 JavaScript 伺服器執行環境  
+其他類似的有  
+- [Deno](https://deno.com/) Node.js 創始人開發的新環境，以改善 Node.js 的缺點
+- [Bun](https://bun.sh/) 目前性能最好的 JavaScript 伺服器環境
 
-### package.json
-`package.json` 和 `package-lock.json` 記錄了這個 Node.js 專案的資訊  
+:::tip TIP
+課程使用目前仍是主流的 Node.js，但未來可能會改用 Bun
+:::
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/M3BM9TB-8yA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+## nvm
+nvm 是 Node.js 的管理工具，可以在一台電腦安裝許多個 Node.js 版本  
+這樣可以避免不同專案使用不同版本的 Node.js 時，造成的相容性問題  
+- [Mac/Linux](https://github.com/nvm-sh/nvm) 
+- [Windows](https://github.com/coreybutler/nvm-windows)
+
+## npm
+npm 是 Node.js 的預設的套件管理工具，可以用來安裝、管理、移除 Node.js 的套件  
+以下是常用的指令
+- `npm init` 初始化專案，產生 `package.json` 和 `package-lock.json`
+- `npm install` 安裝專案的所有套件
+- `npm install <套件名稱>` 安裝指定套件
+- `npm uninstall <套件名稱>` 移除指定套件
+- `npm run <指令>` 執行 `package.json` 裡面的指令
+
+Node.js 還有其他的套件管理工具，使用指令 `corepeack enable` 就可以啟用
+- [yarn](https://yarnpkg.com/) 由 Facebook 開發的套件管理工具
+- [pnpm](https://pnpm.io/zh-TW/) 速度快、節省空間的套件管理工具
+
+:::tip TIP
+課程使用目前較普及的 npm，如果同學想使用其他套件管理工具也可以，但指令可能會有些許不同  
+:::
+
+## 檔案結構
+- `node_modules` 資料夾存放這個專案用到的所有套件
+- `package.json` 記錄了這個 Node.js 專案的資訊
+- `package-lock.json` 記錄了所有套件的版本資訊，確保每次安裝的版本都是一樣的  
+
 ```json
 {
   // 專案使用 ECMAScript 語法
@@ -36,128 +72,15 @@
 ```
 在專案的資料夾使用 `npm init` 初始化專案時會自動產生  
 
-### node_modules
-`node_modules` 資料夾存放這個專案用到的所有套件  
-使用指令 `npm install` 會自動讀取 `package.json` 安裝所有套件  
-
-## 模組化
-:::danger 注意
-JavaScript 語法標準分為 **CommonJS** 和 **ECMAScript**  
-CommonJS 是 Node.js 使用的語法標準，在匯出匯入使用的語法是 `require` / `module.exports`  
-ECMAScript 是瀏覽器使用的語法標準，在匯出匯入使用的語法是 `import` / `export`  
-若要在 Node.js 專案使用 ECMAScript，必須要另外做設定，或是安裝套件
-瀏覽器在模組化開發也有一些限制，不是隨便就能用 `import` / `export`  
+:::tip TIP
+`package-lock.json` 是 npm 專用檔案，使用其他套件管理工具時會產生不同的檔案
+- yarn 會產生 `yarn.lock` 檔案
+- pnpm 會產生 `pnpm-lock.yaml` 檔案
+- bun 會產生 `bun.lockb` 檔案
 :::
 
-模組化開發的概念，就像是組電腦一樣
-```js
-import I牌CPU
-import 主機板
-import N牌顯示卡
-import 記憶體
-import 硬碟
-import 電源供應器
-
-PC.build(I牌CPU, 主機板, N牌顯示卡, 記憶體, 硬碟, 電源供應器)
-```
-
-模組化好處就是方便抽換，如果想換別家的東西，只需要把想換的地方改掉就好，其他地方不用動
-```js
-import A牌CPU
-import 主機板
-import A牌顯示卡
-import 記憶體
-import 硬碟
-import 電源供應器
-
-PC.build(A牌CPU, 主機板, A牌顯示卡, 記憶體, 硬碟, 電源供應器)
-```
-
-:::danger 注意
-- 一個檔案裡面只能有一個預設匯出  
-- 具名匯出時必須使用宣告變數的寫法
-- 匯入時寫相對路徑 `./`、`../` 等代表匯入檔案，直接寫名字則是匯入套件
-- 匯入的變數是 `const`，不能修改值  
-:::
-
-### 預設匯出/匯入
-export.js
-```js
-const num1 = 1
-const num2 = 2
-const add = (num1, num2) => {
-  return num1 + num2
-}
-
-export default {
-  num1, num2, add
-}
-```
-import.js
-```js
-import numbers from './export.js'
-console.log(numbers.num1) // 1
-console.log(numbers.num2) // 2
-const addnum = numbers.add(1, 2)
-console.log(addnum) // 3
-```
-
-### 具名匯出/匯入
-export.js
-```js
-const number1 = 10
-const number2 = 20
-export const a = "a"
-export const b = "b"
-export const c = number1 + number2
-```
-import.js
-```js
-// 具名個別匯入
-// import {} from 
-// {} 放要引用的變數
-// 如果怕變數名稱跟檔案內的重複，可以使用 as 重命名
-import { a as aa, b } from './export.js'
-console.log(aa) // a
-console.log(b)  // b
-
-// 具名一次匯入
-// import * from
-// 也可以使用 as 重命名
-import * as apple from './export.js'
-console.log(apple.a)  // a
-console.log(apple.b)  // b
-
-// 也可以同時引用具名和預設
-// import 預設, 具名 from 檔案
-import apple, {a} from './export.js'
-console.log(apple.num1) // 1
-console.log(a)          // a
-```
-
-## 簡易網頁伺服器
-```js
-// 引用 node.js 的內建 http 套件
-import http from 'http'
-// 建立網頁伺服器
-const server = http.createServer((req, res) => {
-  // 回應狀態碼 200
-  res.writeHead(200)
-  // 寫入回應內容
-  res.write('hello')
-  // 回應結束
-  res.end()
-})
-// 在 8080 埠啟動伺服器
-server.listen(8080, () => {
-  console.log('http://localhost:8080')
-})
-```
-
-輸入指令執行
-```js
-// 使用 node 指令
-node index.js
-// 或使用在 package.json 定義的指令
-npm run start
+## 執行
+使用 `node 檔案` 執行
+```bash
+node test.js
 ```
