@@ -69,6 +69,7 @@ export default defineConfig({
         text: 'Node.js',
         items: [
           { text: '認識 Node.js', link: '/node/intro' },
+          { text: '模組化', link: '/node/module' },
           { text: 'LINE 機器人', link: '/node/line' },
         ]
       },
