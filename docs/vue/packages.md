@@ -7,19 +7,19 @@
 部分套件不是使用 Vite，而是 [Vue Cli](https://cli.vuejs.org/) 或是自己的工具
 - [Vuetify](https://next.vuetifyjs.com/en)
 - [Quasar](https://quasar.dev/)
-- [BootstrapVue3](https://www.npmjs.com/package/bootstrap-vue-3)
+- [BootstrapVueNext](https://bootstrap-vue-next.github.io/bootstrap-vue-next/)
 - [Element Plus](https://element-plus.org/)
-- [PrimeVue](https://www.primefaces.org/primevue/#/)
+- [PrimeVue](https://primevue.org/)
 - [Wave UI](https://antoniandre.github.io/wave-ui/)
-- [BalmUI](https://next-material.balmjs.com/#/)
+- [BalmUI](https://material.balmjs.com/)
 - [Ionic Vue](https://ionicframework.com/docs/vue/overview)
-- [Equal UI](https://quatrochan.github.io/Equal/)
-- [Ant Design of Vue](https://www.antdv.com/docs/vue/introduce/)
-- [Oruga](https://oruga.io/)
-- [Vuestic UI](https://vuestic.dev/)
+- [Equal UI](https://equal-ui.github.io/Equal/)
+- [Ant Design of Vue](https://www.antdv.com/docs/vue/introduce)
+- [Oruga](https://oruga-ui.com/)
+- [Vuestic UI](https://ui.vuestic.dev/)
 - [Naive UI](https://www.naiveui.com/en-US/os-theme)
-- [Varlet UI](https://varlet.gitee.io/varlet-ui/#/zh-CN/home)
-- [Vant](https://vant-contrib.gitee.io/vant/#/zh-CN)
+- [Varlet UI](https://varletjs.org/#/en-US/index)
+- [Vant](https://vant-ui.github.io/vant/#/en-US)
 
 ### Font Awesome
 [vue-fontawesome](https://github.com/FortAwesome/vue-fontawesome) 能以元件方式引用 svg icon  
