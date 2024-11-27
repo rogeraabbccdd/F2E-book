@@ -110,7 +110,7 @@ console.log(route.meta.title) // My home page
 
 ### 路由
 Nuxt 會自動讀取 `pages` 資料夾的檔案，自動產生路由設定  
-`_` 開頭的檔名代表路由參數變數名稱 
+使用 `[]` 的檔名代表路由參數變數名稱  
 Nuxt 裡的 `router-view` 名為 `NuxtPage`  
 Nuxt 裡的 `router-link` 名為 `NuxtLink`
 ```
