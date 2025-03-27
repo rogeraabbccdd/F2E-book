@@ -384,7 +384,13 @@ console.log(obj2)     // {a: 100, b: 2, c: 3}
 :::warning 練習
 宣告一個數字陣列  
 ```js
-const numbers = [33, 75, 69, 41, 50, 19]
+const numbers = [
+  prompt('第一個數字'),
+  prompt('第二個數字'),
+  prompt('第三個數字'),
+  prompt('第四個數字'),
+  prompt('第五個數字')
+]
 ```
 - 印出陣列 `第 x 個數字為 y`
 - 求 `41` 是第幾個數字
@@ -439,6 +445,7 @@ const data = [
 請將上表的內容設定成二維陣列，並依序完成下列各題  
 
 - 將陣列內容印出成表格
+  ![](/images/ch6/weather-table.jpg)
 - 每日的平均溫度
 - 時段一、時段二、時段三的平均氣溫
 - 溫度最高的日子與時段
