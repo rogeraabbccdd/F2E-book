@@ -79,7 +79,9 @@ export default defineConfig({
           { text: '基礎語法', link: '/vue/basic' },
           { text: 'Vite 與單元件檔案', link: '/vue/vite-sfc' },
           { text: '套件', link: '/vue/packages' },
-          { text: '路由、狀態與 PWA', link: '/vue/router-pinia-pwa' },
+          { text: '路由', link: '/vue/router' },
+          { text: 'Pinia', link: '/vue/pinia' },
+          { text: 'PWA', link: '/vue/pwa' },
         ]
       },
       {
