@@ -131,21 +131,14 @@ export default {
 </script>
 ```
 
-## 簡易網頁伺服器
+## 簡易檔案處理
 ```js
-// 引用 node.js 的內建 http 套件
-import http from 'http'
-// 建立網頁伺服器
-const server = http.createServer((req, res) => {
-  // 回應狀態碼 200
-  res.writeHead(200)
-  // 寫入回應內容
-  res.write('hello')
-  // 回應結束
-  res.end()
-})
-// 在 8080 埠啟動伺服器
-server.listen(8080, () => {
-  console.log('http://localhost:8080')
-})
+import fs from 'fs'
+
+const data = [
+  { name: 'John', age: 30 },
+  { name: 'Mary', age: 25 }
+]
+
+fs.writeFileSync('data.json', JSON.stringify(data, null, 2))
 ```
