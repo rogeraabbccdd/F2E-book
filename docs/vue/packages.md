@@ -6,11 +6,12 @@
 UI 套件能快速建立頁面，提供許多已經設計好的元件和樣式，讓開發者能快速建立頁面  
 
 :::danger 注意
-不要混用 UI 套件，會造成樣式衝突
+不要混用 UI 套件，可能會造成樣式衝突
 :::
 
 :::tip TIP
-部分套件不是使用 Vite，而是 [Vue Cli](https://cli.vuejs.org/) 或是自己的工具  
+部分套件不是使用 Vite，而是自己的工具  
+如 [Quasar](https://quasar.dev/) 使用的是 [Quasar CLI](https://quasar.dev/start/quasar-cli/)
 :::
 
 - [Vuetify](https://next.vuetifyjs.com/en)
