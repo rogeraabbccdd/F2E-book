@@ -25,10 +25,16 @@
 
 ## dotenv
 使用 [dotenv](https://www.npmjs.com/package/dotenv) 套件能讓 Node.js 讀取環境設定檔 `.env`  
-將 LINE 機器人的 ID 等資訊寫入環境設定檔，避免上傳 Github 時洩漏資訊  
+環境設定檔可以在不同環境使用不同的設定，例如本機和雲端用的機器人帳號可能不一樣
+
+:::danger 注意
+- 不要將機密資訊寫在程式碼裡面
+- 在 `.gitignore` 忽略 `.env` 檔，避免將機密資訊上傳到 GitHub
+:::
 
 - 建立 `.env` 檔並輸入環境設定
   ```ini
+  # 機器人帳號資訊
   CHANNEL_ID=""
   CHANNEL_SECRET=""
   CHANNEL_ACCESS_TOKEN=""
@@ -42,6 +48,13 @@
 ## linebot
 [linebot](https://www.npmjs.com/package/linebot) 能以比官方工具簡單的語法製作 LINE 機器人  
 詳細的訊息事件可以參考 [LINE 文件](https://developers.line.biz/en/reference/messaging-api/#message-event)
+
+:::danger 注意
+設定機器人監聽 port 時，必須使用 `process.env.PORT`  
+通常雲端服務會自動分配 port，並以環境變數 `PORT` 提供給程式使用  
+某些雲端服務指定 port 時可能會造成程式無法啟動  
+:::
+
 ```js
 // 引用套件
 import linebot from 'linebot'
@@ -54,11 +67,15 @@ const bot = linebot({
 })
 
 // 當收到訊息時，event 包含了訊息的類型、文字等
-bot.on('message', event => {
-  // event.message.text 為使用者傳送的文字
-  let text = event.message.text
-  // event.reply 為回覆訊息
-  event.reply(event.message.text)
+bot.on('message', async event => {
+  // 印出訊息內容
+  console.log(event)
+   // 回覆
+  const result = await event.reply('Hello World!')
+  // 印出回覆結果
+  // 如果有 message，代表回覆出錯，message 為錯誤訊息
+  console.log(result)
+  console.log(result.message)
 });
 
 // 設定機器人監聽 port
@@ -67,7 +84,7 @@ bot.listen('/', process.env.PORT || 3000);
 
 ## fs
 `fs` 為 Node.js 預設套件，不需要安裝，能讀寫檔案  
-使用這個套件將複雜的訊息印成檔案，方便除錯  
+使用這個套件將複雜的 [Flex](https://developers.line.biz/flex-simulator/) 訊息印成檔案，方便除錯  
 ```js
 import fs from 'fs'
 
@@ -77,8 +94,8 @@ fs.writeFileSync('./flex.json', JSON.stringify(flex, null, 2))
 ## ESLint
 [ESLint](https://eslint.org/) 程式碼分析工具，能發現並修復程式碼中的問題，還能強制規範程式碼風格  
 安裝套件後再安裝 [VSCode 擴充功能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)，可以存檔時自動格式化程式碼  
-```json
-"editor.codeActionsOnSave": {
+   ```json
+   "editor.codeActionsOnSave": {
   "source.fixAll.eslint": true
 },
 ```
