@@ -96,7 +96,7 @@ console.log(test.text)
 ```
 
 ## 瀏覽器模組化
-使用 `<script type="module"`
+使用 `<script type="module">`
 ```js
 export default {
   number: 123,
