@@ -383,7 +383,7 @@ app.mount('#app')
 ### 傳入資料
 可以使用 `props` 將資料傳入子元件
 ```html
-<component v-for="post in posts" :posts="post"></blog-post>
+<blog-post v-for="post in posts" :posts="post"></blog-post>
 ```
 ```js
 // Options API
@@ -427,7 +427,7 @@ setup (props) {
 子元件傳出則需要使用 `$emit`
 ```html
 <!-- 外層 -->
-<component @btnClick="handleBtnClick"></component>
+<my-component @btnClick="handleBtnClick"></my-component>
 <!-- 子元件內 -->
 <input type="button" @click="onBtnClick" value="點我">
 ```
@@ -625,7 +625,7 @@ setup () {
 ```
 使用元件時將內容放進元件標籤內即可  
 ```html
-<mytemplate>按鈕</mytemplate>
+<my-component>按鈕</my-component>
 ```
   
 使用多個 `slot` 時必須要給插槽名字  
@@ -641,7 +641,7 @@ setup () {
 ```
 使用元件時將內容放進 `template` 標籤內即可  
 ```html
-<mytemplate>
+<my-component>
   <template v-slot:title>
     ABCDEFG
   </template>
@@ -649,7 +649,7 @@ setup () {
   <template #description>
     1234567
   </template>
-</mytemplate>
+</my-component>
 ```
   
 若要在插槽內使用元件內的資料，必須將資料綁定到 `slot` 標籤  
@@ -662,11 +662,11 @@ setup () {
 ```
 使用時將資料解構出來  
 ```html
-<component>>
+<my-component>
   <template #title="{data, data2}">
     ABCDEFG
   </template>
-</component>
+</my-component>
 ```
 
 :::warning 練習  
