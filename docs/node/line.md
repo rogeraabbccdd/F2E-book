@@ -91,14 +91,34 @@ import fs from 'fs'
 fs.writeFileSync('./flex.json', JSON.stringify(flex, null, 2))
 ```
 
-## ESLint
-[ESLint](https://eslint.org/) 程式碼分析工具，能發現並修復程式碼中的問題，還能強制規範程式碼風格  
-安裝套件後再安裝 [VSCode 擴充功能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)，可以存檔時自動格式化程式碼  
+## ESLint & Prettier
+[ESLint](https://eslint.org/) 能發現並修復程式碼中的格式問題，[Prettier](https://prettier.io/) 能統一排版風格
+
+- 初始化 ESLint
+   ```bash
+   npm init @eslint/config@latest
+   ```
+- 安裝 [ESLint VSCode 擴充功能](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)  
+- 在 VSCode 設定 `settings.json` 開啟存檔自動修復
    ```json
    "editor.codeActionsOnSave": {
-  "source.fixAll.eslint": true
-},
-```
+     "source.fixAll.eslint": true
+   },
+   ```
+- 安裝 [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
+   ```bash
+   npm i -D eslint-config-prettier eslint-plugin-prettier prettier
+   ```
+- 安裝 [Prettier VSCode 擴充功能](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
+- 建立 `.prettierrc`，依需求調整 Prettier 設定
+   ```json
+   {
+     "$schema": "https://json.schemastore.org/prettierrc",
+     "printWidth": 100,
+     "semi": false,
+     "singleQuote": true
+   }
+   ```
 
 ## 部署
 - 註冊 [Render](https://render.com/) 帳號，建立新的 Web Service
