@@ -129,3 +129,6 @@ fs.writeFileSync('./flex.json', JSON.stringify(flex, null, 2))
 參考範例: [isthereanydeal 遊戲查價機器人](https://github.com/rogeraabbccdd/Linebot-Deals)  
 <img src="https://raw.githubusercontent.com/rogeraabbccdd/Linebot-Deals/master/preview.png" height="400" style="margin: 10px 0;">  
 :::
+
+## AI 工具
+- [LINE Bot MCP Server](https://github.com/line/line-bot-mcp-server)
