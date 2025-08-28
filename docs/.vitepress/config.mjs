@@ -96,7 +96,6 @@ export default defineConfig({
       {
         text: '其他',
         items: [
-          { text: 'VuePress 網站', link: '/others/vuepress' },
           { text: 'Git', link: '/others/git' },
           { text: 'Pug', link: '/others/pug' },
           { text: 'Nuxt.js', link: '/others/nuxt' },
