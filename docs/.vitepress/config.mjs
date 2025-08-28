@@ -77,6 +77,7 @@ export default defineConfig({
         text: 'Vue.js',
         items: [
           { text: '基礎語法', link: '/vue/basic' },
+          { text: '元件', link: '/vue/components' },
           { text: 'Vite 與單元件檔案', link: '/vue/vite-sfc' },
           { text: '套件', link: '/vue/packages' },
           { text: '路由', link: '/vue/router' },
