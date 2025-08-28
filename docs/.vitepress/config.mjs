@@ -52,8 +52,8 @@ export default defineConfig({
       {
         text: 'jQuery',
         items: [
-          { text: 'jQuery - DOM', link: '/jquery/dom' },
-          { text: 'jQuery - 動畫', link: '/jquery/animation' },
+          { text: 'DOM', link: '/jquery/dom' },
+          { text: '動畫', link: '/jquery/animation' },
           { text: '打殭屍小遊戲', link: '/jquery/zombie' },
           { text: '翻牌記憶小遊戲', link: '/jquery/cards' },
         ]
