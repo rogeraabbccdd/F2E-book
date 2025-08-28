@@ -4,17 +4,13 @@ Nuxt 是伺服器渲染版的 Vue.js，改善了 SEO 等問題。
 
 
 ## Nuxt
-[Nuxt](https://v3.nuxtjs.org/) 使用了伺服器渲染的方式呈現網頁，相比原本的 Vue.js
+[Nuxt](https://nuxt.com/) 使用了伺服器渲染的方式呈現網頁，相比原本的 Vue.js
 - 先將網頁內容渲染好後才傳送給使用者，相比原生 Vue.js 在下載網頁檔案後還需要等待呼叫 API
 - 能與 express 整合，所以能把後端的 API 一併寫在同一個專案裡面
 - 能自訂各頁面的 meta，改善 SEO 問題
 
 ### 安裝
-- 使用 `npx nuxi init 網站名稱` 建立網站
-- 移除 `app.vue` 的 `<NuxtWelcome />` 元件
-- 使用 `npm i -D pug` 安裝 Pug
-- 使用 `npm i -D sass` 安裝 Sass
-- 使用 `npm run dev` 開啟開發伺服器
+- 使用 `npm create nuxt@latest` 建立網站
 
 :::danger
 Nuxt 預設使用 TypeScript，所以會有 tsconfig.json 及 nuxt.config.ts  
