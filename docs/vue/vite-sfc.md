@@ -1,4 +1,4 @@
-# Vite 與單元件檔案
+# Vite 與單檔案元件
 
 在 Node.js 環境，以打包工具 [Vite](https://vitejs.dev/) 開發 Vue 網站
 
@@ -68,23 +68,64 @@ import MyComponent from "@/components/MyComponent.vue";
 ```
 
 ## 單檔案元件
-Vite 開發工具可以使用單檔案元件 `.vue`，包含三個部分
+單檔案元件 (Single File Component, SFC) 是 Vue 的特色  
+在 Vite 開發環境下，使用單檔案元件 `.vue` 檔案，包含三個部分
+```html
+<template>
+  <h1>{{ text }}</h1>
+</template>
+
+<script>
+export default {
+  data () {
+    return {
+      text: 'Hello Vue'
+    }
+  },
+  methods: {}
+}
+</script>
+
+<style>
+  h1 {
+    color: red;
+  }
+</style>
+```
 - `<template>` 為元件的 HTML，裡面只能有一個 HTML 元素
 - `<style>` 為元件的 CSS，加上 `scoped` 屬性的話裡面的 CSS 只會套用到這個元件
-- `<script>` 為元件的 Vue 程式碼，`data`、`methods`、`setup` 等等都放這裡，加上 `setup` 使用 Composition API 更方便
+- `<script>` 為元件的 Vue 程式碼，`data`、`methods`、`setup` 等等都放這裡
 
-### 使用元件
-- 在要引用的大元件的 `<script>` 引用
-  ```js
-  import Navbar from '@/components/Navbar.vue'
-  ```
-- 在 `components` 內宣告使用，若使用 `<script setup>` 則不需要
-  ```json
-  components: {
-    Navbar
-  }
-  ```
-- 直接使用元件名的標籤 `<Navbar />` 就能引用了
+## script setup
+在 `<script setup>` 裡面可以直接使用 Composition API 的語法  
+不需要寫 return，但是會有一些語法差異
+- `props` 變成 `defineProps`
+- `emit` 變成 `defineEmits`
+- `expose` 變成 `defineExpose`
+```html
+<script setup>
+import { ref } from 'vue'
+const count = ref(0)
+
+// 使用 defineProps 定義 props
+// 這是特別的語法，不需要 import
+const props = defineProps({
+  title: String
+})
+console.log(props.title)
+
+// 使用 defineEmits 定義 emit
+// 這是特別的語法，不需要 import
+const emit = defineEmits(['customEvent'])
+emit('customEvent', 'someValue')
+
+// 使用 defineExpose 定義 expose
+// 這是特別的語法，不需要 import
+defineExpose({
+  count
+})
+</script>
+```
 
 ## 引用資源
 圖片、音效等資源有 `src/assets/` 和 `public` 可以放  
@@ -98,51 +139,34 @@ Vite 開發工具可以使用單檔案元件 `.vue`，包含三個部分
 - 有些套件可能不相容，需要有獨立的 `<script>` 標籤引用
 :::
 
-使用 `src/assets` 裡面的資源時使用相對路徑  
-打包時會自動將 src 的檔名轉換為加了 hash 的檔名
+使用 `src/assets` 裡面的資源，使用相對路徑  
+打包時會自動將 src 的檔名轉換為加了 hash 的檔名  
 ```html
 <!-- v-bind:src 必須搭配 new URL(路徑), import.meta.url).href 寫相對檔案的路徑 -->
 <img v-for='(image, idx) in images' :key='idx' :src="image">
 <script setup>
 const images = reactive([
-  new URL('./assets/image1.png', import.meta.url).href,
-  new URL('./assets/image2.png', import.meta.url).href
+  new URL('@/assets/image1.png', import.meta.url).href,
+  new URL('@/assets/image2.png', import.meta.url).href
 ])
 const play = () => {
   const audio = new Audio()
-  audio.src = new URL('./assets/meow.mp3', import.meta.url).href
+  audio.src = new URL('@/assets/meow.mp3', import.meta.url).href
   audio.play()
 }
 </script>
-<script>
-export default {
-  data () {
-    return {
-      images: [
-        new URL('./assets/logo.png?raw', import.meta.url).href,
-        new URL('./assets/edit.png', import.meta.url).href
-      ]
-    }
-  },
-  methods: {
-    play () {
-      const audio = new Audio()
-      audio.src = new URL('./assets/meow.mp3', import.meta.url).href
-      audio.play()
-    }
-  }
-}
-</script>
+```
+```html
 <!-- 一般的 src 使用相對路徑 -->
-<img src="./img.jpg">
+<img src="@/assets/img.jpg">
 ```
 ```css
 body {
-  background-image: url('./assets/image.jpg');
+  background-image: url('@/assets/image.jpg');
 }
 ```
 
-使用 `public` 裡面的資源
+使用 `public` 裡面的資源，路徑以 `/` 開頭  
 ```html
 <!-- / 開頭代表 public 資料夾 -->
 <img :src="'/img.jpg'">
@@ -164,7 +188,14 @@ mounted () {
 
 ## 部署
 ### 編譯
-開發完後使用 `npm run build` 可以輸出靜態網頁  
+使用指令打包成靜態網頁，輸出到 `dist` 資料夾  
+```bash
+npm run build
+```
+打包完後使用指令可以在本機預覽打包後的網站
+```bash
+npm run preview
+```
 
 :::danger 注意
 如果沒有設定 base 的話預設路徑是根目錄  
