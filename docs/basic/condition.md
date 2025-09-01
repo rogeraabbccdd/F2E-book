@@ -27,8 +27,8 @@ if (外面下雨) {
   去爬山
 }
 ```
-- `if` 代表如果，後面接判斷式，如果成立，就會裡面的執行程式碼
-- `else` 代表否則，當 `if` 不成立時，就會裡面的執行程式碼
+- `if` 代表如果，後面接判斷式，如果成立，就會執行裡面的程式碼
+- `else` 代表否則，當 `if` 不成立時，就會執行裡面的程式碼
 
 :::tip TIP
 當判斷式後的 `{}` 內只有一行程式碼時，可以省略 `{}`
@@ -70,7 +70,6 @@ if (可以決定交作業時間) {
 | a <span style="color: #ff6600;">==</span> b | a <span style="color: #ff6600;">等於</span> b |
 | a <span style="color: #ff6600;">===</span> b | a <span style="color: #ff6600;">等於</span> b （資料型態也要相同） |
 | a <span style="color: #ff6600;">!=</span> b | a <span style="color: #ff6600;">不等於</span> b |
-| a <span style="color: #ff6600;"><></span> b | a <span style="color: #ff6600;">不等於</span> b |
 | a <span style="color: #ff6600;">!==</span> b | a <span style="color: #ff6600;">不等於</span> b （資料型態也不相等） |
 | a <span style="color: #ff6600;">></span> b | a <span style="color: #ff6600;">大於</span> b （數值判斷） |
 | a <span style="color: #ff6600;">＜</span> b | a <span style="color: #ff6600;">小於 </span>b （數值判斷） |
@@ -168,7 +167,7 @@ if (dinner === '炸雞' || dinner === '可樂') {
 const like = confirm('你喜歡 JavaScript 嗎')
 
 // 使用三元運算子前
-if (message) {
+if (like) {
   console.log('喜歡')
 } else {
   console.log('不喜歡')
@@ -301,8 +300,6 @@ switch (lang) {
   case 'zh-tw':
     document.write('台灣中文')
     break
-  case 'jp':
-    document.write('日本')
   case 'ja-jp':
     document.write('日本日文')
     break
@@ -334,7 +331,7 @@ switch (true) {
   case (age >= 12):
     document.write('輔12級')
     break
-  case (age >= 16):
+  case (age >= 6):
     document.write('保護級')
     break
   case (age >= 0):
