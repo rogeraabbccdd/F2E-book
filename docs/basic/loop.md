@@ -70,7 +70,7 @@ for(let i = 0; i < 10; i++) document.write(i)
 
 ## while
 這種迴圈結構較簡單，只有一個執行條件  
-先判斷是否符合條件，符合的話才執行程式碼，執行後後再判斷要不要執行下一次  
+先判斷是否符合條件，符合的話才執行程式碼，執行後再判斷要不要執行下一次  
 用於不確定執行次數的迴圈  
 
 <ImageFigure
@@ -95,11 +95,11 @@ cond(no)->e
 ```js
 let input = ''
 let count = 0
-while (input !== '123') {
-  input = prompt('123')
+while (input !== 'end') {
+  input = prompt('輸入 end 結束迴圈')
   count++
 }
-document.write(`輸入了${count}次`)
+document.write(`輸入了 ${count} 次`)
 ```
 
 ## do while
