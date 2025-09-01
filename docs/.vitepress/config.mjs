@@ -20,6 +20,7 @@ export default defineConfig({
         text: '前言',
         items: [
           { text: '在開始之前', link: '/intro/before-start' },
+          { text: 'AI', link: '/intro/ai' },
         ]
       },
       {
