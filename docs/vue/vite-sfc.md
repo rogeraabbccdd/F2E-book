@@ -230,7 +230,7 @@ export default defineConfig({
         # 步驟一：複製程式碼
         - name: checkout
           # 使用的 actions/checkout 複製程式碼
-          uses: actions/checkout@v3
+          uses: actions/checkout@v5
         # 步驟二：編譯
         - name: Install and Build
           run: |
