@@ -35,10 +35,10 @@ console.log(text)           // '123 abc def ghi jkl'
   - 檢查是否有包含尋找文字，回傳 boolean
   - 第二個參數是選填，預設是 `0`
 - `.indexOf(尋找文字, 從第幾個字開始往後)`
-  - 尋找陣列是否有東西符合尋找文字，回傳第一個符合的索引，`-1` 代表找不到
+  - 尋找字串中是否有東西符合尋找文字，回傳第一個符合的索引，`-1` 代表找不到
   - 第二個參數是選填，預設是 `0`
 - `.lastIndexOf(尋找文字, 從第幾個字開始往前)`
-  - 尋找陣列是否有東西符合尋找文字，回傳最後一個符合的索引，`-1` 代表找不到
+  - 尋找字串中是否有東西符合尋找文字，回傳最後一個符合的索引，`-1` 代表找不到
   - 第二個參數是選填，預設是 `string.length - 1`
 - `.match(正則表達式Regex)`
   - 符合的結果用陣列回傳
@@ -65,21 +65,21 @@ console.log(text)           // '123 abc def ghi jkl'
 ```js
 const curry = '外賣 咖哩拌飯 咖哩烏冬'
 
-const includesCurry1 = text2.includes('咖哩')
-console.log(includesCurry)    // true
-const includesCurry2 = text2.includes('咖哩', 3)
+const includesCurry1 = curry.includes('咖哩')
+console.log(includesCurry1)    // true
+const includesCurry2 = curry.includes('咖哩', 9)
 console.log(includesCurry2)   // false
 
-const indexCurry = text2.indexOf('咖哩')
+const indexCurry = curry.indexOf('咖哩')
 console.log(indexCurry)       // 3
 
-const lastIndexCurry = text2.lastIndexOf('咖哩')
-console.log(lastIndexCurry)   // 9
+const lastIndexCurry = curry.lastIndexOf('咖哩')
+console.log(lastIndexCurry)   // 8
 
-const matchCurry = text2.match(/咖哩/g)
+const matchCurry = curry.match(/咖哩/g)
 console.log(matchCurry)       // [ '咖哩', '咖哩' ]
 
-const matchAllCurry = text2.matchAll(/咖哩/g)
+const matchAllCurry = curry.matchAll(/咖哩/g)
 console.log(matchAllCurry)    // RegExpStringIterator
 for (const match of matchAllCurry) {
   // [ 
@@ -88,13 +88,20 @@ for (const match of matchAllCurry) {
   //   input: '外賣 咖哩拌飯 咖哩烏冬',
   //   groups: undefined
   // ]
+
+  // [ 
+  //   '咖哩',
+  //   index: 8,
+  //   input: '外賣 咖哩拌飯 咖哩烏冬',
+  //   groups: undefined
+  // ]
   console.log(match)
 }
 
-const replaceCurry1 = text2.replace('咖哩', '三色豆')
+const replaceCurry1 = curry.replace('咖哩', '三色豆')
 console.log(replaceCurry1)      // '外賣 三色豆拌飯 咖哩烏冬'
 
-const replaceCurry2 = text2.replace(/咖哩/g, '三色豆')
+const replaceCurry2 = curry.replace(/咖哩/g, '三色豆')
 console.log(replaceCurry2)      // '外賣 三色豆拌飯 三色豆烏冬'
 
 const email = 'aaaa@gmail.com'
@@ -124,7 +131,7 @@ for (const match of emailMatchAllGroup2) {
   // 2: "gmail"
   // 3: "com"
   // groups: {
-  //   account: "aaa",
+  //   account: "aaaa",
   //   domain: "gmail",
   //   tld: "com"
   // }
