@@ -2,26 +2,35 @@
 
 Nuxt 是伺服器渲染版的 Vue.js，改善了 SEO 等問題。
 
-
-## Nuxt
+## 伺服器渲染
 [Nuxt](https://nuxt.com/) 使用了伺服器渲染的方式呈現網頁，相比原本的 Vue.js
 - 先將網頁內容渲染好後才傳送給使用者，相比原生 Vue.js 在下載網頁檔案後還需要等待呼叫 API
-- 能與 express 整合，所以能把後端的 API 一併寫在同一個專案裡面
+- 能與 Node.js 後端整合，所以能把後端的 API 一併寫在同一個專案裡面
 - 能自訂各頁面的 meta，改善 SEO 問題
 
-### 安裝
+:::tip TIP
+[Quasar Framework](https://quasar.dev/) 內建伺服器渲染模式，後端網頁伺服器使用的是 [express.js](https://expressjs.com/)  
+只需要[加入 SSR 模式](https://quasar.dev/quasar-cli-vite/developing-ssr/preparation) 即可使用  
+:::
+
+:::danger 注意
+Nuxt 的後端網頁伺服器使用的是 [Nitro](https://nitro.build/) 與 [h3](https://h3.dev/)  
+使用方式與架構會與 API 課程使用的 [express.js](https://expressjs.com/) 不同
+:::
+
+## 安裝
 - 使用 `npm create nuxt@latest` 建立網站
 
-:::danger
+:::danger 注意
 Nuxt 預設使用 TypeScript，所以會有 tsconfig.json 及 nuxt.config.ts  
 若沒有要使用 TypeScript，刪除 tsconfig.json 並將 nuxt.config.ts 改為 nuxt.config.js
 :::
 
-### 引用資源
+## 引用資源
 - `assets` 資料夾的內容**會**經過 Vite 處理，打包時加上 hash
 - `public` 資料夾的內容**不會**經過 Vite 處理
 
-:::danger
+:::danger 注意
 Nuxt 不會提供 assets 內圖片的網址如 `/assets/my-file.png`  
 如果需要網址，需使用 public 資料夾
 :::
@@ -44,6 +53,7 @@ body {
   <img src="/img/your_image.png" alt="" width="100">
   <img :src="img" alt="" width="100">
 </template>
+
 <script setup>
 const img = ref('/img/your_image.png')
 </script>
@@ -54,7 +64,7 @@ body {
   background: url(/img/your_image.png)
 }
 ```
-### Layout
+## Layout
 建立一個 `layouts` 資料夾，可以自己放設定的版面  
 使用 `<NuxtLayout>` 元件讓頁面套用版面  
 預設套用 `layouts/default.vue`，若無此檔案須自己建立
@@ -104,7 +114,7 @@ console.log(route.meta.title) // My home page
 </script>
 ```
 
-### 路由
+## 路由
 Nuxt 會自動讀取 `pages` 資料夾的檔案，自動產生路由設定  
 使用 `[]` 的檔名代表路由參數變數名稱  
 Nuxt 裡的 `router-view` 名為 `NuxtPage`  
@@ -136,7 +146,7 @@ routes: [
 ]
 ```
 
-### Pinia
+## Pinia
 - 使用 `npm install @pinia/nuxt` 安裝
 - `nuxt.config.js` 寫入設定
   ```js
@@ -150,7 +160,7 @@ routes: [
   ```
 - 使用方式和平常一樣
 
-### 非同步資料
+## 非同步資料
 非同步資料語法分下列幾種
 - `useAsyncData` 載入頁面前先取得資料
 - `useLazyAsyncData` 等頁面載入完後再取資料
@@ -162,6 +172,7 @@ useAsyncData
 <template>
   <pre>{{ data }}</pre>
 </template>
+
 <script setup>
 // useAsyncData(key, function, options)
 // key 指定不同的值讓 nuxt 正確的更新資料，沒提供的話會根據程式碼檔名和行數自動產生
@@ -178,6 +189,7 @@ useLazyAsyncData
   <p v-if='pending'>載入中</p>
   <pre v-else>{{ data }}</pre>
 </template>
+
 <script setup>
 // useLazyAsyncData(key, function, options)
 // key 指定不同的值讓 nuxt 正確的更新資料，沒提供的話會根據程式碼檔名和行數自動產生
@@ -199,6 +211,7 @@ useFetch
 <template>
   <pre>{{ data }}</pre>
 </template>
+
 <script setup>
 // useFetch 是 useAsyncData 簡化版
 // 包裝了 useAsyncData 和 $fetch 並根據網址自動產生 key
@@ -212,6 +225,7 @@ useLazyFetch
   <p v-if='pending'>載入中</p>
   <pre v-else>{{ data }}</pre>
 </template>
+
 <script setup>
 // useFetch 是 useLazyAsyncData 簡化版
 // 包裝了 useLazyAsyncData 和 $fetch 並根據網址自動產生 key
@@ -231,6 +245,7 @@ watch(data, (newData) => {
   <pre>{{ data }}</pre>
   <input type="button" @click="showNext" value="next" />
 </template>
+
 <script setup>
 const id = ref(1);
 
@@ -258,6 +273,7 @@ const showPrev = () => {
   <p v-if='pending'>載入中</p>
   <pre v-else>{{ data }}</pre>
 </template>
+
 <script setup>
 const id = ref(1)
 const { pending, data } = useLazyAsyncData('count', () => $fetch(`https://jsonplaceholder.typicode.com/todos/${id.value}`))
@@ -274,7 +290,7 @@ const refresh = () => {
 </script>
 ```
 
-### Plugin
+## Plugin
 Nuxt 沒有 `main.js`，所以安裝 Vue 相關套件時需要在 `plugins` 資料夾建立一個 js 檔  
 - 檔案結尾是 `.server.js` 代表只在 server 執行
 - 檔案結尾是 `.client.js` 代表只在瀏覽器執行
@@ -296,7 +312,7 @@ export default defineNuxtPlugin((nuxtApp) => {
 部分 Vue 套件僅支援瀏覽器端執行，因為 server 端沒有 DOM 相關的變數
 :::
 
-### CSS
+## CSS
 Nuxt 沒有 main.js，所以引用自己寫的 css 或外部 css 時，必須在 `nuxt.config.js` 引用  
 可以忽略副檔名，nuxt 會自動尋找檔案
 ```js
@@ -307,7 +323,7 @@ export default {
 }
 ```
 
-### Meta
+## Meta
 每個元件都可以使用 `useHead` 設定各自的 meta，或引用外部資源。  
 ```html
 <script setup>
@@ -374,6 +390,7 @@ useHead({
   <Title>{{ title }}</Title>
   <Meta name="description" :content="title" />
 </template>
+
 <script setup>
 const title = ref('aaa')
 </script>
@@ -413,6 +430,6 @@ export default defineNuxtConfig({
 })
 ```
 
-### 打包
+## 打包
 - 必須先執行 `npm run build` 指令打包檔案
 - 執行 `node .output/server/index.mjs` 開啟伺服器
