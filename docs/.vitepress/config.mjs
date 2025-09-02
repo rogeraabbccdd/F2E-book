@@ -100,6 +100,7 @@ export default defineConfig({
           { text: 'Git', link: '/others/git' },
           { text: 'Pug', link: '/others/pug' },
           { text: 'Nuxt.js', link: '/others/nuxt' },
+          { text: 'Firebase', link: '/others/firebase' },
         ]
       },
     ],
