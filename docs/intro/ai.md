@@ -30,3 +30,4 @@ MCP (Model Context Protocol) 是一個開放標準，讓 AI 模型能夠存取�
 - [Context 7](https://github.com/upstash/context7) 文件
 - [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) 記憶上下文
 - [Sequential Thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) 結構化思考
+- [Chrome](https://github.com/hangwin/mcp-chrome) Chrome 瀏覽器
