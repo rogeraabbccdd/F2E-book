@@ -51,7 +51,7 @@ export default defineConfig([
 ```
 
 ## 路徑設定
-`vite.config.js` 中預設將 `@/` 指向 src 資料夾  
+`vite.config.js` 中設定將 `@` 指向 src 資料夾  
 可以依照需求調整
 這樣在引用資源時比較好管理路徑  
 ```js
@@ -59,7 +59,7 @@ import path from "path";
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    alias: {'@/': `${path.resolve(__dirname, 'src')}/`}
+    alias: {'@': path.resolve(__dirname, 'src')}
   }
 })
 ```
@@ -92,7 +92,7 @@ export default {
   }
 </style>
 ```
-- `<template>` 為元件的 HTML，裡面只能有一個 HTML 元素
+- `<template>` 為元件的 HTML (如果是使用 vue2，裡面只能有一個 HTML 元素)
 - `<style>` 為元件的 CSS，加上 `scoped` 屬性的話裡面的 CSS 只會套用到這個元件
 - `<script>` 為元件的 Vue 程式碼，`data`、`methods`、`setup` 等等都放這裡
 
@@ -170,7 +170,7 @@ body {
 ```html
 <!-- / 開頭代表 public 資料夾 -->
 <img :src="'/img.jpg'">
-<img src="/img.jpg'">
+<img src="/img.jpg">
 ```
 ```css
 body {
@@ -181,7 +181,7 @@ body {
 ```js
 mounted () {
   const audio = new Audio()
-  audio.src = './sound.mp3'
+  audio.src = '/sound.mp3'
   audio.play()
 }
 ```
