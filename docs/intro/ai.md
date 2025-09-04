@@ -6,6 +6,12 @@
 新手學習時，建議不要過度依賴 AI 工具
 :::
 
+:::danger 注意
+使用 AI 工具總結網頁或文章內容時，可能會有安全性問題
+- [Brave 示警 Perplexity Comet 瀏覽器 AI 助理可被隱藏指令操控](https://www.ithome.com.tw/news/170795)
+- [研究人員論文暗藏「好評專屬」 AI 指令](https://www.inside.com.tw/article/38892-researchers-hide-positive-review-only-ai-instructions-in-academic-papers)
+:::
+
 - [GitHub Copilot](https://github.com/features/copilot)
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli)
 - [Gemini Code Assist](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist)
@@ -15,7 +21,7 @@
 ## MCP
 MCP (Model Context Protocol) 是一個開放標準，讓 AI 模型能夠存取外部資料與工具
 
-:::danger 注意
+:::tip TIP
 每個 MCP 的系統需求不同，常見的需求有
 - [Node.js](https://nodejs.org/)
 - [Python](https://www.python.org/)
