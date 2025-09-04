@@ -28,7 +28,8 @@ export const useUserStore = defineStore('user', {
     return {
       name: '',
       email: '',
-      age: 0
+      age: 0,
+      isLoggedIn: false
     }
   },
   // 修改狀態用的 function
@@ -56,6 +57,7 @@ export const useUserStore = defineStore('user', () => {
   const name = ref('')
   const email = ref('')
   const age = ref(0)
+  const isLoggedIn = ref(false)
 
   // actions 修改狀態用一般的 function
   const setAge = (value) => {
@@ -79,10 +81,10 @@ import { useUserStore } from './store/user'
 const user = useUserStore()
 
 // 直接存取 store、getter 值
-console.log(user.name, user.email, user.isAdult())
+console.log(user.name, user.email, user.isAdult)
 
 // 解構 state 需要搭配 storeToRefs，否則資料修改時不會動態更新
-const { name, email, age, isAdult, isOlderThan } = storeToRefs(user)
+const { name, email, age, isAdult } = storeToRefs(user)
 // 解構 action 直接解構即可，預先定義好的 function 不會改變
 const { setAge } = user
 
@@ -93,7 +95,7 @@ user.$patch(state => {
 
 // 直接改也可以
 user.name = 100
-name = 100
+name.value = 100
 
 // 呼叫 action 修改
 user.setAge(100)
