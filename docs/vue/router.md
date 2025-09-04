@@ -97,12 +97,12 @@ import { useRouter, useRoute } from 'vue-router'
 const router = useRouter()
 const route = useRoute()
 // 指定網址
-router.push('home')
-router.push({ path: 'home' })
+router.push('/home')
+router.push({ path: '/home' })
 // 指定路由名稱
 router.push({ name: 'user'})
-// 路由 query，register?plan=private
-router.push({ path: 'register', query: { plan: 'private' }})
+// 路由 query，/register?plan=private
+router.push({ path: '/register', query: { plan: 'private' }})
 // 取得路由資訊
 console.log(route)
 ```
