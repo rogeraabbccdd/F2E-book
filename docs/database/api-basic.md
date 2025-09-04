@@ -93,8 +93,6 @@ import mongoose from 'mongoose'
 // 引用 dotenv
 import 'dotenv/config'
 
-const Schema = mongoose.Schema
-
 // 連接資料庫
 mongoose.connect(process.env.dbUrl, { useNewUrlParser: true, useUnifiedTopology: true })
 
@@ -180,7 +178,7 @@ const userSchema = new Schema(
 // 資建立 Model
 // mongoose.model('資料表名稱', Schema)
 // 資料表名稱必須為複數，結尾加 s
-const users = mongoose.model('users', usersSchema)
+const users = mongoose.model('users', userSchema)
 
 // 匯出 Model
 export default users
@@ -192,13 +190,16 @@ export default users
 ```js
 import express from 'express'
 // 從 controller 引用 function
-import { createUser, getUsers, updateUser, deleteUser } from '../controllers/users.js'
+import { createUser, getUser, getUsers, updateUser, deleteUser } from '../controllers/users.js'
 
 // 建立 router
 const router = express.Router()
 
 // 這裡最後的路徑會是 /users，進來這裡的 POST 請求會執行 createUser
 router.post('/', createUser)
+
+// 這裡最後的路徑會是 /users/:id，進來這裡的 GET 請求會執行 getUser
+router.get('/:id', getUser)
 
 // 這裡最後的路徑會是 /users，進來這裡的 GET 請求會執行 getUsers
 router.get('/', getUsers)
@@ -228,7 +229,7 @@ import users from '../models/users.js'
 
 // 匯出各 function
 export const createUser = () => {}
-export const createUserOrder = () = {}
+export const createUserOrder = () => {}
 export const getUsers = () => {}
 export const getUserOrder = () => {}
 export const updateUser = () => {}
@@ -490,7 +491,7 @@ export const updateUserOrder = async (req, res) => { // 拒絕不是 json 的資
 ```js
 export const deleteUser = async (req, res) => {
   try {
-    await users.findByIdAndDelete(req.params.id)
+    const result = await users.findByIdAndDelete(req.params.id)
     if (result === null) {
       res.status(404)
       res.send({ success: false, message: '找不到資料' })
@@ -515,7 +516,7 @@ export const deleteUser = async (req, res) => {
 ```js
 export const deleteUserOrder = async (req, res) => {
   try {
-    await users.findOneAndUpdate(
+    const result = await users.findOneAndUpdate(
       // 以訂單 ID 查詢使用者資料
       {'orders._id': req.params.id},
       {
