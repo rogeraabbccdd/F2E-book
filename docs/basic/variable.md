@@ -12,7 +12,7 @@
 ```
 轉換為程式後
 ```js
-const x = 5
+const x = 2
 const result = x * 5
 console.log(result)
 ```
@@ -90,7 +90,7 @@ console.log(a)          // 3
 let b = 1
 console.log(b)          // 1
 // 重複宣告會出現錯誤
-// Uncaught SyntaxError: Identifier 'a' has already been declared
+// Uncaught SyntaxError: Identifier 'b' has already been declared
 // let b = 2
 b = 2
 console.log(b)          // 2
