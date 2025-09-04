@@ -17,7 +17,7 @@ BOM 是瀏覽器功能的核心，也就是 `window`
 { id: 3, text_1: 'history', father: 1, color:'#00bcd4' }, 
 { id: 4, text_1: 'screen', father: 1, color:'#00bcd4' },
 { id: 5, text_1: 'navigator', father: 1, color:'#00bcd4' },
-{ id: 6, text_1: 'localtion', father: 1, color:'#00bcd4' },
+{ id: 6, text_1: 'location', father: 1, color:'#00bcd4' },
 { id: 7, text_1: 'popup', father: 1, color:'#00bcd4' }]" />
 -->
 
@@ -99,7 +99,7 @@ history.go(-1);
 ::: demo [vanilla]
 ```html
 <html>
-  <p id="example-p"><p>
+  <p id="example-p"></p>
 </html>
 <script>
   const p1 = document.getElementById("example-p");
@@ -119,7 +119,7 @@ history.go(-1);
 ::: demo [vanilla]
 ```html
 <html>
-  <p id="example2-p"><p>
+  <p id="example2-p"></p>
 </html>
 <script>
   const p2 = document.getElementById("example2-p")
