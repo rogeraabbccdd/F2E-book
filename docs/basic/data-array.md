@@ -1,5 +1,5 @@
 # 資料處理 - 陣列
-一些常用的陣列處理函式  
+一些常用的陣列處理函式
 
 ## 基本處理
 - `.forEach(function)` 迴圈陣列，每個東西都執行提供的 function，有三個參數可以使用
@@ -26,7 +26,7 @@ const func = (value) => {
 // 正確，func 是 function
 array.forEach(func)
 // 錯誤，func() 是 function 的回傳值
-// 會立即執行 func()，並將回傳值放入 setTimeout
+// 會立即執行 func()，並將回傳值放入 forEach
 // 但 func() 沒有回傳值，所以會放入 undefined
 array.forEach(func())
 ```
@@ -88,9 +88,9 @@ console.log(fruits)
 const otherFruits = ['櫻桃', '火龍果']
 fruits.splice(1, 2, ...otherFruits)
 // ['蘋果', '櫻桃', '火龍果', '橘子', '葡萄', '藍莓', '草莓', '芭樂']
-console.log(otherFruits)
+console.log(fruits)
 
-const newFruits = phones.slice(1, 5)
+const newFruits = fruits.slice(1, 5)
 // newFruits = ['櫻桃', '火龍果', '橘子', '葡萄']
 // fruits = ['蘋果', '櫻桃', '火龍果', '橘子', '葡萄', '藍莓', '草莓', '芭樂']
 console.log(newFruits, fruits)
