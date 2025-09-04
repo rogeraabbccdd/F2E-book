@@ -8,7 +8,7 @@ function 由下列幾個部分組成
 - `()` 放傳入 function 的值
 - `{}` 則是要執行的程式碼
 - 執行 function 時只要使用 `名稱` 和 `()` 就能執行
-- 宣告時可以使用 `function declartaion` 或 `function expression` 兩種方式
+- 宣告時可以使用 `function declaration` 或 `function expression` 兩種方式
 
 :::tip TIP
 使用 function expression 宣告時通常會使用 `const` 以避免 function 被覆寫
@@ -100,12 +100,12 @@ const GoodMorning = (time = '早上', item = '冰淇淋') => {
 簡寫範例
 ```js
 // 簡寫前
-const squre = (number) => {
+const square = (number) => {
   return number * number
 }
 
 // 簡寫後
-const squre = number => number * number
+const square = number => number * number
 ```
 物件回傳簡寫範例
 ```js
@@ -148,22 +148,22 @@ const GoodMorning = (time, item) => {}
 
 /**
  * 早安
- * @param time {string} 時間
- * @param item {string} 物品
+ * @param {string} time 時間
+ * @param {string} item 物品
  */
 const GoodMorning = (time, item) => {}
 
 /**
  * 早安
- * @param [time=早上] {string} 時間
- * @param [item=冰淇淋] {string} 物品
+ * @param {string} [time=早上] 時間
+ * @param {string} [item=冰淇淋] 物品
  */
 const GoodMorning = (time = '早上', item = '冰淇淋') => {}
 
 /**
  * 早安
- * @param [time=早上] {string} 時間
- * @param [item=冰淇淋] {string} 物品
+ * @param {string} [time=早上] 時間
+ * @param {string} [item=冰淇淋] 物品
  * @returns {string} 組合完成的訊息
  */
 const GoodMorning = (time = '早上', item = '冰淇淋') => {}
@@ -390,7 +390,7 @@ function hi (name) {
 ```js
 // function expression
 console.log(hi)  // undefined
-// Uncaught TypeError: hi2 is not a function
+// Uncaught TypeError: hi is not a function
 // hi('BBB')
 var hi = function (name) {
   console.log('hi, ' + name)
