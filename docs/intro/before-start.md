@@ -23,13 +23,13 @@
 ## Markdown
 Markdown 是一種輕量級標記式語言  
 目前有很多網站使用這個語法撰寫說明文件或文章，例如這個網站就是使用 Markdown 製作  
-在寫程式相關的筆記時，使用 Markdwon 比 Word 還要方便快速  
+在寫程式相關的筆記時，使用 Markdown 比 Word 還要方便快速  
 
 相關連結:
 - [Markdown Here](https://markdown-here.com/)，用 Markdown 語法寫 email
 - [Markdown PDF](https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf)，將 Markdown 轉成 pdf
 - [HackMD](https://hackmd.io/)，線上筆記
-- [HackMD Markdwon 語法大全](https://hackmd.io/@mrcoding/ryZE7k8cN)
+- [HackMD Markdown 語法大全](https://hackmd.io/@mrcoding/ryZE7k8cN)
 - [Discord Markdown 語法](https://support.discord.com/hc/zh-tw/articles/210298617-Markdown-%E8%AA%9E%E6%B3%95%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8-%E6%96%87%E5%AD%97%E6%A0%BC%E5%BC%8F-%E7%B2%97%E9%AB%94-%E6%96%9C%E9%AB%94-%E5%BA%95%E7%B7%9A)
 
 ## 如何問問題
