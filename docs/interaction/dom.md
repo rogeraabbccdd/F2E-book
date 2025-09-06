@@ -43,7 +43,7 @@ document.getElementById('main').getElementsByClassName('test')
 
 ```js
 // 取得 id 為 header 的元素
-document.getElementByID("header")
+document.getElementById("header")
 
 // 取得所有 h1 標籤，結果會是陣列
 document.getElementsByTagName("h1")
@@ -75,7 +75,7 @@ document.querySelectorAll(".product")
   
 串連語法範例
 ```js
-const el document.getElementById('id').nextElementSibling.nextElementSibling
+const el = document.getElementById('id').nextElementSibling.nextElementSibling
 ```
 迴圈範例
 ```js
@@ -93,10 +93,10 @@ document.getElementById("myLI").parentElement;
 // children 可以抓取下一層所有元素
 document.getElementById("myUL").children;
 
-// firstChild 可以抓取下一層第一個元素
+// firstElementChild 可以抓取下一層第一個元素
 document.getElementById("myUL").firstElementChild;
 
-// lastChild 可以抓取下一層最後一個元素
+// lastElementChild 可以抓取下一層最後一個元素
 document.getElementById("myUL").lastElementChild;
 
 // nextElementSibling 可以抓取同一層的下一個元素
@@ -149,7 +149,7 @@ console.log(element.innerText)
 // 修改元素內的文字
 element.innerText = "123"
 // 取得元素內的 HTML
-console.log(element.innerText)
+console.log(element.innerHTML)
 // 修改元素內的 HTML
 element.innerHTML = "<h1>123</h1>"; 
 
@@ -173,10 +173,10 @@ element.className = 'text-red text-center'
 
 // 使用 classList 新增 class
 element.classList.add("text-italic")
-element.classList.add("bg-black text-white")
+element.classList.add("bg-black", "text-white")
 // 使用 classList 移除 class
 element.classList.remove("text-italic");
-element.classList.remove("bg-black text-white");
+element.classList.remove("bg-black", "text-white");
 // 使用 classList 取代 class
 element.classList.replace("text-red", "text-blue");
 // 使用 classList 切換 class
@@ -184,9 +184,9 @@ element.classList.toggle("red");
 ```
 
 ## 元素移動
-- `document.createElement(標籤名)` 新增一個元素，需另外使用語法 DOM
+- `document.createElement(標籤名)` 新增一個元素，需另外使用語法插入 DOM
 - `.appendChild(元素)`、`.append(元素)` 在內部最後面插入元素
-- `.prependChild(元素)`、`.prepend(元素)` 在內部最前面插入元素
+- `.prepend(元素)` 在內部最前面插入元素
 - `.replaceChild(新元素, 舊元素)` 在內部替換元素
 - `.insertBefore(新元素, 參考元素)` 在內部最前面插入一個元素，並指定插入位置，用於新增或移動元素
   - 參考元素為 null 時，等同於 `appendChild`
@@ -200,7 +200,7 @@ element.classList.toggle("red");
 
 :::tip TIP
 - `.append()` 和 `.prepend()` 可以一次放入多個元素或文字
-- `.appendChild()` 和 `.prependChild()` 只能放入一個元素
+- `.appendChild()` 只能放入一個元素
 ```js
 const p = document.createElement("p")
 element.append(p, 'Text1', 'Text2')
@@ -335,7 +335,7 @@ Node 相關語法
 - `document.createTextNode(文字)` 新增一個文字節點
 
 ```html
-<div id="example-div"><!-- 註解--><p id="example-p">123456<p></div>
+<div id="example-div"><!-- 註解--><p id="example-p">123456</p></div>
 ```
 ```js
 // 取得 div 內第一個節點的類型，為註解
