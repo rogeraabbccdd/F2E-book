@@ -84,7 +84,7 @@ jQuery 動畫預設只有 `swing` 和 `linear` 兩種效果
     })
     
     $("#slideDown").on("click", function(){
-      // 滑入，遞減 height 至原本高度
+      // 滑入，遞增 height 至原本高度
       principal.slideDown(2000, function(){
         console.log("滑入了")
       })
