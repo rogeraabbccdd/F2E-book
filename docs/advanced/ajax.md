@@ -15,14 +15,14 @@ Request Line 為請求的方式及目標網址
 - `DELETE`: 刪除資源
 - `POST`: 新增資源
 
-以上四種方式分別對應遠端伺服器資料庫的增改刪查動作，也就是 `RESTful API`  
+以上五種方式分別對應遠端伺服器資料庫的增改刪查動作，也就是 `RESTful API`  
 
 :::danger 注意
 HTML 的 form 標籤只支援 GET 和 POST
 :::
 
 ### Status Line
-Status Line 為請求的狀態資訊，也就是 HTTP 狀態碼  
+Status Line 為回應的狀態資訊，也就是 HTTP 狀態碼  
 
 HTTP 狀態碼大致分為下列幾種  
 - `1xx` Informational 參考資訊
@@ -32,9 +32,16 @@ HTTP 狀態碼大致分為下列幾種
 - `5xx` Server Error 伺服器錯誤
 
 常見的 HTTP 狀態碼有：
-- `100`: 請求中
-- `200`: 成功
-- `404`: 找不到
+- `100`: Continue 請求中
+- `200`: OK 成功
+- `201`: Created 創建成功
+- `204`: No Content 沒有返回內容
+- `302`: Found 重新導轉頁面
+- `400`: Bad Request 用戶端請求錯誤
+- `401`: Unauthorized 未登入
+- `403`: Forbidden 沒有權限操作
+- `404`: Not Found 找不到
+- `500`: Internal Server Error 伺服器錯誤
 
 ### Header
 Header 為資料的設定，比較重要的設定有：  
