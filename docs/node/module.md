@@ -16,7 +16,7 @@ JavaScript 語法標準分為 `CommonJS` 和 `ECMAScript`，兩種規範的模�
 - 檔案副檔名改為 `.mjs`
 
 :::tip TIP
-由於開發 Vue.js 使用的是 `ECMAScript`，為避免混淆，課程所以統一使用 `ECMAScript`
+由於開發 Vue.js 使用的是 `ECMAScript`，為避免混淆，課程統一使用 `ECMAScript`
 :::
 
 :::danger 注意
@@ -91,7 +91,7 @@ console.log(num)
 console.log(text)
 
 import * as test from './test.js'
-console.log(test.num)
+console.log(test.number)
 console.log(test.text)
 ```
 
