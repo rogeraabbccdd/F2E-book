@@ -34,7 +34,7 @@ const validate = (input) => {
     console.log('驗證成功');
   }
   catch(err) {
-    console.log = `驗證失敗: ${err.message}`;
+    console.log(`驗證失敗: ${err.message}`);
   }
 }
 validate(1);
