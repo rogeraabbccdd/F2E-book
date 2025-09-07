@@ -70,8 +70,8 @@ window.onload = () => {
 
 ## 事件監聽
 事件監聽相比事件綁定更為彈性，可以為同一個元素綁定多個事件
-- `.addEventListener(function)` 增加事件監聽器至元素
-- `.removeEventListener(function)` 從元素移除事件監聽器
+- `.addEventListener(事件名稱, function)` 增加事件監聽器至元素
+- `.removeEventListener(事件名稱, function)` 從元素移除事件監聽器
 
 ```js
 const onBtnClick1 = () => {
