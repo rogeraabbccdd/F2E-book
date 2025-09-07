@@ -29,7 +29,6 @@ export const useUserStore = defineStore('user', {
       name: '',
       email: '',
       age: 0,
-      isLoggedIn: false
     }
   },
   // 修改狀態用的 function
@@ -43,7 +42,10 @@ export const useUserStore = defineStore('user', {
     // 單純處理
     isAdult () {
       return this.age >= 18
-    }
+    },
+    isLoggedIn () {
+      return this.email !== '' && this.name !== ''
+    },
   }
 })
 ```
@@ -57,7 +59,6 @@ export const useUserStore = defineStore('user', () => {
   const name = ref('')
   const email = ref('')
   const age = ref(0)
-  const isLoggedIn = ref(false)
 
   // actions 修改狀態用一般的 function
   const setAge = (value) => {
@@ -66,9 +67,10 @@ export const useUserStore = defineStore('user', () => {
 
   // getters 用 computed 定義
   const isAdult = computed(() => age.value >= 18)
+  const isLoggedIn = computed(() => email.value !== '' && name.value !== '')
 
   // 回傳要讓外部使用的資料和方法
-  return { name, email, age, setAge, isAdult }
+  return { name, email, age, setAge, isAdult, isLoggedIn }
 })
 ```
 
