@@ -20,12 +20,12 @@
 |getHours() | 小時，0 到 23 |
 |getMinutes() | 分鐘，0 到 59 |
 |getSeconds() | 秒鐘，0 到 59|
-|getMilliseeonds() | 毫秒， 0 到 999 |
+|getMilliseconds() | 毫秒， 0 到 999 |
 |getTime() | 從 1970/1/1 00:00:00 到現在的毫秒數 |
 |toDateString() | 轉換成日期字串 |
 |toTimeString() | 轉換成時間字串 |
-|toLocalDateString() | 依語言格式化日期 |
-|toLocalTimeString() | 依語言格式化時間 |
+|toLocaleDateString() | 依語言格式化日期 |
+|toLocaleTimeString() | 依語言格式化時間 |
 |toLocaleString(語言) | 依語言格式化輸出 |
 
 :::danger 注意
@@ -128,7 +128,7 @@ console.log("現在時間是 " + string2)
   border-radius: 20px;
 }
 
-#example-clock-secound {
+#example-clock-second {
   position: absolute;
   top: calc(50% - 3px);
   width: 40%;

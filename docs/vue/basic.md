@@ -108,12 +108,12 @@ Vue.createApp({
     如果 v-on 呼叫 function 時只寫名字，仍會收到一個 event 物件
   -->
   <input type="button" value="新增" @click="add">
-  <input type="button" v-model="modeltext" @keydown.enter="add">
+  <input type="text" v-model="modeltext" @keydown.enter="add">
   <!--
     如果可以帶資料進去時需要 event 事件的話
     需要使用 $event 變數
   -->
-  <input type="button"  keydown.enter="print('hi', $event)"> 
+  <input type="text" @keydown.enter="print('hi', $event)"> 
   ```
 
 ## Composition API
@@ -234,7 +234,7 @@ setup () {
   const mytext = ref(null)
   // Vue 3.5
   // const mytext = useTemplateRef('mytext')
-  console.log(mytext.innerText)
+  console.log(mytext.value.innerText)
   return {
     mytext
   }

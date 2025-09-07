@@ -22,7 +22,6 @@ MongoDB 的安裝以及增改刪查語法
   dbpath=data
   logpath=logs\log.txt
   ```
-- 建立 `data` 和 `log` 資料夾
 - 建立 MongoDB 啟動檔 `start.bat`，寫入 
   ```txt
   .\bin\mongod --config .\mongod.config
@@ -70,7 +69,7 @@ BulkWriteResult({
 建立索引，可以避免資料庫欄位出現重複資料  
 ```js
 // 建立索引
-> db.col.createIndex({"account":1}, {unique: true})
+> db.admin.createIndex({"account":1}, {unique: true})
 
 // 顯示索引
 > db.admin.getIndexes()
@@ -106,9 +105,9 @@ BulkWriteResult({
   - `collection` 為資料表名稱
   - `.find(query, projection)`，`query` 為查詢 `projection` 顯示欄位
     ```js
-    // db.products.find( query, projection )
+    // db.products.find(query, projection)
     // 找出 _id 為 123 的資料，但只顯示 _id, name, price 三個欄位
-    > db.products.find( { _id: "ac3" } , { name:1,price:1} )  
+    > db.products.find( { _id: ObjectId("ac3") } , { name:1,price:1} )  
     ```
   - `.limit()` 為資料比數，可不加
   - `.skip()` 為略過幾筆資料，可不加
@@ -138,9 +137,9 @@ BulkWriteResult({
 ### 刪除
 ```js
 // 刪除一筆
-> db.col.deleteOne({'name':'ABC'})
+> db.collection.deleteOne({'name':'ABC'})
 // 刪除多筆
-> db.col.deleteMany({'name':'ABC'})
+> db.collection.deleteMany({'name':'ABC'})
 ```
 
 ## 聚合框架
@@ -176,13 +175,12 @@ MongoDB 的聚合框架 (Aggregation Framework) 能更進階的處理查詢請�
 ### 操作符
 [操作符](https://www.mongodb.com/docs/manual/aggregation/) 能在聚合管道中使用，常用的有以下幾種
 - `$size` - 計算數量
-- `$filter` - 過濾資料，可以搭配 `$eq`
 - `$add` - 接受多個值相加
-- `$subtract` - 接受兩個值相減，第二個剪減第一個，如 `$subtract : [ "$price", "$count"]`
+- `$subtract` - 接受兩個值相減，第一個減第二個，如 `$subtract : [ "$price", "$count"]`
 - `$multiply` - 接受兩個值相乘，如 `$multiply : [ "$price", "$count"]`
 - `$divide` - 接受兩個值相除，取結果
 - `$mod` - 接受兩個值相除，取餘數
-- `$filter` - 過濾資料，`{ $filter: { input: 陣列, cond: 判斷條件 } }`
+- `$filter` - 過濾資料，`{ $filter: { input: 陣列, cond: 判斷條件 } }`，可以搭配 `$eq`
 
 操作符能混搭使用，如以下語法回傳 products 陣列裡 sell 欄位值為 1 的商品總數  
 ```js
@@ -218,4 +216,4 @@ MongoDB 的聚合框架 (Aggregation Framework) 能更進階的處理查詢請�
 ```
 
 ## 資料庫規劃
-<PDF src="/assets/ch26/uml.pdf"></PDF>
+<PDF src="/F2E-book/assets/ch26/uml.pdf"></PDF>
