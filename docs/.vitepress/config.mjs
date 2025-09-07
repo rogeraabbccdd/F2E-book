@@ -90,7 +90,8 @@ export default defineConfig({
         text: '資料庫 API',
         items: [
           { text: 'MongoDB 的安裝與操作', link: '/database/mongo' },
-          { text: '基礎 API', link: '/database/api-basic' },
+          { text: 'mongoose', link: '/database/mongoose' },
+          { text: 'Express', link: '/database/express' },
           { text: '進階 API', link: '/database/api-advanced' },
         ]
       },
