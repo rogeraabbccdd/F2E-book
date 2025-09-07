@@ -30,7 +30,7 @@ MongoDB 的安裝以及增改刪查語法
 - 使用時須先執行啟動檔後， cd 到 bin 資料夾內，下 `mongo` 指令進入終端機下資料庫指令
 
 ### 工具
-- [Azure Cosmos DB](https://marketplace.visualstudio.com/items?itemName=ms-azuretools.vscode-cosmosdb)
+- [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
 - [MongoDB Compass](https://www.mongodb.com/products/compass)
 
 ## 使用語法
