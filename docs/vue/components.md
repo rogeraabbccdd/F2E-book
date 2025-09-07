@@ -108,21 +108,21 @@ app.component('product', {
   },
   setup (props) {
     // 直接使用 props
-    console.log(props.text)
+    console.log(props.name)
 
     // 整個 props 轉成 refs 並解構
-    const { text } = toRefs(props)
+    const { name } = toRefs(props)
 
     // 或是單獨轉成 ref 使用
-    const text = toRef(props, 'text')
+    const name = toRef(props, 'name')
 
-    console.log(text.value)
+    console.log(name.value)
   }
 })
 ```
 
 ## emit
-子元件傳出則需要使用 `$emit`
+子元件傳出則需要使用 `emit()`
 ```html
 <!-- 外層 -->
 <my-component @apple="handleApple"></my-component>
@@ -141,9 +141,9 @@ const app = Vue.createApp({
       handleApple
     }
   }
-}).component('component', {
+}).component('my-component', {
   setup(props, { emit }) {
-    // 子元件觸發自訂義事件，名稱為 btnClick，將 'abcd' 帶出去
+    // 子元件觸發自訂義事件，名稱為 apple，將 'abcd' 帶出去
     const onBtnClick = () => {
       emit('apple', 'abcd')
     }
@@ -157,30 +157,32 @@ const app = Vue.createApp({
 ## v-model
 使用 `v-model` 搭配 `computed` 實現雙向綁定  
 ```html
-<my-component v-model:data="data"></my-component>
+<my-component v-model:title="title"></my-component>
 ```
 ```js
 app.component('my-component', {
   props: {
-    data: String
+    title: String
   },
   setup (props, { emit }) {
-    const syncData = computed({
+    const syncTitle = computed({
       get () {
-        return props.data
+        return props.title
       },
       set (value) {
-        emit('update:data', value)
+        emit('update:title', value)
       }
     })
+    return { syncTitle }
   }
 })
 ```
-在 Vue 3.4 以後的 SFC 可以使用 `defineModel` 簡化
+在 Vue 3.4 以後的 SFC 可以使用 [`defineModel`](https://vuejs.org/api/sfc-script-setup.html#definemodel) 簡化
 ```html
 <script setup>
-// defineModel(prop名, prop選項)
-const title = defineModel('title', { required: true })
+  // 在 <script setup> 標籤內才可使用
+  // defineModel(prop名, prop選項)
+  const title = defineModel('title', { required: true })
 </script>
 ```
 
@@ -234,18 +236,18 @@ provide/inject 在元件比較多層時可能會難以追蹤資料來源，不�
 const { provide, ref } = Vue
 
 setup () {
-  const string = ref('abcd')
-  provide('string', string.value)
+  const message = ref('abcd')
+  provide('message', message)
 }
 ```
 
 子元件就能使用 inject 取得資料
 ```js
-const { inject, ref } = Vue
+const { inject } = Vue
 
 setup () {
   const message = inject('message')
-  console.log(message)
+  console.log(message.value)
 }
 ```
 
