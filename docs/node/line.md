@@ -14,6 +14,17 @@
 ## nodemon
 [nodemon](https://www.npmjs.com/package/nodemon) 套件能在檔案存檔時自動重啟  
 只需要在 `package.json` 將啟動的 node 改成 nodemon 就好  
+
+:::tip TIP
+這個套件只有開發時會用到，雲端環境不需要  
+所以安裝時使用 `-D` 參數，將套件安裝在 `devDependencies` 中  
+有些雲端服務會自動偵測 `devDependencies`，並忽略  
+:::
+
+```bash
+npm i -D nodemon
+```
+
 ```json
 "scripts": {
   // 開發用指令，自動重新啟動
@@ -31,6 +42,10 @@
 - 不要將機密資訊寫在程式碼裡面
 - 在 `.gitignore` 忽略 `.env` 檔，避免將機密資訊上傳到 GitHub
 :::
+
+```bash
+npm i dotenv
+```
 
 - 建立 `.env` 檔並輸入環境設定
   ```ini
@@ -54,6 +69,10 @@
 通常雲端服務會自動分配 port，並以環境變數 `PORT` 提供給程式使用  
 某些雲端服務指定 port 時可能會造成程式無法啟動  
 :::
+
+```bash
+npm i linebot
+```
 
 ```js
 // 引用套件
