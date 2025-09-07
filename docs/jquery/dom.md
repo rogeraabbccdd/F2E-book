@@ -130,7 +130,7 @@ $('h1').eq(1).text('Hi');
 // .html() 取得 HTML
 console.log( $('h1').eq(2).html() )
 // .html() 修改 HTML
-$('h1').eq(2).html('<a href='https://google.com'>Google</a>');
+$('h1').eq(2).html('<a href="https://google.com">Google</a>');
 
 // .val() 取得輸入欄位的值
 console.log( $('#input-password').val() )
@@ -173,11 +173,16 @@ $('#target').remove()
 - 部分常用事件已經有對應的函式
   - `.click()`
   - `.submit()`
-  - `.load()`
   - `.mouseenter()`
   - `.mouseleave()`
   - `.mousemove()`
 - 其他事件需使用 `.on()` 綁定
+
+:::danger 注意
+jQuery 3.0 以後，[load event](https://api.jquery.com/load-event/) 移除了直接使用 `load()` 函式的形式
+
+新的 [`load()`](https://api.jquery.com/load/) 函式改成載入一段 HTML 並插入到指定元素中
+:::
 
 ```js
 // 使用事件的函式
