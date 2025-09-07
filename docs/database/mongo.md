@@ -144,7 +144,7 @@ BulkWriteResult({
 ```
 
 ## 聚合框架 (Aggregation Framework)
-MongoDB 的聚合框架能更進階的處理查詢請求  
+MongoDB 的聚合框架 (Aggregation Framework) 能更進階的處理查詢請求  
 
 ```js
 > db.collection.aggregate([])
@@ -153,6 +153,8 @@ MongoDB 的聚合框架能更進階的處理查詢請求
 可使用 [MongoDB Compass](https://www.mongodb.com/products/compass) 的聚合工具輔助編寫語法  
 
 ### [pipeline](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/)
+[聚合管道 (Aggregation Pipeline)](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) 是由多個階段 (stage) 組成的資料處理管道，每個階段都會對資料進行特定的操作，並將結果傳遞給下一個階段。
+
 - `$project` - 選擇回傳欄位，若只要回傳姓名和 id 為 `{ "$project" : { "id" : 1, "name" : 1 }}`
 - `$match` - 查詢條件，一般 `.find()` 裡面寫的語法
 - `$unwind` - 拆分，能把陣列裡的資料拆成單獨的一個個資料，若要拆分訂單陣列欄位為 `{"$unwind" : "$orders"}`
@@ -172,6 +174,7 @@ MongoDB 的聚合框架能更進階的處理查詢請求
   }
   ```
 ### [操作符](https://docs.mongodb.com/manual/reference/operator/aggregation/)
+[操作符](https://www.mongodb.com/docs/manual/aggregation/) 能在聚合管道中使用，常用的有以下幾種
 - `$size` - 計算數量
 - `$filter` - 過濾資料，可以搭配 `$eq`
 - `$add` - 接受多個值相加
