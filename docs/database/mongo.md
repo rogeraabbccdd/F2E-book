@@ -29,7 +29,7 @@ MongoDB 的安裝以及增改刪查語法
   ```
 - 使用時須先執行啟動檔後， cd 到 bin 資料夾內，下 `mongo` 指令進入終端機下資料庫指令
 
-### 工具
+## 工具
 - [MongoDB for VS Code](https://marketplace.visualstudio.com/items?itemName=mongodb.mongodb-vscode)
 - [MongoDB Compass](https://www.mongodb.com/products/compass)
 
@@ -143,7 +143,7 @@ BulkWriteResult({
 > db.col.deleteMany({'name':'ABC'})
 ```
 
-## 聚合框架 (Aggregation Framework)
+## 聚合框架
 MongoDB 的聚合框架 (Aggregation Framework) 能更進階的處理查詢請求  
 
 ```js
@@ -152,7 +152,7 @@ MongoDB 的聚合框架 (Aggregation Framework) 能更進階的處理查詢請�
 
 可使用 [MongoDB Compass](https://www.mongodb.com/products/compass) 的聚合工具輔助編寫語法  
 
-### [pipeline](https://docs.mongodb.com/manual/reference/operator/aggregation-pipeline/)
+### 聚合管道
 [聚合管道 (Aggregation Pipeline)](https://www.mongodb.com/docs/manual/core/aggregation-pipeline/) 是由多個階段 (stage) 組成的資料處理管道，每個階段都會對資料進行特定的操作，並將結果傳遞給下一個階段。
 
 - `$project` - 選擇回傳欄位，若只要回傳姓名和 id 為 `{ "$project" : { "id" : 1, "name" : 1 }}`
@@ -173,7 +173,7 @@ MongoDB 的聚合框架 (Aggregation Framework) 能更進階的處理查詢請�
     }
   }
   ```
-### [操作符](https://docs.mongodb.com/manual/reference/operator/aggregation/)
+### 操作符
 [操作符](https://www.mongodb.com/docs/manual/aggregation/) 能在聚合管道中使用，常用的有以下幾種
 - `$size` - 計算數量
 - `$filter` - 過濾資料，可以搭配 `$eq`
