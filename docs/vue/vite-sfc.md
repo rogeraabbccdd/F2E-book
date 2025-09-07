@@ -51,16 +51,19 @@ export default defineConfig([
 ```
 
 ## 路徑設定
-`vite.config.js` 中設定將 `@` 指向 src 資料夾  
+`vite.config.js` 中預設將 `@` 指向 src 資料夾  
 可以依照需求調整
 這樣在引用資源時比較好管理路徑  
 ```js
-import path from "path";
+import { fileURLToPath, URL } from 'node:url'
+
 export default defineConfig({
   plugins: [vue()],
   resolve: {
-    alias: {'@': path.resolve(__dirname, 'src')}
-  }
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    },
+  },
 })
 ```
 ```js
