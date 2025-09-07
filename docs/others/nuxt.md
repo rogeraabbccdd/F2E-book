@@ -177,7 +177,7 @@ useAsyncData
 // useAsyncData(key, function, options)
 // key 指定不同的值讓 nuxt 正確的更新資料，沒提供的話會根據程式碼檔名和行數自動產生
 // function 產生資料的 function
-// $fetch 為 ohmyfetch 套件，內建在 nuxt 裡 https://github.com/unjs/ohmyfetch
+// $fetch 為 ofetch 套件，內建在 nuxt 裡 https://github.com/unjs/ofetch
 // options 設定 https://v3.nuxtjs.org/api/composables/use-async-data#params
 const { data, pending, error, refresh } = await useAsyncData('events', () => $fetch('https://kktix.com/events.json'))
 </script>
@@ -227,7 +227,7 @@ useLazyFetch
 </template>
 
 <script setup>
-// useFetch 是 useLazyAsyncData 簡化版
+// useLazyFetch 是 useLazyAsyncData 簡化版
 // 包裝了 useLazyAsyncData 和 $fetch 並根據網址自動產生 key
 const { data, pending, error, refresh } = useLazyFetch('https://kktix.com/events.json')
 
@@ -260,7 +260,7 @@ const showNext = () => {
 }
 
 const showPrev = () => {
-  id.value++
+  id.value--
   refresh()
 }
 </script>
@@ -404,7 +404,7 @@ export default defineNuxtConfig({
     head: {
       title: 'Shop',
       // 設定的 titleTemplate 只能放文字，%s 代表 title
-      titleTemplate: '%s - Shop'
+      titleTemplate: '%s - Shop',
       meta: [
         // <meta name="viewport" content="width=device-width, initial-scale=1">
         { name: 'viewport', content: 'width=device-width, initial-scale=1' }
