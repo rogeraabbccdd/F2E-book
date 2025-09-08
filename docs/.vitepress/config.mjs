@@ -92,7 +92,8 @@ export default defineConfig({
           { text: 'MongoDB 的安裝與操作', link: '/database/mongo' },
           { text: 'mongoose', link: '/database/mongoose' },
           { text: 'Express', link: '/database/express' },
-          { text: '進階 API', link: '/database/api-advanced' },
+          { text: '身分驗證', link: '/database/passport' },
+          { text: '檔案上傳', link: '/database/upload' },
         ]
       },
       {
