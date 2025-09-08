@@ -84,7 +84,8 @@ JavaScript 是網頁開發者必學的三種語言之一，也是最流行的腳
 - 有相當多的套件可以使用，擴充性高
 
 ## 其他功能
-- 能以 [Electron](https://electronjs.org/) 開發跨平台應用程式
+- 能以 [Electron](https://electronjs.org/)、[Tauri](https://v2.tauri.app/)、[React Native](https://reactnative.dev/)、[NativeScript](https://nativescript.org/) 等開發跨平台應用程式
+- 在遊戲引擎 Unity 中以類似 HTML、CSS 的 [UI Toolkit](https://docs.unity3d.com/6000.2/Documentation/Manual/ui-systems/introduction-ui-toolkit.html) 開發遊戲介面
 - 能以 [UserScript](https://greasyfork.org/zh-TW) 修改網頁
 
 ## 缺點
