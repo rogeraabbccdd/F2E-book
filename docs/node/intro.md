@@ -12,7 +12,7 @@
 課程使用目前仍是主流的 Node.js，但未來可能會改用 Bun
 :::
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/M3BM9TB-8yA" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/LB8KwiiUGy0" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 ## nvm
 nvm 是 Node.js 的管理工具，可以在一台電腦安裝許多個 Node.js 版本  
