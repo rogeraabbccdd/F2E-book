@@ -107,7 +107,7 @@ export default mongoose.model('users', usersSchema)
 ```
 
 ## Model
-[Model]((https://mongoosejs.com/docs/index.html)) 是操作資料庫的物件，可以使用 Model 來新增、查詢、更新、刪除資料  
+[Model](https://mongoosejs.com/docs/index.html) 是操作資料庫的物件，可以使用 Model 來新增、查詢、更新、刪除資料  
 
 ```js
 import User from './models/user.js'
