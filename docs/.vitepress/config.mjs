@@ -103,6 +103,7 @@ export default defineConfig({
           { text: 'Pug', link: '/others/pug' },
           { text: 'Nuxt.js', link: '/others/nuxt' },
           { text: 'Firebase', link: '/others/firebase' },
+          { text: '靜態網站產生器', link: '/others/ssg' },
         ]
       },
     ],
@@ -204,7 +205,7 @@ export default defineConfig({
       "link",
       {
         rel: "icon",
-        href: "favicon.ico"
+        href: "/F2E-book/favicon.ico"
       }
     ]
   ]
