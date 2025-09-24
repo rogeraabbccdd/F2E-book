@@ -171,10 +171,6 @@ const GoodMorning = (time = '早上', item = '冰淇淋') => {}
 
 ## 綜合練習
 :::warning 練習
-編寫一個 function，可以判斷傳入的數字是不是偶數，是的話回傳 `true`，不是則回傳 `false`
-:::
-
-:::warning 練習
 小明喜歡數數  
 某天媽媽請他從 n 開始數，下一個數字是 n+1，再下一個數字是 n+2，以此類推  
 媽媽想知道，小明數了多少個數字後，數過的數字總和會超過 m  
@@ -354,6 +350,63 @@ function func () {
 }
 func()
 console.log('out', b)   // 1
+```
+
+## 閉包
+function 可以回傳一個 function
+
+```js
+function f () {
+  console.log(1)
+  return function () {
+    console.log(2)
+  }
+}
+
+const a = f()
+console.log(a)
+a()
+a()
+```
+
+function 回傳的 function，可以使用宣告 function 內的變數
+```js
+// var count = 0
+// function f () {
+//   count = count + 1
+//   console.log(count)
+// }
+// f()
+// f()
+// f()
+// var countStuduent = 0
+// function ff () {
+//   countStuduent = countStuduent + 1
+//   console.log(countStuduent)
+// }
+// var countDays = 0
+// function ff () {
+//   countDays = countDays + 1
+//   console.log(countDays)
+// }
+
+function f () {
+  // 函式用到的變數
+  var count = 0 
+  // 傳出真正執行的動作
+  return function () {
+    count = count + 1
+    console.log(count)
+  }
+}
+// countDogs = 真正要執行的動作
+const countDogs = f()
+// 呼叫動作，修改函式用到的變數
+countDogs()
+countDogs()
+const countCats = f()
+countCats()
+countCats()
 ```
 
 ## 提升
