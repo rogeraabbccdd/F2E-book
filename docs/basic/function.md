@@ -363,50 +363,42 @@ function f () {
   }
 }
 
-const a = f()
-console.log(a)
-a()
-a()
+const a = f()   // 1
+console.log(a)  // f () { console.log(2) }
+a()             // 2
+a()             // 2
 ```
 
-function 回傳的 function，可以使用宣告 function 內的變數
-```js
-// var count = 0
-// function f () {
-//   count = count + 1
-//   console.log(count)
-// }
-// f()
-// f()
-// f()
-// var countStuduent = 0
-// function ff () {
-//   countStuduent = countStuduent + 1
-//   console.log(countStuduent)
-// }
-// var countDays = 0
-// function ff () {
-//   countDays = countDays + 1
-//   console.log(countDays)
-// }
+function 回傳的 function，可以使用宣告 function 內的變數  
+它可以記得並存取它被建立時的外部函式作用域中的變數，即使那個外部函式已經執行完畢  
+閉包的一個常見用途是建立私有變數，避免全域變數的汙染  
 
+使用閉包前
+```js
+var countCats = 0
+countCats++
+countCats++
+
+var countDogs = 0
+countDogs++
+countDogs++
+```
+使用閉包後
+```js
 function f () {
-  // 函式用到的變數
-  var count = 0 
-  // 傳出真正執行的動作
+  var count = 0
   return function () {
     count = count + 1
     console.log(count)
   }
 }
-// countDogs = 真正要執行的動作
-const countDogs = f()
-// 呼叫動作，修改函式用到的變數
-countDogs()
-countDogs()
 const countCats = f()
-countCats()
-countCats()
+countCats()  // 1
+countCats()  // 2
+
+const countDogs = f()
+countDogs()  // 1
+countDogs()  // 2
 ```
 
 ## 提升
