@@ -17,6 +17,7 @@
 - [Gemini Code Assist](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist)
 - [Claude](https://claude.ai/)
 - [Cursor](https://cursor.com/)
+- [Stitch](https://stitch.withgoogle.com/create)
 
 ## MCP
 MCP (Model Context Protocol) 是一個開放標準，讓 AI 模型能夠存取外部資料與工具
@@ -36,7 +37,15 @@ MCP (Model Context Protocol) 是一個開放標準，讓 AI 模型能夠存取�
 - [Context 7](https://github.com/upstash/context7) 文件
 - [Memory](https://github.com/modelcontextprotocol/servers/tree/main/src/memory) 記憶上下文
 - [Sequential Thinking](https://github.com/modelcontextprotocol/servers/tree/main/src/sequentialthinking) 結構化思考
-- [Chrome](https://github.com/hangwin/mcp-chrome) Chrome 瀏覽器
+
+## Skills
+Skills 定義 AI 的工作行為說明，像是 SOP
+
+蒐集整理
+- [skills.sh](https://skills.sh/)
+
+推薦
+- [frontend-design](https://skills.sh/anthropics/skills/frontend-design) 擺脫 AI 味，產生有設計感的版面
 
 ## 延伸閱讀
 - [Beyond Vibe Coding](https://beyond.addy.ie/)
