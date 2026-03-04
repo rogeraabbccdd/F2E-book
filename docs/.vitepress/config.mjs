@@ -101,6 +101,7 @@ export default defineConfig({
         items: [
           { text: '資料庫防護', link: '/security/database' },
           { text: '後端防護', link: '/security/server' },
+          { text: 'XSS', link: '/security/xss' },
         ]
       },
       {
