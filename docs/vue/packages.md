@@ -37,7 +37,7 @@ UI 套件能快速建立頁面，提供許多已經設計好的元件和樣式�
 
 ## 其他
 - [VueUse](https://vueuse.org/) 什麼都有的工具庫
-- [unplugin-vue-router](https://uvr.esm.is/) 檔案式路由
+- ~~[unplugin-vue-router](https://uvr.esm.is/) 檔案式路由~~ 已被合併經官方路由
 - [unplugin-vue-components](https://github.com/unplugin/unplugin-vue-components) 自動 import 元件
 - [unplugin-auto-import](https://github.com/unplugin/unplugin-auto-import) 自動 import 變數
 - [VeeValidate](https://vee-validate.logaretm.com/v4/) 表單驗證
