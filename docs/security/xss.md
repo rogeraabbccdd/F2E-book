@@ -25,7 +25,7 @@ http://example.com/?keyword=%3Cscript%3Ealert(1);%3C/script%3E
 ```html
 <img src="#" onerror="alert(123)">
 ```
-使用 [sanitize-html](https://www.npmjs.com/package/sanitize-html) 處理使用者輸入的內容，就能過濾掉有問題的 HTML  
+使用 [sanitize-html](https://npmx.dev/package/sanitize-html) 處理使用者輸入的內容，就能過濾掉有問題的 HTML  
 ```js
 import sanitizeHtml from 'sanitize-html';
 

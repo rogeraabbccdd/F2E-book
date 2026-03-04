@@ -154,7 +154,7 @@ app.use('/users', userRouter)
 依據不同處理結果，回傳不同的 HTTP 狀態碼
 
 :::tip TIP
-建議安裝 [http-status-codes](https://www.npmjs.com/package/http-status-codes)  
+建議安裝 [http-status-codes](https://npmx.dev/package/http-status-codes)  
 這個套件可以使用名稱來取得 HTTP 狀態碼，讓程式碼更具可讀性
 
 ```js
@@ -229,6 +229,6 @@ export const getId = async (req, res) => {
 ```
 
 ## 其他套件
-- [cors](https://www.npmjs.com/package/cors) 讓瀏覽器前端能夠跨網域請求 API
-- [express-rate-limit](https://www.npmjs.com/package/express-rate-limit) 限制單一 IP 在一定時間內的請求次數，防止惡意攻擊
-- [express-mongo-sanitize](https://www.npmjs.com/package/express-mongo-sanitize) 移除請求中的 `$` 和 `.`，防止資料庫攻擊
+- [cors](https://npmx.dev/package/cors) 讓瀏覽器前端能夠跨網域請求 API
+- [express-rate-limit](https://npmx.dev/package/express-rate-limit) 限制單一 IP 在一定時間內的請求次數，防止惡意攻擊
+- [express-mongo-sanitize](https://npmx.dev/package/express-mongo-sanitize) 移除請求中的 `$` 和 `.`，防止資料庫攻擊

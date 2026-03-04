@@ -6,8 +6,8 @@
 - [Passport.js](https://www.passportjs.org/) 身分驗證套件本體
   - [passport-local](https://www.passportjs.org/packages/passport-local/) 帳號密碼驗證策略
   - [passport-jwt](https://www.passportjs.org/packages/passport-jwt/) JWT 驗證策略
-- [bcrypt](https://www.npmjs.com/package/bcrypt) 密碼雜湊套件
-- [jsonwebtoken](https://www.npmjs.com/package/jsonwebtoken) JWT 簽發
+- [bcrypt](https://npmx.dev/package/bcrypt) 密碼雜湊套件
+- [jsonwebtoken](https://npmx.dev/package/jsonwebtoken) JWT 簽發
 
 
 近年瀏覽器對第三方 Cookie 驗證規定日趨嚴格，所以符合 RESTful 架構的 [JWT](https://jwt.io/) 漸漸興起  

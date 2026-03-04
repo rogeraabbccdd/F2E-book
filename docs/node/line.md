@@ -12,7 +12,7 @@
 - 關閉自動回覆訊息
 
 ## nodemon
-[nodemon](https://www.npmjs.com/package/nodemon) 套件能在檔案存檔時自動重啟  
+[nodemon](https://npmx.dev/package/nodemon) 套件能在檔案存檔時自動重啟  
 只需要在 `package.json` 將啟動的 node 改成 nodemon 就好  
 
 :::tip TIP
@@ -35,7 +35,7 @@ npm i -D nodemon
 ```
 
 ## dotenv
-使用 [dotenv](https://www.npmjs.com/package/dotenv) 套件能讓 Node.js 讀取環境設定檔 `.env`  
+使用 [dotenv](https://npmx.dev/package/dotenv) 套件能讓 Node.js 讀取環境設定檔 `.env`  
 環境設定檔可以在不同環境使用不同的設定，例如本機和雲端用的機器人帳號可能不一樣
 
 :::danger 注意
@@ -61,7 +61,7 @@ npm i dotenv
 - 以 `process.env.變數名稱` 使用環境變數
 
 ## linebot
-[linebot](https://www.npmjs.com/package/linebot) 能以比官方工具簡單的語法製作 LINE 機器人  
+[linebot](https://npmx.dev/package/linebot) 能以比官方工具簡單的語法製作 LINE 機器人  
 詳細的訊息事件可以參考 [LINE 文件](https://developers.line.biz/en/reference/messaging-api/#message-event)
 
 :::danger 注意

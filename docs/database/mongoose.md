@@ -12,7 +12,7 @@ npm install mongoose
 ```
 
 ## 連線
-設定資料庫連線，建議使用 [dotenv](https://www.npmjs.com/package/dotenv) 和 `.env` 檔管理資料庫連線資訊  
+設定資料庫連線，建議使用 [dotenv](https://npmx.dev/package/dotenv) 和 `.env` 檔管理資料庫連線資訊  
 
 ```ini
 DB_URL=mongodb://xxx/xxx

@@ -2,7 +2,7 @@
 Firebase 是 Google 提供的後端服務平台，提供了資料庫、身份驗證等功能
 
 ## 安裝
-- [firebase](https://www.npmjs.com/package/firebase) Firebase 官方 SDK
+- [firebase](https://npmx.dev/package/firebase) Firebase 官方 SDK
 - [vuefire](https://vuefire.vuejs.org/) Vue 3 的 Firebase 整合套件
 ```bash
 npm i vuefire firebase

@@ -116,7 +116,7 @@ router.beforeEach((to) => {
 ```
 
 ## 持久化
-Pinia 本身沒有提供持久化功能，可以使用套件 [pinia-plugin-persistedstate](https://www.npmjs.com/package/pinia-plugin-persistedstate) 將狀態保存至 LocalStorage
+Pinia 本身沒有提供持久化功能，可以使用套件 [pinia-plugin-persistedstate](https://npmx.dev/package/pinia-plugin-persistedstate) 將狀態保存至 LocalStorage
 
 ```bash
 npm i pinia-plugin-persistedstate
