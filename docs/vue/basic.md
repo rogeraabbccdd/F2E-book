@@ -1,4 +1,4 @@
-# Ch.22 基礎 Vue.js
+# 基礎 Vue.js
 
 認識 Vue 與基礎 Vue.js 語法  
 
