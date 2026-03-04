@@ -13,10 +13,13 @@
 :::
 
 - [GitHub Copilot](https://github.com/features/copilot)
+- [GitHub Copilot CLI](https://github.com/features/copilot/cli)
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli)
 - [Gemini Code Assist](https://marketplace.visualstudio.com/items?itemName=Google.geminicodeassist)
+- [Google Antigravity](https://antigravity.google/)
 - [Claude](https://claude.ai/)
 - [Cursor](https://cursor.com/)
+- [OpenClaw](https://openclaw.ai/)
 - [Stitch](https://stitch.withgoogle.com/create)
 
 ## MCP
