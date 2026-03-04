@@ -100,6 +100,7 @@ export default defineConfig({
         text: '資訊安全',
         items: [
           { text: '資料庫防護', link: '/security/database' },
+          { text: '後端防護', link: '/security/server' },
         ]
       },
       {
