@@ -12,6 +12,11 @@
 - [研究人員論文暗藏「好評專屬」 AI 指令](https://www.inside.com.tw/article/38892-researchers-hide-positive-review-only-ai-instructions-in-academic-papers)
 :::
 
+:::danger 注意
+一定要檢查 AI 產生的程式碼內容
+- [去你的，Google這招太奸詐了！](https://www.facebook.com/share/p/1834zHGQ78/)
+:::
+
 - [GitHub Copilot](https://github.com/features/copilot)
 - [GitHub Copilot CLI](https://github.com/features/copilot/cli)
 - [Gemini CLI](https://github.com/google-gemini/gemini-cli)
