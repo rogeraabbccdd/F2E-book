@@ -141,16 +141,3 @@ const user = await User.findByIdAndDelete('123456789')
 // 帶出關聯資料
 const user = await User.findById('12345678').populate('cart.product')
 ```
-
-## 安全性
-由於 MongoDB 的資料庫操作都是使用 `$` 開頭的字串來表示指令，如果直接將使用者輸入的資料存進資料庫，可能有[安全性問題](https://thecodebarbarian.com/2014/09/04/defending-against-query-selector-injection-attacks.html)  
-`sanitizeFilter` 可以將所有查詢指令中的 `$` 開頭欄位值用 `$eq` 包起來，避免被當成指令執行
-
-```js
-mongoose.set('sanitizeFilter', true)
-```
-
-如果某些欄位需要使用查詢指令，使用 [trusted](https://mongoosejs.com/docs/6.x/docs/api/mongoose.html#mongoose_Mongoose-trusted) 標記，就不會被包起來
-```js
-Product.find({ price: trusted({ $gt: 100 }) })
-```

@@ -97,6 +97,12 @@ export default defineConfig({
         ]
       },
       {
+        text: '資訊安全',
+        items: [
+          { text: '資料庫防護', link: '/security/database' },
+        ]
+      },
+      {
         text: '其他',
         items: [
           { text: 'Git', link: '/others/git' },
