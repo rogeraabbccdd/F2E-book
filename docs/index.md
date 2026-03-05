@@ -6,7 +6,7 @@ titleTemplate: 前端班課程講義
 
 hero:
   name: 泰山職訓
-  text: 前端班課程講義
+  text: 前端網頁技術與AI應用課程講義
   tagline: 進入 JavaScript 的世界
   image:
     src: /hero.png
