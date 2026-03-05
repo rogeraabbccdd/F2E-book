@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import NotFound from 'vitepress/dist/client/theme-default/NotFound.vue'
 import { useData } from 'vitepress/dist/client/theme-default/composables/data'
-import { useSidebar } from 'vitepress/dist/client/theme-default/composables/sidebar'
+import { useLayout } from 'vitepress/dist/client/theme-default/composables/layout'
 import VPDoc from 'vitepress/dist/client/theme-default/components/VPDoc.vue'
 import VPHome from 'vitepress/dist/client/theme-default/components/VPHome.vue'
 import VPPage from 'vitepress/dist/client/theme-default/components/VPPage.vue'
@@ -10,7 +10,7 @@ import '../../plugins/demo-block/style.scss'
 import webController from '../../plugins/demo-block/main.mjs'
 
 const { page, frontmatter } = useData()
-const { hasSidebar } = useSidebar()
+const { isHome, hasSidebar } = useLayout()
 
 onMounted(() => {
   // window.$VUEPRESS_DEMO_BLOCK = SETTINGS
@@ -26,10 +26,7 @@ onUpdated(() => {
   <div
     class="VPContent"
     id="VPContent"
-    :class="{
-      'has-sidebar': hasSidebar,
-      'is-home': frontmatter.layout === 'home'
-    }"
+    :class="{ 'has-sidebar': hasSidebar, 'is-home': isHome }"
   >
     <slot name="not-found" v-if="page.isNotFound"><NotFound /></slot>
 
@@ -103,8 +100,8 @@ onUpdated(() => {
 
 @media (min-width: 1440px) {
   .VPContent.has-sidebar {
-    padding-right: calc((100vw - var(--vp-layout-max-width)) / 2);
-    padding-left: calc((100vw - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
+    padding-right: calc((100% - var(--vp-layout-max-width)) / 2);
+    padding-left: calc((100% - var(--vp-layout-max-width)) / 2 + var(--vp-sidebar-width));
   }
 }
 </style>

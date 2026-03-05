@@ -10,11 +10,11 @@
       <a :href="link" target="_blank">
         <img :src="realSrc" :alt="alt" :title="title">
       </a>
-      <a :href="link" target="_blank">
-        <figcaption>
+      <figcaption>
+        <a :href="link" target="_blank">
           <slot></slot>
-        </figcaption>
-      </a>
+        </a>
+      </figcaption>
     </template>
   </figure>
 </template>

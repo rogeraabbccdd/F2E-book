@@ -15,16 +15,16 @@
   "license": "ISC",
   "devDependencies": {
     "markdown-it-container": "^4.0.0",
-    "sass": "^1.72.0",
-    "vitepress": "^1.0.1",
+    "sass": "^1.97.3",
+    "vitepress": "^2.0.0-alpha.16",
     "vitepress-plugin-google-analytics": "^1.0.2"
   },
   "dependencies": {
     "flowchart.js": "^1.18.0",
     "hash-sum": "^2.0.0",
     "jquery": "^3.7.1",
-    "jsmind": "^0.8.3",
-    "pdfobject": "^2.3.0",
+    "jsmind": "^0.8.8",
+    "pdfobject": "^2.3.1",
     "treeviz": "2.2.0"
   }
 }
