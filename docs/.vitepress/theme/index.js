@@ -5,6 +5,7 @@ import Mindmap from '../components/Mindmap.vue'
 import PDF from '../components/PDF.vue'
 import Tree from '../components/Tree.vue'
 import ImageFigure from '../components/ImageFigure.vue'
+import "@catppuccin/vitepress/theme/mocha/green.css";
 import $ from 'jquery'
 import './custom.sass'
 

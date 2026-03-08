@@ -20,6 +20,7 @@
     "vitepress-plugin-google-analytics": "^1.0.2"
   },
   "dependencies": {
+    "@catppuccin/vitepress": "^0.1.2",
     "flowchart.js": "^1.18.0",
     "hash-sum": "^2.0.0",
     "jquery": "^3.7.1",

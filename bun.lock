@@ -5,6 +5,7 @@
     "": {
       "name": "f2e-book",
       "dependencies": {
+        "@catppuccin/vitepress": "^0.1.2",
         "flowchart.js": "^1.18.0",
         "hash-sum": "^2.0.0",
         "jquery": "^3.7.1",
@@ -28,6 +29,8 @@
     "@babel/parser": ["@babel/parser@7.29.0", "", { "dependencies": { "@babel/types": "^7.29.0" }, "bin": "./bin/babel-parser.js" }, "sha512-IyDgFV5GeDUVX4YdF/3CPULtVGSXXMLh1xVIgdCgxApktqnQV0r7/8Nqthg+8YLGaAtdyIlo2qIdZrbCv4+7ww=="],
 
     "@babel/types": ["@babel/types@7.29.0", "", { "dependencies": { "@babel/helper-string-parser": "^7.27.1", "@babel/helper-validator-identifier": "^7.28.5" } }, "sha512-LwdZHpScM4Qz8Xw2iKSzS+cfglZzJGvofQICy7W7v4caru4EaAmyUuO6BGrbyQ2mYV11W0U8j5mBhd14dd3B0A=="],
+
+    "@catppuccin/vitepress": ["@catppuccin/vitepress@0.1.2", "", { "peerDependencies": { "typescript": "^5.0.0" } }, "sha512-dqhgo6U6GWbgh3McAgwemUC8Y2Aj48rRcQx/9iuPzBPAgo7NA3yi7ZcR0wolAENMmoOMAHBV+rz/5DfiGxtZLA=="],
 
     "@docsearch/css": ["@docsearch/css@4.6.0", "", {}, "sha512-YlcAimkXclvqta47g47efzCM5CFxDwv2ClkDfEs/fC/Ak0OxPH2b3czwa4o8O1TRBf+ujFF2RiUwszz2fPVNJQ=="],
 
@@ -398,6 +401,8 @@
     "treeviz": ["treeviz@2.2.0", "", { "dependencies": { "@types/d3-hierarchy": "^1.1.6", "@types/d3-selection": "^1.4.1", "@types/d3-transition": "^1.1.4", "@types/d3-zoom": "^1.7.4", "d3-hierarchy": "^1.1.8", "d3-selection": "^1.4.0", "d3-zoom": "^1.8.3" } }, "sha512-erq202RyQ3+PW/8+S0O/lExwgLumkLFhM/AD7uw9lWDMzG/zUnz2Fw5kQgNb3WZkoDtuhq2SqiiFjBCodBy4rg=="],
 
     "trim-lines": ["trim-lines@3.0.1", "", {}, "sha512-kRj8B+YHZCc9kQYdWfJB2/oUl9rA99qbowYYBtr4ui4mZyAQ2JpvVBd/6U2YloATfqBhBTSMhTpgBHtU0Mf3Rg=="],
+
+    "typescript": ["typescript@5.9.3", "", { "bin": { "tsc": "bin/tsc", "tsserver": "bin/tsserver" } }, "sha512-jl1vZzPDinLr9eUt3J/t7V6FgNEw9QjvBPdysz9KfQDD41fQrC2Y4vKQdiaUpFT4bXlb1RHhLpp8wtm6M5TgSw=="],
 
     "unist-util-is": ["unist-util-is@6.0.1", "", { "dependencies": { "@types/unist": "^3.0.0" } }, "sha512-LsiILbtBETkDz8I9p1dQ0uyRUWuaQzd/cuEeS1hoRSyW5E5XGmTzlwY1OrNzzakGowI9Dr/I8HVaw4hTtnxy8g=="],
 
