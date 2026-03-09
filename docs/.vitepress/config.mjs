@@ -83,6 +83,7 @@ export default defineConfig({
           { text: '套件', link: '/vue/packages' },
           { text: '路由', link: '/vue/router' },
           { text: 'Pinia', link: '/vue/pinia' },
+          { text: 'Pinia Colada', link: '/vue/pinia-colada' },
           { text: 'PWA', link: '/vue/pwa' },
         ]
       },
