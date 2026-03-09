@@ -107,6 +107,12 @@ export default defineConfig({
         ]
       },
       {
+        text: 'TypeScript',
+        items: [
+          { text: '介紹', link: '/typescript/intro' },
+        ]
+      },
+      {
         text: '其他',
         items: [
           { text: 'Git', link: '/others/git' },
