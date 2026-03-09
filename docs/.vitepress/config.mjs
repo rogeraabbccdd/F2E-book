@@ -110,6 +110,7 @@ export default defineConfig({
         text: 'TypeScript',
         items: [
           { text: '介紹', link: '/typescript/intro' },
+          { text: '基本語法', link: '/typescript/basic' }
         ]
       },
       {
