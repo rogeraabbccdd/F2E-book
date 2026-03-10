@@ -85,6 +85,7 @@ export default defineConfig({
           { text: 'Pinia', link: '/vue/pinia' },
           { text: 'Pinia Colada', link: '/vue/pinia-colada' },
           { text: 'PWA', link: '/vue/pwa' },
+          { text: '表單驗證', link: '/vue/form' },
         ]
       },
       {
