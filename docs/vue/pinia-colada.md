@@ -1,8 +1,8 @@
 # Pinia Colada
-使用 Pinia Colada 串接後端資料
+使用 [Pinia Colada](https://pinia-colada.esm.dev/) 串接後端資料
 
 ## 介紹
-[Pinia Colada](https://pinia-colada.esm.dev/) 特點:
+Pinia Colada 特點:
 - 快取，必免使用者頻繁閱覽重複頁面造成後端負擔
 - Composable，更方便管理資料狀態
 
@@ -11,7 +11,7 @@ npm i @pinia/colada
 ```
 
 ## Query
-使用 `useQuery` 查詢資料  
+元件內使用 `useQuery` 查詢資料  
 
 ```js
 import { useQuery } from '@pinia/colada'
@@ -39,7 +39,7 @@ const {
 })
 ```
 
-如果會重複使用的話，使用 `defineQuery` 包裝會更好管理
+如果會重複使用的話，建議獨立成 js 檔並使用 `defineQuery` 包裝
 ```js
 import { useQuery, defineQuery } from '@pinia/colada'
 
@@ -64,22 +64,34 @@ const { data } = useGetProductQuery()
 ```
 
 ## Mutation
-使用 `useMutation` 查詢資料  
+元件內使用 `useMutation` 修改資料  
 ```js
 const {
-  mutate: createTodo,
-  status,
-  asyncStatus,
+  mutateAsync: createProduct
 } = useMutation({
   mutation: (data) => axios.post('/api/products', data)
 })
+
+await createProduct({
+  name: '商品',
+  price: 100
+})
 ```
 
-如果會重複使用的話，使用 `defineMutation` 包裝
+如果會重複使用的話，建議獨立成 js 檔並使用 `defineMutation` 包裝
 ```js
 export const useCreateProductMutation = defineMutation(() => {
   return useMutation({
     mutation: (data) => axios.post('/api/products', data)
   })
+})
+
+const {
+  mutateAsync: createProduct
+}  = useCreateProductMutation()
+
+await createProduct({
+  name: '商品',
+  price: 100
 })
 ```
