@@ -1,9 +1,23 @@
 # 表單驗證
-使用 [VeeValidate](https://vee-validate.logaretm.com/v4/) 和 [yup](https://npmx.dev/package/yup) 進行表單驗證
+使用驗證套件進行表單驗證
 
-## 表單驗證規則
-使用 yup 定義表單驗證規則  
-建議搭配套件 [validator](https://npmx.dev/package/validator)，有更豐富的驗證能使用
+## 套件
+- [VeeValidate](https://vee-validate.logaretm.com/v4/): 表單套件
+- [yup](https://npmx.dev/package/yup): 定義驗證規則套件，類似的有 [joi](https://joi.dev/)、[zod](https://npmx.dev/package/zod) 等
+- [validator](https://npmx.dev/package/validator): 驗證函式庫
+
+```bash
+npm i vee-validate yup validator
+```
+
+## 驗證規則
+使用 yup 和 validator 定義表單驗證規則  
+
+:::danger 注意
+部分套件有相同的驗證規則，但是驗證邏輯不同  
+例如 `yup.string().email()` 和 `validator.isEmail()`  
+建議挑選一種後前後端統一使用，避免前端通過，後端卻過不了的情況
+:::
 
 ```js
 import * as yup from 'yup'
