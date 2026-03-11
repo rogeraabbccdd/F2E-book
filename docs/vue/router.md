@@ -45,7 +45,7 @@ createApp()
 ## 路由設定
 路由設定方式分為兩種
 - 陣列路由: 通用設定方式
-- 檔案路由: 從 Vue Router 4.x 開始，整合了 [Unplugin Vue Router](https://uvr.esm.is/)  
+- 檔案路由: 從 Vue Router 5.x 開始，整合了 [Unplugin Vue Router](https://uvr.esm.is/)  
 
 ### 陣列路由
 使用陣列定義路由  
