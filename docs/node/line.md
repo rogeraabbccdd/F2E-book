@@ -121,7 +121,7 @@ fs.writeFileSync('./flex.json', JSON.stringify(flex, null, 2))
 - 在 VSCode 設定 `settings.json` 開啟存檔自動修復
    ```json
    "editor.codeActionsOnSave": {
-     "source.fixAll.eslint": true
+     "source.fixAll.eslint": "explicit"
    },
    ```
 - 安裝 [eslint-plugin-prettier](https://github.com/prettier/eslint-plugin-prettier)
