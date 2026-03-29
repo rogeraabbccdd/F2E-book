@@ -32,45 +32,38 @@ Markdown 是一種輕量級標記式語言
 - [HackMD Markdown 語法大全](https://hackmd.io/@mrcoding/ryZE7k8cN)
 - [Discord Markdown 語法](https://support.discord.com/hc/zh-tw/articles/210298617-Markdown-%E8%AA%9E%E6%B3%95%E6%96%B0%E6%89%8B%E6%95%99%E5%AD%B8-%E6%96%87%E5%AD%97%E6%A0%BC%E5%BC%8F-%E7%B2%97%E9%AB%94-%E6%96%9C%E9%AB%94-%E5%BA%95%E7%B7%9A)
 
-## 如何問問題
-老師們不會通靈，也不可能 24 小時待命回答你的問題  
-老師們也不是電腦，不要問程式這樣寫行不行，實際跑跑看就知道行不行了  
-老師們也不是 Google 搜尋引擎，請自己先上網尋找答案  
-  
-離開職訓進到公司後，也不可能會有前輩隨時回答你的問題  
-所以請同學們先培養自己先試著解決問題的良好習慣  
-  
-所以在你提問前，你應該  
-- 先看過錯誤訊息
-- 先搜尋過錯誤訊息是什麼意思
-- 先搜尋過錯誤的解決方法
-- 先自己檢查過沒有錯字
-- 先看過說明文件
-- 先自己檢查該設定的有沒有設，該開啟的有沒有開啟
+## 提問的技巧
+學會如何整理遇到的問題，不僅能更快獲得幫助，也許在整理的過程中就能發現解答。
 
-問問題前，也請注意  
-- 描述越詳細越好
-- 附上你的程式碼以及錯誤訊息
-- 如果你找到的方法不能用，把你找的方法也一起傳過來
-- 如果你覺得打字描述太慢，你可以直接進語音頻道開螢幕分享，或是 Live Share
+### 提問前檢查
+在你發出訊息前，試著先嘗試這些步驟：
+- 解讀錯誤：程式報錯時，通常會告訴你哪一行、發生了什麼事。
+- 善用工具：嘗試搜尋錯誤訊息，或詢問 AI 這段訊息的含意。
+- 檢查細節：確認沒有錯字（如變數名稱拼錯）、括號有成對、該開啟的服務有開啟。
+- 實際執行：與其詢問「這樣寫行不行？」，不如直接執行看看結果。
 
-當你要附上你的程式碼時，可以的話千萬不要傳白底黑字的純文字  
-程式碼和一般的文章不同，白底黑字非常難閱讀  
-有非常多地方提供程式碼分享服務，例如  
-- [Pastebin](https://pastebin.com/)
-- [GitHub Gist](https://gist.github.com/)
-- [JSFiddle](https://jsfiddle.net/)
-- [CodePen](https://codepen.io/)
-- [Wandbox](https://wandbox.org/)
-- [Mongo Playground](https://mongoplayground.net/)
+### 提問技巧
+- 詳細描述：目前的狀況是什麼？你預期應該出現什麼結果？
+- 提供素材：附上完整的程式碼與錯誤訊息截圖（或文字）。
+- 分享嘗試：你試過哪些方法？這樣老師能避開你已經試過的無效解法，直接給你合適的建議。
+- 善用溝通：如果打字難以描述，可以直接在 Discord 語音頻道開螢幕分享，或使用 VS Code Live Share。
 
-Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markdown 語法  
-當你在 Discord 傳程式碼時請使用程式碼標記，方便同學與老師閱讀  
+### 分享程式碼
+附上程式碼時，請盡量避免直接貼上白底黑字的純文字（這會讓閱讀者很難對齊與辨識語法）。建議使用以下工具分享你的程式碼：
+- [Pastebin](https://pastebin.com/) / [GitHub Gist](https://gist.github.com/) (程式碼分享)
+- [JSFiddle](https://jsfiddle.net/) / [CodePen](https://codepen.io/) (前端網頁)
+- [Wandbox](https://wandbox.org/) (多語言程式碼片段測試)
+- [CodeSandbox](https://codesandbox.io/) (線上虛擬環境)
+- [Mongo Playground](https://mongoplayground.net/) (資料庫查詢練習)
 
-<ImageFigure src="/images/ch0/discord-bad.png" alt="錯誤示範" title="錯誤示範" caption="錯誤示範"></ImageFigure>
-<ImageFigure src="/images/ch0/discord-good.png" alt="正確示範" title="正確示範" caption="正確示範"></ImageFigure>
+:::tip TIP
+[Discord 支援 Markdown 語法](https://support.discord.com/hc/zh-tw/articles/210298617)，傳送程式碼時用代碼塊標記，能更方便閱讀
+<ImageFigure src="/images/ch0/discord-bad.png" alt="錯誤示範" title="錯誤示範">錯誤示範</ImageFigure>
+<ImageFigure src="/images/ch0/discord-good.png" alt="正確示範" title="正確示範">正確示範</ImageFigure>
+:::
 
-延伸閱讀  
+延伸閱讀
+- [小黃鴨除錯法](https://zh.wikipedia.org/zh-tw/%E5%B0%8F%E9%BB%84%E9%B8%AD%E8%B0%83%E8%AF%95%E6%B3%95)
 - [X-Y Problem](https://ithelp.ithome.com.tw/articles/10144633)
 - [不要為了提問而提問](https://dontasktoask.com/zh-tw/)
 - [提問的智慧](https://github.com/ryanhanwu/How-To-Ask-Questions-The-Smart-Way)
@@ -107,4 +100,3 @@ Discord 文字訊息支援粗體、斜體、刪除線、程式碼標記等 Markd
 >
   RABBIDS CODING
 </ImageFigure>
-
