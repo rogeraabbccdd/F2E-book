@@ -40,6 +40,33 @@ const validate = (input) => {
 validate(1);
 ```
 
+:::warning 練習
+製作註冊資料驗證 function，使用 `throw` 拋出錯誤，並用 `try catch` 處理  
+驗證規則
+- 帳號不能空白
+- 帳號長度需為 4 ~ 20 個字
+- 密碼至少需要 8 個字
+- 密碼不能和帳號相同
+
+```js
+const register = (account, password) => {
+  // ... 在此寫你的程式碼
+}
+
+console.log(register(prompt('帳號'), prompt('密碼')))
+```
+
+測試資料
+|帳號|密碼|輸出|
+|---|---|---|
+|(空白)|12345678|驗證失敗: 帳號不能空白|
+|abc|12345678|驗證失敗: 帳號長度需為 4 ~ 20 個字|
+|abcd|1234|驗證失敗: 密碼至少需要 8 個字|
+|abcd1234|abcd1234|驗證失敗: 密碼不能和帳號相同|
+|abcd|12345678|註冊成功|
+:::
+
+
 ## Promise
 `Promise` 就跟單字的意思一樣，就是承諾  
 當承諾達成時，執行 `.then()` 內的程式，若有錯誤則執行 `.catch()` 內的程式
@@ -87,6 +114,19 @@ willGetMoney(true).then(res => {
   console.log(err.message)
 })
 ```
+
+:::warning 練習
+製作抽獎程式  
+```js
+const draw = () => {
+  return new Promise((resolve, reject) => {
+    // ... 在此寫你的程式碼
+  })
+}
+```
+- 點抽獎按鈕後，等待 2 秒才公布結果
+- 有 30% 的機率中獎，中獎時出現 `恭喜中獎`、沒中獎時出現錯誤 `沒有中獎`
+:::
 
 ## async await
 將 function 加上 `async`，就可以在 function 內使用等待程式執行完畢的 `await`，變成同步函式  
@@ -164,6 +204,10 @@ func2()
 ```
 :::
 
+:::warning 練習
+將上一題的抽獎程式，改用 async await 和 try catch 寫法顯示結果
+:::
+
 ## Event Loop
 JavaScript 一次只能做一件事，稱為單執行緒  
 等待 `setTimeout` 或 AJAX 時網頁不會卡住，是因為有 Event Loop 在安排程式的執行順序  
@@ -193,3 +237,15 @@ console.log('4')
 - [JavaScript Visualizer 9000](https://www.jsv9000.app/) 視覺化工具，可以貼上程式碼觀察執行順序
 - [What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) JSConf EU 2014 演講影片
 - [MDN：並行模型和事件循環](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Execution_model)
+
+
+## 綜合練習
+:::warning 練習
+製作紅綠燈  
+網頁上有一個燈號，使用 async await 依序切換  
+- 紅燈亮 3 秒
+- 綠燈亮 2 秒
+- 黃燈亮 1 秒
+
+提示: 可以使用本章的 `wait()` function
+:::
