@@ -1,6 +1,40 @@
 # 身分驗證
 
-使用 [Passport.js](https://www.passportjs.org/) 進行身分驗證
+使用 [Passport.js](https://www.passportjs.org/) 進行身分驗證  
+課程以 Token 認證為主
+
+## 認證方式
+登入認證方式主要分成 `Session` 和 `Token` 認證兩種  
+
+Session 認證流程，讓伺服器記住使用者
+- 登入成功後，後端產生一個隨機的 Session ID，並在伺服器記錄這個 ID 對應的使用者
+- 後端將 Session ID 回傳給瀏覽器，存入 cookie
+- 之後每次請求，瀏覽器會自動帶上 cookie
+- 後端用 cookie 內的 Session ID 查詢伺服器記錄，找出是哪個使用者
+- 登出時，後端刪除伺服器上的記錄，這個 Session ID 就失效了
+
+Token 認證流程，自己攜帶登入證明
+- 登入成功後，後端將使用者資訊簽章成 Token 回傳給前端
+- 之後每次請求，前端在 header 帶上 Token
+- 後端驗證 Token 的簽章是否正確，不需要查詢伺服器記錄就能知道是哪個使用者
+
+| 比較項目 | Session 認證 | JWT + Refresh Token 認證 |
+|:---|:---|:---|
+| 狀態儲存位置 | 伺服器端 (Server Memory / Redis) | 客戶端 (瀏覽器端保存 Token) |
+| 伺服器負擔 | 每次請求都要查詢 Session | 驗證 JWT 只需要運算，非必要不須需查詢資料庫 |
+| 跨網域/跨伺服器 | 較麻煩（需要共享 Session 或固定伺服器） | 非常容易（適合微服務、Mobile App、不同網域） |
+| 立即主動廢除 | 容易（伺服器直接刪除該 Session 即可） | AT 在到期前都有效，所以效期要設短，在用 RT 換新 AT 時才檢查是否廢除 |
+| 安全隱患 | 主要防範 CSRF 攻擊 | 主要防範 XSS 攻擊（如果 Token 存 localStorage） |
+
+:::tip TIP
+課程範例在驗證 JWT 後，仍然會用 `_id` 查詢使用者資料，原因是
+- 購物車等功能本來就需要使用者資料，放進 `req.user` 讓後面的 controller 使用
+- 使用者資料變更（如權限調整）時可以立即生效，不用等到 AT 過期
+- 使用 `_id` 查詢有索引，速度很快
+
+如果想真正發揮 JWT 不查資料庫的優點，可以把角色等必要資訊放進 payload  
+但權限變更要等到 AT 過期後才會生效
+:::
 
 ## 流程
 身分認證以 `access token` (AT)、`refresh token` (RT) 實作  
