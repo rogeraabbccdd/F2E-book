@@ -120,3 +120,25 @@ document.write(Mei.sayHi())
   }
 }
 " />
+
+## 綜合練習
+:::warning 練習
+製作銀行帳戶類別 `BankAccount`  
+- 建立帳戶時，傳入戶名和初始餘額
+- `deposit(金額)` 存款，回傳 `存款 OOO 元，餘額 OOO 元`
+- `withdraw(金額)` 提款，回傳 `提款 OOO 元，餘額 OOO 元`
+- 餘額不足時不能提款，回傳 `餘額不足，目前餘額 OOO 元`
+- `info()` 回傳 `OOO 的帳戶餘額為 OOO 元`
+
+```js
+class BankAccount {
+  // ... 在此寫你的程式碼
+}
+
+const account = new BankAccount('小明', 1000)
+console.log(account.deposit(500))   // 存款 500 元，餘額 1500 元
+console.log(account.withdraw(2000)) // 餘額不足，目前餘額 1500 元
+console.log(account.withdraw(300))  // 提款 300 元，餘額 1200 元
+console.log(account.info())         // 小明的帳戶餘額為 1200 元
+```
+:::
