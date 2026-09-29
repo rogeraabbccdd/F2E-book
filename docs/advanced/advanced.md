@@ -163,10 +163,3 @@ const func2 = async () => {
 func2()
 ```
 :::
-
-:::warning 練習
-使用 AJAX 搭配以上的本章的函式  
-先在 `https://jsonplaceholder.typicode.com/users` 裡搜尋名為 `Leanne Graham` 的使用者 ID  
-接著用 `https://jsonplaceholder.typicode.com/posts?userId=` 獲取該使用者的所有文章  
-最後用條列式顯示所有文章的 `title`
-:::
