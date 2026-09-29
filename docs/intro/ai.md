@@ -27,6 +27,50 @@
 - [OpenClaw](https://openclaw.ai/)
 - [Stitch](https://stitch.withgoogle.com/create)
 
+## 本機 AI
+使用 [Docker](https://www.docker.com/) 架設本機 AI 服務  
+- [Ollama](https://ollama.com/) 免費開源 AI 執行框架
+- [Open WebUI](https://openwebui.com/) 免費 AI 聊天網頁介面
+- [Continue](https://continue.dev/) 免費 AI 助手
+
+建議先使用 [CanIRun.ai](https://www.canirun.ai/) 查詢適合執行的模型  
+再到 [Ollama Library](https://ollama.com/library) 確認是否能使用
+
+```yml
+services:
+  ollama:
+    image: ollama/ollama:latest
+    container_name: ollama
+    restart: unless-stopped
+    ports:
+      - "11434:11434"
+    volumes:
+      - ./ollama:/root/.ollama
+    deploy:
+      resources:
+        reservations:
+          devices:
+          - driver: nvidia
+            count: 1
+            capabilities:
+              - gpu
+    environment:
+      TZ: Asia/Taipei
+  open-webui:
+    image: ghcr.io/open-webui/open-webui:main
+    container_name: open-webui
+    restart: unless-stopped
+    depends_on:
+      - ollama
+    ports:
+      - "8080:8080"
+    environment:
+      OLLAMA_BASE_URL: http://ollama:11434
+      TZ: Asia/Taipei
+    volumes:
+      - ./open-webui:/app/backend/data
+```
+
 ## MCP
 MCP (Model Context Protocol) 是一個開放標準，讓 AI 模型能夠存取外部資料與工具
 
