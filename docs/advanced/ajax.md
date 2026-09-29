@@ -179,6 +179,7 @@ axios.get('https://kktix.com/events.json')
   });
 ```
 
+## 綜合練習
 :::warning 練習
-以上面任一種方式連接 kktix API，並用表格顯示資料  
+以 Axios 連接 kktix API，並用表格顯示資料  
 :::
