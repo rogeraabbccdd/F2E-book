@@ -183,6 +183,28 @@ console.log(text3.slice(-4, -2))    // de
 ```
 
 ## 資料型態轉換
+- `.parseInt(文字)`
+- `.parseFloat(文字)`
+- `.isNaN(變數)`
+- `.split(文字)`
+
+```js
+// 文字轉數字或浮點
+let strNumber = "123456";
+let num = parseInt(strNumber);
+let strFloat = "12345.67";
+let float = parseFloat(strFloat);
+
+// 如果將文字轉換成數字的話會發生什麼事?
+let notNumber = "abcdefg";
+let nan = parseInt(notNumber);
+console.log(isNaN(nan));
+
+// 文字轉成陣列
+// .split(分割文字)
+let alphabet = "a,b,c,d,e,f,g";
+let alphabetArr = alphabet.split(",");
+```
 
 ## 綜合練習
 :::warning 練習
