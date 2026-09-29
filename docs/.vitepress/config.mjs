@@ -62,8 +62,8 @@ export default defineConfig({
       {
         text: 'JavaScript 進階',
         items: [
-          { text: 'HTTP 請求', link: '/advanced/ajax' },
           { text: '進階語法', link: '/advanced/advanced' },
+          { text: 'HTTP 請求', link: '/advanced/ajax' },
         ]
       },
       {
