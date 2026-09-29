@@ -285,11 +285,8 @@ op_done->e_retry
 @flowend
 
 ```js
+import axios, { AxiosError } from 'axios'
 import { useUserStore } from '@/stores/user'
-import axios from 'axios'
-
-// 記錄更新請求的 Promise
-let refreshPromise: null
 
 // withCredentials: 請求自動攜帶 cookie
 // baseURL: 請求基礎網址
@@ -302,62 +299,62 @@ export const apiAuth = axios.create({
   baseURL: import.meta.env.VITE_API_URL,
 })
 
+// 使用 RT 換新的 AT
+// 成功時更新使用者資料，失敗時登出
+export async function refreshToken () {
+  const user = useUserStore()
+  try {
+    const { data } = await apiAuth.post('/auth/refresh')
+    user.login(data.result)
+  } catch (error) {
+    user.logout()
+    throw error
+  }
+}
+
+// 記錄更新請求的 Promise，以判斷更新是否進行中
+let refreshPromise = null
+
 // 請求攔截器
 // config: 請求設定，包含網址、請求方式、body 等
-apiAuth.interceptors.request.use(async (config) => {
-  // 如果刷新進行中，等待完成
-  // 必須要排除刷新本身，不然會卡住
-  if (refreshPromise && config.url !== '/auth/refresh') {
-    try{
-      await refreshPromise
-    } catch {
-      // 錯誤由回應攔截器處理
-      // 這裡還是要寫 catch，避免在這裡出現更新錯誤
-    }
+apiAuth.interceptors.request.use(async config => {
+  // 如果更新進行中，等待完成
+  // 必須要排除更新本身，不然會卡住
+  if (refreshPromise && !config.url?.includes('/auth/refresh')) {
+    await refreshPromise
   }
   // 從 Pinia 取得並帶上 AT
-  const userStore = useUserStore()
-  if (userStore.accessToken) {
-    config.headers.set('Authorization', `Bearer ${userStore.accessToken}`)
-  }
+  const user = useUserStore()
+  config.headers.set('Authorization', `Bearer ${user.accessToken}`)
   // 使用更新後的請求設定發送
   return config
 })
 
 // 回應攔截器
-// res: 回應
-// error: 發生的錯誤
+// .use(成功處理, 失敗處理)
 apiAuth.interceptors.response.use(
-  (res) => res,
-  async (error) => {
-    const userStore = useUserStore()
-    const originalRequest = error.config
-
-    // 如果錯誤是 401，且不是刷新 Token 的請求本身
+  res => res,
+  async error => {
+    // 如果錯誤是 401，且不是更新 Token 的請求本身
     if (
-      error instanceof AxiosError &&
-      error.response?.status === 401 &&
-      originalRequest?.url !== '/auth/refresh'
+      error instanceof AxiosError
+      && error.config
+      && error.response?.status === 401
+      && !error.config.url?.includes('/auth/refresh')
     ) {
-
-      // 如果目前沒有正在進行中的刷新請求，就發送一個
+      // 如果目前沒有正在進行中的更新請求，就發送一個
       if (!refreshPromise) {
-        refreshPromise = useRefreshMutation().mutateAsync()
+        refreshPromise = refreshToken()
       }
 
       try {
-        const refreshResponse = await refreshPromise
-        // 更新 Pinia 中的 token
-        userStore.accessToken = refreshResponse.data.result
-        // 修改發生錯誤的原請求設定，換上新的 token
-        originalRequest.headers.set('Authorization', `Bearer ${refreshResponse.data.result.token}`)
-        // 重試原始請求
-        // 不使用 axios(originalRequest)，否則會失去 baseURL 等設定
-        return apiAuth(originalRequest)
+        // 等待更新完成
+        await refreshPromise
+        // 重試原始請求，請求攔截器會自動帶上新的 AT
+        // 不使用 axios(error.config)，否則會失去 baseURL 等設定
+        return apiAuth(error.config)
       } catch {
-        // 刷新失敗，登出
-        userStore.accessToken = ''
-        // 回傳原錯誤
+        // 更新失敗，回傳原本的錯誤
         throw error
       } finally {
         // 清空 refreshPromise
@@ -368,4 +365,19 @@ apiAuth.interceptors.response.use(
     throw error
   },
 )
+```
+
+AT 只存在 Pinia 變數中，重新整理網頁後就會消失  
+所以第一次進入網頁時，在路由守衛使用 RT 換取新的 AT  
+```js
+import { START_LOCATION } from 'vue-router'
+import { refreshToken } from '@/utils/api'
+
+router.beforeEach(async (to, from) => {
+  // 第一次進入網頁
+  if (from === START_LOCATION) {
+    // 沒有登入過或 RT 過期時會失敗，失敗就維持未登入狀態
+    await refreshToken().catch(() => {})
+  }
+})
 ```
