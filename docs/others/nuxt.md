@@ -9,7 +9,11 @@ Nuxt 是伺服器渲染版的 Vue.js，改善了 SEO 等問題。
 - 能自訂各頁面的 meta，改善 SEO 問題
 
 :::tip TIP
-[Quasar Framework](https://quasar.dev/) 內建伺服器渲染模式，後端網頁伺服器使用的是 [express.js](https://expressjs.com/)  
+[Quasar Framework](https://quasar.dev/) 內建伺服器渲染模式，後端網頁伺服器有多個套件供選擇
+- [Express](https://expressjs.com/)  
+- [Hono](https://hono.dev/)
+- [Fastify](https://fastify.dev/)
+- [Koa](https://koajs.com/)
 只需要[加入 SSR 模式](https://quasar.dev/quasar-cli-vite/developing-ssr/preparation) 即可使用  
 :::
 
