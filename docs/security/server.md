@@ -22,11 +22,7 @@ app.use(limiter)
 - 預設阻擋許多攻擊種類和漏洞
 - 防止暴露 `X-Powered-By`，Express 預設會顯示，讓攻擊者能針對這個套件的漏洞攻擊
 
-<ImageFigure
-  src="/images/x-power-by-express.png"
-  title="二維陣列概念"
-  alt="二維陣列概念"
->X-Powered-By: Express</ImageFigure>
+<img src="/images/x-power-by-express.png" height="400" style="margin: 10px 0;">  
 
 ```js
 import helmet from 'helmet'
