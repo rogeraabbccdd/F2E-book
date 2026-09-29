@@ -381,21 +381,25 @@ console.log(obj2)     // {a: 100, b: 2, c: 3}
 :::
 
 ## 綜合練習
-:::warning 練習
+::::warning 練習
 宣告一個數字陣列  
 ```js
 const numbers = [
-  prompt('第一個數字'),
-  prompt('第二個數字'),
-  prompt('第三個數字'),
-  prompt('第四個數字'),
-  prompt('第五個數字')
+  parseInt(prompt('第一個數字')),
+  parseInt(prompt('第二個數字')),
+  parseInt(prompt('第三個數字')),
+  parseInt(prompt('第四個數字')),
+  parseInt(prompt('第五個數字'))
 ]
 ```
 - 印出陣列 `第 x 個數字為 y`
 - 有幾個奇數和幾個偶數
 - 最大數字和最小數字
+:::danger 注意
+一定要先轉成數字避免錯誤，因為
+`'10' < '9'` 是 `true`
 :::
+::::
 
 :::warning 練習
 某國家發生通貨膨脹  
