@@ -163,3 +163,33 @@ const func2 = async () => {
 func2()
 ```
 :::
+
+## Event Loop
+JavaScript 一次只能做一件事，稱為單執行緒  
+等待 `setTimeout` 或 AJAX 時網頁不會卡住，是因為有 Event Loop 在安排程式的執行順序  
+
+- 一般程式碼會放在 `Call Stack` 依序執行
+- 遇到 `setTimeout`、AJAX 這類需要等待的工作，會交給瀏覽器處理，不會卡在 `Call Stack`
+- 等待完成後，要執行的 function 會放進佇列排隊
+- `Event Loop` 會不斷檢查，等 `Call Stack` 空了，才從佇列拿出下一個 function 執行
+
+佇列又分成兩種，`Promise` 的 `.then()` 會放在優先度較高的 `Microtask Queue`  
+所以會比 `setTimeout` 先執行
+
+```js
+console.log('1')
+setTimeout(() => console.log('2'), 0)
+Promise.resolve().then(() => console.log('3'))
+console.log('4')
+// 輸出順序: 1 4 3 2
+```
+
+:::danger 注意
+如果迴圈一直執行不結束，`Call Stack` 永遠不會空，其他程式和事件都沒機會執行，網頁就會卡死  
+`await` 會暫停 async function 並讓出執行權，其他程式才有機會執行
+:::
+
+延伸閱讀
+- [JavaScript Visualizer 9000](https://www.jsv9000.app/) 視覺化工具，可以貼上程式碼觀察執行順序
+- [What the heck is the event loop anyway?](https://www.youtube.com/watch?v=8aGhZQkoFbQ) JSConf EU 2014 演講影片
+- [MDN：並行模型和事件循環](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Execution_model)
