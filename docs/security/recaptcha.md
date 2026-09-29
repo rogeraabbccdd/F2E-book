@@ -150,6 +150,7 @@
   ```
 
 ## 後端
+- 安裝 `axios` 和 `form-data`，需要將認證資料用 form-data 格式跟 API 拿資料
 - 設定環境變數 `TURNSTILE_SECRET_KEY`
 - 建立 `middlewares/turnstile.ts`
   ```ts
