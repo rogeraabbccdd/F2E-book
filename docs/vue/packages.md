@@ -10,8 +10,8 @@ UI 套件能快速建立頁面，提供許多已經設計好的元件和樣式�
 :::
 
 :::tip TIP
-部分套件不是使用 Vite，而是自己的工具  
-如 [Quasar](https://quasar.dev/) 使用的是 [Quasar CLI](https://quasar.dev/start/quasar-cli/)
+部分套件不是使用直接 Vite，而是自己的工具  
+如 [Quasar](https://quasar.dev/) 使用的是 [Quasar CLI](https://quasar.dev/start/quasar-cli/)，不過底層依然是 Vite。
 :::
 
 更多資訊可考 [UI 比較](https://ui-libs.vercel.app/)
