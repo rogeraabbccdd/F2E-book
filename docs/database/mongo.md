@@ -1,4 +1,4 @@
-# MongoDB 的安裝與操作
+# MongoDB
 
 MongoDB 的安裝以及增改刪查語法  
 

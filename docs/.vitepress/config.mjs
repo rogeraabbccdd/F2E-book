@@ -91,7 +91,7 @@ export default defineConfig({
       {
         text: '資料庫 API',
         items: [
-          { text: 'MongoDB 的安裝與操作', link: '/database/mongo' },
+          { text: 'MongoDB', link: '/database/mongo' },
           { text: 'mongoose', link: '/database/mongoose' },
           { text: 'Express', link: '/database/express' },
           { text: '身分驗證', link: '/database/passport' },
