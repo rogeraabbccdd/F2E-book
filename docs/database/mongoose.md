@@ -15,7 +15,7 @@ npm install mongoose
 設定資料庫連線，建議使用 [dotenv](https://npmx.dev/package/dotenv) 和 `.env` 檔管理資料庫連線資訊  
 
 ```ini
-DB_URL=mongodb://xxx/xxx
+DB_URL=mongodb+srv://帳號:密碼@cluster0.xxxxx.mongodb.net/資料庫名稱?retryWrites=true&w=majority
 ```
 
 ```js
@@ -107,7 +107,7 @@ export default mongoose.model('users', usersSchema)
 ```
 
 ## Model
-[Model](https://mongoosejs.com/docs/index.html) 是操作資料庫的物件，可以使用 Model 來新增、查詢、更新、刪除資料  
+[Model](https://mongoosejs.com/docs/models.html) 是操作資料庫的物件，可以使用 Model 來新增、查詢、更新、刪除資料  
 
 ```js
 import User from './models/user.js'
@@ -141,3 +141,110 @@ const user = await User.findByIdAndDelete('123456789')
 // 帶出關聯資料
 const user = await User.findById('12345678').populate('cart.product')
 ```
+
+## 查詢條件
+查詢條件使用的是 MongoDB 本身的語法，mongoose 會直接傳給資料庫  
+
+```js
+// 查詢價格大於等於 200 的商品
+const products = await Product.find({ price: { $gte: 200 } })
+```
+
+### 比較
+- `$eq` - 等於 `{ price: { $eq: 200 } }`，也可以直接寫 `{ price: 200 }`
+- `$ne` - 不等於 `{ price: { $ne: 200 } }`
+- `$gt` - 大於 `{ price: { $gt: 200 } }`
+- `$gte` - 大於等於 `{ price: { $gte: 200 } }`
+- `$lt` - 小於 `{ price: { $lt: 200 } }`
+- `$lte` - 小於等於 `{ price: { $lte: 200 } }`
+- `$in` - 符合陣列內任一值 `{ type: { $in: ['food', 'drink'] } }`
+- `$nin` - 不符合陣列內任何值 `{ type: { $nin: ['food', 'drink'] } }`
+
+### 邏輯
+- `$and` - 和 `{ $and: [{ price: { $lt: 200 } }, { name: 'ABCD' }] }`
+- `$or` - 或 `{ $or: [{ price: { $lt: 200 } }, { name: 'ABCD' }] }`
+- `$not` - 否 `{ price: { $not: { $gt: 200 } } }`
+
+:::tip TIP
+同一個物件內的多個條件就是 `$and`，下面兩種寫法結果相同
+```js
+{ $and: [{ price: { $lt: 200 } }, { name: 'ABCD' }] }
+{ price: { $lt: 200 }, name: 'ABCD' }
+```
+:::
+
+### 其他
+- `$regex` - 正則表達式，用於搜尋文字 `{ name: { $regex: 'abc', $options: 'i' } }`，`i` 代表不分大小寫
+- `$exists` - 欄位是否存在 `{ image: { $exists: true } }`
+
+### 排序與分頁
+```js
+const products = await Product
+  // 查詢條件
+  .find({ price: { $gte: 200 } })
+  // 只回傳 name 和 price 欄位
+  .select('name price')
+  // 依價格排序，1 為小到大，-1 為大到小
+  .sort({ price: 1 })
+  // 略過前 10 筆
+  .skip(10)
+  // 只取 10 筆
+  .limit(10)
+```
+
+## 更新運算子
+更新資料時，可以使用 MongoDB 的更新運算子描述要怎麼修改資料
+- `$set` - 修改指定欄位的值
+- `$inc` - 數字加減，負數為減
+- `$mul` - 數字相乘
+
+```js
+// 修改一筆資料，將名稱為 ABCD 的商品價格改為 300
+await Product.updateOne({ name: 'ABCD' }, { $set: { price: 300 } })
+
+// 修改多筆資料，將所有食物類商品的價格加 10
+await Product.updateMany({ type: 'food' }, { $inc: { price: 10 } })
+```
+
+:::tip TIP
+在 mongoose 若沒有寫更新運算子，會自動當作 `$set`，下面兩種寫法結果相同
+```js
+await Product.updateOne({ name: 'ABCD' }, { $set: { price: 300 } })
+await Product.updateOne({ name: 'ABCD' }, { price: 300 })
+```
+:::
+
+陣列欄位的資料，可以先查詢出來，用陣列語法處理後再 `save()`
+```js
+const user = await User.findById('12345678').orFail()
+// 使用陣列語法修改購物車
+user.cart.push({ product: '123', quantity: 1 })
+await user.save()
+```
+
+## 索引
+Schema 設定的 `unique: true` 不是驗證規則，而是資料庫的索引  
+資料重複時不會出現驗證錯誤，而是資料庫回傳錯誤代碼 `11000` 的錯誤，需要另外處理  
+```js
+try {
+  await User.create({ account: 'aaa' })
+} catch (error) {
+  if (error.code === 11000) {
+    console.log('帳號重複')
+  }
+}
+```
+
+## 聚合框架
+MongoDB 的[聚合框架 (Aggregation Framework)](https://www.mongodb.com/docs/manual/aggregation/) 能更進階的處理查詢  
+由多個階段組成，每個階段對資料進行篩選、分組、計算、關聯等處理，並將結果傳給下一個階段  
+適合用在統計報表等複雜的查詢，mongoose 使用 `Model.aggregate()`  
+
+```js
+// 依類別分組，計算每個類別的商品數量
+const result = await Product.aggregate([
+  { $group: { _id: '$type', count: { $sum: 1 } } }
+])
+```
+
+可使用 [MongoDB Compass](https://www.mongodb.com/products/compass) 的聚合工具輔助編寫語法  
