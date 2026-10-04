@@ -1,6 +1,21 @@
 # Firebase
 Firebase 是 Google 提供的後端服務平台，提供了資料庫、身份驗證等功能
 
+## 建立專案
+在 [Firebase 控制台](https://console.firebase.google.com/) 依照下列步驟建立專案  
+免費方案 (Spark) 不需要綁定信用卡
+
+1. 新增專案，輸入專案名稱，Google Analytics 可以不啟用
+2. 在專案總覽新增網頁應用程式，完成後會顯示 `firebaseConfig` 設定，複製起來之後會用到
+3. 在「安全性」的 Authentication 點選開始使用，於「登入方式」啟用「電子郵件/密碼」
+4. 在「資料庫和儲存空間」的 Firestore 點選建立資料庫
+   - 位置選擇 `asia-east1 (台灣)`，建立後無法更改
+   - 規則選擇「正式版模式」，再依照下方「安全規則」章節修改規則
+
+:::danger 注意
+如果沒有啟用登入方式，註冊時會出現 `auth/operation-not-allowed` 錯誤
+:::
+
 ## 安裝
 - [firebase](https://npmx.dev/package/firebase) Firebase 官方 SDK
 - [vuefire](https://vuefire.vuejs.org/) Vue 3 的 Firebase 整合套件
@@ -9,7 +24,7 @@ npm i vuefire firebase
 ```
 
 ## 設定
-到 Firebase 控制台新增應用程式後，複製 apiKey 等設定資訊
+使用建立專案時複製的 `firebaseConfig` 設定
 ```js
 import { initializeApp } from 'firebase/app'
 import { createApp } from 'vue'
