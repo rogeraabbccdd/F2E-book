@@ -32,8 +32,24 @@ Nuxt 預設使用 TypeScript，所以會有 tsconfig.json 及 nuxt.config.ts
 若沒有要使用 TypeScript，刪除 tsconfig.json 並將 nuxt.config.ts 改為 nuxt.config.js
 :::
 
+## 目錄結構
+Nuxt 4 的程式碼大多放在 `app` 資料夾內，`~` 代表的也是 `app` 資料夾  
+`public` 和後端 API 用的 `server` 則放在專案根目錄
+```
+app/
+--| assets/
+--| components/
+--| layouts/
+--| pages/
+--| plugins/
+--| app.vue
+public/
+server/
+nuxt.config.ts
+```
+
 ## 引用資源
-- `assets` 資料夾的內容**會**經過 Vite 處理，打包時加上 hash
+- `app/assets` 資料夾的內容**會**經過 Vite 處理，打包時加上 hash
 - `public` 資料夾的內容**不會**經過 Vite 處理
 
 :::danger 注意
@@ -71,9 +87,9 @@ body {
 }
 ```
 ## Layout
-建立一個 `layouts` 資料夾，可以自己放設定的版面  
+建立一個 `app/layouts` 資料夾，可以自己放設定的版面  
 使用 `<NuxtLayout>` 元件讓頁面套用版面  
-預設套用 `layouts/default.vue`，若無此檔案須自己建立
+預設套用 `app/layouts/default.vue`，若無此檔案須自己建立
 
 ```html
 <template>
@@ -86,7 +102,7 @@ body {
 ```
 
 也能套用自訂 layout  
-建立 `layouts/版面名稱.vue` 後將名稱傳入 `NuxtLayout`
+建立 `app/layouts/版面名稱.vue` 後將名稱傳入 `NuxtLayout`
 ```html
 <template>
   <!-- 指定 -->
@@ -121,33 +137,37 @@ console.log(route.meta.title) // My home page
 ```
 
 ## 路由
-Nuxt 會自動讀取 `pages` 資料夾的檔案，自動產生路由設定  
-使用 `[]` 的檔名代表路由參數變數名稱  
-Nuxt 裡的 `router-view` 名為 `NuxtPage`  
-Nuxt 裡的 `router-link` 名為 `NuxtLink`
+Nuxt 會自動讀取 `app/pages` 資料夾的檔案，自動產生路由設定
+:::danger 注意
+Nuxt 路由元件名稱和 Vue 路由元件名稱不同
+- `router-view` 變成 `NuxtPage`  
+- `router-link` 變成 `NuxtLink`
+:::
+
 ```
-pages/
---| user/
+app/
+--| pages/
+-----| user/
+--------| index.vue
+--------| [id].vue
 -----| index.vue
------| [id].vue
---| index.vue
 ```
 ```js
 routes: [
   {
     name: 'index',
     path: '/',
-    component: 'pages/index.vue'
+    component: 'app/pages/index.vue'
   },
   {
     name: 'user',
     path: '/user',
-    component: 'pages/user/index.vue'
+    component: 'app/pages/user/index.vue'
   },
   {
     name: 'user-id',
     path: '/user/:id',
-    component: 'pages/user/[id].vue'
+    component: 'app/pages/user/[id].vue'
   }
 ]
 ```
@@ -173,6 +193,20 @@ routes: [
 - `useFetch` 取得資料的方法，在載入頁面前執行
 - `useLazyFetch` 取得資料的方法，在載入頁面後執行，需處理沒有拿到資料的情況
 
+回傳的 `status` 代表資料狀態
+- `idle` 還沒開始取得資料
+- `pending` 取得資料中
+- `success` 取得成功
+- `error` 取得失敗
+
+:::danger 注意
+回傳的 `data` 是 `shallowRef`，只有整個資料被替換時才會觸發更新  
+如果需要直接修改資料內部的屬性，或是 watch 內部屬性的變化，需加上 `deep: true`
+```js
+const { data } = await useFetch('https://kktix.com/events.json', { deep: true })
+```
+:::
+
 useAsyncData
 ```html
 <template>
@@ -184,15 +218,15 @@ useAsyncData
 // key 指定不同的值讓 nuxt 正確的更新資料，沒提供的話會根據程式碼檔名和行數自動產生
 // function 產生資料的 function
 // $fetch 為 ofetch 套件，內建在 nuxt 裡 https://github.com/unjs/ofetch
-// options 設定 https://v3.nuxtjs.org/api/composables/use-async-data#params
-const { data, pending, error, refresh } = await useAsyncData('events', () => $fetch('https://kktix.com/events.json'))
+// options 設定 https://nuxt.com/docs/4.x/api/composables/use-async-data
+const { data, status, error, refresh } = await useAsyncData('events', () => $fetch('https://kktix.com/events.json'))
 </script>
 ```
 
 useLazyAsyncData
 ```html
 <template>
-  <p v-if='pending'>載入中</p>
+  <p v-if="status === 'pending'">載入中</p>
   <pre v-else>{{ data }}</pre>
 </template>
 
@@ -200,12 +234,11 @@ useLazyAsyncData
 // useLazyAsyncData(key, function, options)
 // key 指定不同的值讓 nuxt 正確的更新資料，沒提供的話會根據程式碼檔名和行數自動產生
 // function 產生資料的 function
-// $fetch 為 ohmyfetch 套件，內建在 nuxt 裡 https://github.com/unjs/ohmyfetch
-// options 設定 https://v3.nuxtjs.org/api/composables/use-async-data#params
-// 注意 data 初始值是 null
-const { data, pending, error, refresh } = useLazyAsyncData('events', () => $fetch('https://kktix.com/events.json'))
+// $fetch 為 ofetch 套件，內建在 nuxt 裡 https://github.com/unjs/ofetch
+// options 設定 https://nuxt.com/docs/4.x/api/composables/use-async-data
+const { data, status, error, refresh } = useLazyAsyncData('events', () => $fetch('https://kktix.com/events.json'))
 
-// 注意 data 初始值是 null，無法立即取得資料，但是可以 watch 偵測變更
+// 注意 data 初始值是 undefined，無法立即取得資料，但是可以 watch 偵測變更
 watch(data, (newData) => {
   console.log('data 更新')
 })
@@ -221,23 +254,23 @@ useFetch
 <script setup>
 // useFetch 是 useAsyncData 簡化版
 // 包裝了 useAsyncData 和 $fetch 並根據網址自動產生 key
-const { data, pending, error, refresh } = await useFetch('https://kktix.com/events.json')
+const { data, status, error, refresh } = await useFetch('https://kktix.com/events.json')
 </script>
 ```
 
 useLazyFetch
 ```html
 <template>
-  <p v-if='pending'>載入中</p>
+  <p v-if="status === 'pending'">載入中</p>
   <pre v-else>{{ data }}</pre>
 </template>
 
 <script setup>
 // useLazyFetch 是 useLazyAsyncData 簡化版
 // 包裝了 useLazyAsyncData 和 $fetch 並根據網址自動產生 key
-const { data, pending, error, refresh } = useLazyFetch('https://kktix.com/events.json')
+const { data, status, error, refresh } = useLazyFetch('https://kktix.com/events.json')
 
-// 注意 data 初始值是 null，無法立即取得資料，但是可以 watch 偵測變更
+// 注意 data 初始值是 undefined，無法立即取得資料，但是可以 watch 偵測變更
 watch(data, (newData) => {
   console.log('data 更新')
 })
@@ -276,13 +309,13 @@ const showPrev = () => {
 ```html
 <template>
   <input type="button" @click="refresh" value="更新" />
-  <p v-if='pending'>載入中</p>
+  <p v-if="status === 'pending'">載入中</p>
   <pre v-else>{{ data }}</pre>
 </template>
 
 <script setup>
 const id = ref(1)
-const { pending, data } = useLazyAsyncData('count', () => $fetch(`https://jsonplaceholder.typicode.com/todos/${id.value}`))
+const { status, data } = useLazyAsyncData('count', () => $fetch(`https://jsonplaceholder.typicode.com/todos/${id.value}`))
 
 const refresh = () => {
   id.value++
@@ -297,21 +330,19 @@ const refresh = () => {
 ```
 
 ## Plugin
-Nuxt 沒有 `main.js`，所以安裝 Vue 相關套件時需要在 `plugins` 資料夾建立一個 js 檔  
+Nuxt 沒有 `main.js`，所以安裝 Vue 相關套件時需要在 `app/plugins` 資料夾建立一個 js 檔  
 - 檔案結尾是 `.server.js` 代表只在 server 執行
 - 檔案結尾是 `.client.js` 代表只在瀏覽器執行
 - 檔案結尾沒有 server 和 client 代表兩邊都執行
 
-例如使用 [vue-gtag](https://github.com/MatteoGabriele/vue-gtag) 時，建立 `plugins/vue-gtag.client.js` 
+例如使用 [vue-gtag](https://github.com/MatteoGabriele/vue-gtag) 時，建立 `app/plugins/vue-gtag.client.js`  
 ```js
-import VueGtag from 'vue-gtag-next'
+import { createGtag } from 'vue-gtag'
 
 export default defineNuxtPlugin((nuxtApp) => {
-  nuxtApp.vueApp.use(VueGtag, {
-    property: {
-      id: 'GA_MEASUREMENT_ID'
-    }
-  })
+  nuxtApp.vueApp.use(createGtag({
+    tagId: 'GA_MEASUREMENT_ID'
+  }))
 })
 ```
 :::danger 注意
@@ -320,19 +351,24 @@ export default defineNuxtPlugin((nuxtApp) => {
 
 ## CSS
 Nuxt 沒有 main.js，所以引用自己寫的 css 或外部 css 時，必須在 `nuxt.config.js` 引用  
-可以忽略副檔名，nuxt 會自動尋找檔案
+Nuxt 會根據副檔名自動使用對應的預處理器
 ```js
 // nuxt.config.js
-export default {
-  // 在 assets/ 裡找檔名為 main 的 CSS、Stylus 或其他預處理器的檔案
-  css: ['~/assets/main'],
-}
+export default defineNuxtConfig({
+  css: [
+    // app/assets/css/main.css
+    '~/assets/css/main.css',
+    // app/assets/css/main.scss
+    '~/assets/css/main.scss',
+  ],
+})
 ```
 
 ## Meta
 每個元件都可以使用 `useHead` 設定各自的 meta，或引用外部資源。  
 ```html
 <script setup>
+const route = useRoute()
 const description = ref('site description')
 const image = ref('site image')
 useHead({
@@ -346,9 +382,8 @@ useHead({
     return title ? `${title} - Site Title` : 'Site Title';
   },
   // Meta
+  // charset 和 viewport 是 Nuxt 預設就有的，不需要另外設定
   meta: [
-    { charset: 'utf-8' },
-    { name: 'viewport', content: 'width=device-width, initial-scale=1' },
     {
       property: 'og:title',
       content: route.meta.title
@@ -364,13 +399,17 @@ useHead({
   ],
   // 外部 JS
   script: [
+    // 預設放在 head
     {
       src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js'
     },
+    // 使用 tagPosition 指定位置
+    // head: 放在 head
+    // bodyOpen: 放在 body 開頭
+    // bodyClose: 放在 body 結尾
     {
       src: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js',
-      // 放在 body
-      body: true
+      tagPosition: 'bodyClose'
     }
   ],
   // 外部 CSS
@@ -378,12 +417,6 @@ useHead({
     {
       rel: 'stylesheet',
       href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap'
-    },
-    {
-      rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css?family=Roboto&display=swap',
-      // 放在 body
-      body: true
     }
   ]
 })
@@ -424,12 +457,12 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://awesome-lib.css' }
       ],
       style: [
-        // <style type="text/css">:root { color: red }</style>
-        { children: ':root { color: red }', type: 'text/css' }
+        // <style>:root { color: red }</style>
+        { textContent: ':root { color: red }' }
       ],
       noscript: [
         // <noscript>Javascript is required</noscript>
-        { children: 'Javascript is required' }
+        { textContent: 'Javascript is required' }
       ]
     }
   }
