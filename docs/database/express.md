@@ -1,6 +1,6 @@
-# Express.js
+# Express
 
-[Express.js](https://expressjs.com/) 是一個 Node.js 網頁伺服器框架
+[Express](https://expressjs.com/) 是一個 Node.js 網頁伺服器框架
 
 ## 安裝
 ```bash

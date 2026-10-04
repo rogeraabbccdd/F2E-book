@@ -1,5 +1,5 @@
 # 後端防護
-Express.js 相關防護措施
+Express 相關防護措施
 
 ## Rate Limit
 使用 [express-rate-limit](https://express-rate-limit.mintlify.app/overview)，進行流量管制
