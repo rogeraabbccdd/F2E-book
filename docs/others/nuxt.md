@@ -10,16 +10,18 @@ Nuxt 是伺服器渲染版的 Vue.js，改善了 SEO 等問題。
 
 :::tip TIP
 [Quasar Framework](https://quasar.dev/) 內建伺服器渲染模式，後端網頁伺服器有多個套件供選擇
+
 - [Express](https://expressjs.com/)  
 - [Hono](https://hono.dev/)
 - [Fastify](https://fastify.dev/)
 - [Koa](https://koajs.com/)
+
 只需要[加入 SSR 模式](https://quasar.dev/quasar-cli-vite/developing-ssr/preparation) 即可使用  
 :::
 
 :::danger 注意
 Nuxt 的後端網頁伺服器使用的是 [Nitro](https://nitro.build/) 與 [h3](https://h3.dev/)  
-使用方式與架構會與 API 課程使用的 [express.js](https://expressjs.com/) 不同
+使用方式與架構會與 API 課程使用的 [Express](https://expressjs.com/) 不同
 :::
 
 ## 安裝
