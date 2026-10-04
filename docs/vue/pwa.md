@@ -83,6 +83,8 @@ npm i -D vite-plugin-pwa
   ```
 - 在 `index.html` 中加入 PWA 相關標籤
 
+## 綜合練習
+
 :::warning 作業
 製作一個番茄鐘，功能包括：
 - 使用者能新增、編輯、刪除待辦事項
@@ -99,3 +101,31 @@ npm i -D vite-plugin-pwa
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/BdwdENBrk2c" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>  
 :::
+
+::::warning 挑戰
+參考 [Firebase](/others/firebase) 章節，幫番茄鐘加上雲端同步功能
+- 使用者能用信箱註冊、登入、登出
+- 登入後，未完成和已完成的事項都儲存在 Firestore，換裝置登入也能看到相同資料
+- 未登入時，事項頁面提示使用者先登入
+- 設定 Firestore 安全規則，使用者只能讀寫自己的資料
+
+::: details 提示 1
+資料可以存在 `users/使用者ID/items` 集合，每個事項用一個欄位記錄是否已完成  
+這樣就能直接使用 Firebase 章節「安全規則」的範例
+:::
+
+::: details 提示 2
+編輯中的 `edit`、`input` 只是畫面用的狀態，不需要存進 Firestore  
+:::
+
+::: details 提示 3
+登入狀態會變化，可以用 `computed` 產生集合位置，未登入時回傳 `null`
+```js
+const user = useCurrentUser()
+const db = useFirestore()
+
+const items = useCollection(computed(() => {
+  return user.value ? collection(db, 'users', user.value.uid, 'items') : null
+}))
+```
+::::
