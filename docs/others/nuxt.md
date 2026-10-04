@@ -1,4 +1,4 @@
-# Nuxt.js
+# Nuxt
 
 Nuxt 是伺服器渲染版的 Vue.js，改善了 SEO 等問題。
 

@@ -120,7 +120,7 @@ export default defineConfig({
         items: [
           { text: 'Git', link: '/others/git' },
           { text: 'Pug', link: '/others/pug' },
-          { text: 'Nuxt.js', link: '/others/nuxt' },
+          { text: 'Nuxt', link: '/others/nuxt' },
           { text: 'Firebase', link: '/others/firebase' },
           { text: '靜態網站產生器', link: '/others/ssg' },
         ]
