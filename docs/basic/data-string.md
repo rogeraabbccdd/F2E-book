@@ -46,8 +46,8 @@ console.log(text)           // '123 abc def ghi jkl'
 - `.matchAll(正則表達式Regex)`
   - 符合的結果用 `RegExpStringIterator` 回傳
   - 只能用迴圈取資料
-- `.replace(搜尋文字或 Regex, 取代文字)`
-  - 搜尋文字只會取代找到的第一個
+- `.replaceAll(搜尋文字或 Regex, 取代文字)`
+  - 搜尋文字後取代所有符合的
   - 正則表達式有設定 `g` 會取代全部找到的
   - 正則表達式的取代文字可以使用 `$1`, `$2`... 或 `$<群組名稱>` 代表找到的東西
 
