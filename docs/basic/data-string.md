@@ -98,11 +98,8 @@ for (const match of matchAllCurry) {
   console.log(match)
 }
 
-const replaceCurry1 = curry.replace('咖哩', '三色豆')
-console.log(replaceCurry1)      // '外賣 三色豆拌飯 咖哩烏冬'
-
-const replaceCurry2 = curry.replace(/咖哩/g, '三色豆')
-console.log(replaceCurry2)      // '外賣 三色豆拌飯 三色豆烏冬'
+const replaceCurry = curry.replaceAll('咖哩', '三色豆')
+console.log(replaceCurry1)      // '外賣 三色豆拌飯 三色豆烏冬'
 
 const email = 'aaaa@gmail.com'
 const emailMatch = email.match(/^[0-9a-z]+@[0-9a-z]+\.[0-9a-z]+$/g)
