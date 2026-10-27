@@ -351,8 +351,91 @@ console.log(p.firstChild.nodeType === Node.TEXT_NODE)       // true
 
 ## 綜合練習
 :::warning 練習
+製作記帳本網頁版  
+使用 `prompt()` 一直輸入花費金額，輸入 `0` 或按取消時結束  
+每筆金額變成一個 `<li>` 放進清單，超過 `500` 的金額文字為紅色  
+最後在 `#total` 顯示總金額
+```html
+<ul id="list"></ul>
+<p id="total"></p>
+```
+
+測試資料，依序輸入 `100`、`800`、`30`、`0`
+```
+• 100
+• 800  (紅色)
+• 30
+總共 930 元
+```
+:::
+
+:::warning 練習
+製作乘法表  
+使用 `prompt()` 輸入數字 n，在網頁上產生 n × n 的乘法表格  
+對角線的格子 (1×1、2×2...) 背景為黃色
+
+測試資料，輸入 `3`
+```
+1×1=1 (黃色)  1×2=2         1×3=3
+2×1=2         2×2=4 (黃色)  2×3=6
+3×1=3         3×2=6         3×3=9 (黃色)
+```
+:::
+
+:::warning 練習
 製作倒數計時器
 - 使用者用 `prompt()` 輸入秒數數字
 - 在網頁只能有一行字顯示 `剩餘 X 秒`，秒數不能變負數，顏色為藍色
 - 時間到時文字變成紅色的 `時間到`
+:::
+
+:::warning 練習
+製作新聞輪播  
+每 2 秒把第一則新聞移到清單最後面
+```html
+<ul id="news">
+  <li>新聞 1</li>
+  <li>新聞 2</li>
+  <li>新聞 3</li>
+  <li>新聞 4</li>
+</ul>
+```
+
+測試資料
+```
+一開始：新聞 1、新聞 2、新聞 3、新聞 4
+2 秒後：新聞 2、新聞 3、新聞 4、新聞 1
+4 秒後：新聞 3、新聞 4、新聞 1、新聞 2
+```
+:::
+
+:::warning 挑戰
+製作紅綠燈  
+一開始亮紅燈，每秒換一個燈亮，順序為 紅 → 綠 → 黃 → 紅...  
+亮的燈加上 `on` class，其他燈移除 `on` class  
+注意燈亮的順序和 HTML 的順序不一樣
+```html
+<div id="light">
+  <div class="red"></div>
+  <div class="yellow"></div>
+  <div class="green"></div>
+</div>
+```
+```css
+#light div {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: gray;
+}
+#light .red.on {
+  background: red;
+}
+#light .yellow.on {
+  background: yellow;
+}
+#light .green.on {
+  background: green;
+}
+```
 :::
