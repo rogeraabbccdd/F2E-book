@@ -19,6 +19,7 @@ Git 是一種分散式的版本控制系統，有免費、體積小、分散式�
 :::danger 注意
 Git 無法檢視 PSD、AI 等非文字檔案修改了哪些東西
 :::
+
 ### 專有名詞
 - `Repository`: 儲存庫
 - `Stage`: 暫存檔案，等待提交
@@ -49,15 +50,6 @@ Git 無法檢視 PSD、AI 等非文字檔案修改了哪些東西
 - `Issue`: 議題，回報問題、提出建議與討論
 - `Watch`: 關注，接收儲存庫的通知、在首頁顯示動態
 - `Fork`: 複製一份別人的 Repo 到自己的帳號
-
-## GitKraken
-GitKraken 是一個基本使用免費的 Git GUI 軟體，但若要在不公開的儲存庫使用則需要付費  
-<img src="/images/ch30/gitkraken.png" height="300" style="margin: 10px 0;">  
-
-除了這個以外，還有其他的 GUI 軟體，如  
-- [Sourcetree](https://www.sourcetreeapp.com/)
-- [Fork](https://git-fork.com/)
-- [GitHub Desktop](https://desktop.github.com/)
 
 :::warning 注意
 將指定作業上傳至 GitHub Classroom，學習 Git 與 GitHub 的操作
